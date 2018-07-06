@@ -1,0 +1,377 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color:#1f2024 ;
+    color: #000000;
+    overflow:hidden;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: "微软雅黑";
+    cursor: default;
+    font-weight: normal;
+}
+table{
+    white-space:nowrap;
+   /*  border-collapse: collapse; */
+    border-spacing: 0px;
+    border-color: grey;
+}
+a:link,a:visited{color:inherit;text-decoration:none;}
+a:hover{color:inherit;}
+
+.clearfix:after { 
+    content: "." ; 
+    display: block ;
+    height: 0 ;
+    clear: both ;
+    visibility: hidden ;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* 轨道样式 */
+/* Handle样式 */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  /*background: rgba(0,0,0,0.2);*/
+  background: #ffffff;
+}
+
+/*当前窗口未激活的情况下*/
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #ffffff;
+}
+
+/*hover到滚动条上*/
+::-webkit-scrollbar-thumb:vertical:hover {
+  /*background-color: rgba(255, 255, 255, 1);*/
+  background-color: #474A4D;
+}
+
+/*滚动条按下*/
+::-webkit-scrollbar-thumb:vertical:active {
+  background-color: #474a4d;
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+  background-color: #474a4d;
+}
+
+/*滚动条按下*/
+::-webkit-scrollbar-thumb:horizontal:active {
+  background-color: #474a4d;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #333333;
+}
+
+.left{
+    width: 200px;
+    height: 100%;
+    float: left;
+    border-right: 2px solid #121212;
+    background-color: #FFFFFF;
+    overflow: auto;
+}
+.right{
+    width: calc(100% - 200px);
+    height: 100%;
+    float: left;
+    /* padding: 10px; */
+}
+.tabs1{
+    width: 100%;
+    padding-left: 10px;
+    line-height: 52px;
+    height: 52px;
+    background-color: #ffffff;
+    border-top:  1px solid #FFFFFF;
+    border-radius: 4px;
+}
+.tabs2 li{
+    width: 100%;
+    background-color: #FFFFFF;
+    padding-left: 20px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 4px;
+    border:1px solid #4444;
+    cursor: pointer;
+}
+.tabs3 li{
+    width: 100%;
+    background-color: #FFFFFF;
+    padding-left: 20px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 4px;
+    border:1px solid #4444;
+}
+.top{
+    height: 100px;
+    width: 100%;
+    position: relative;
+    /* border-bottom: 1px solid #444444; */
+    margin-bottom: -11px;
+}
+.top2{
+    height: 60px;
+    width: 100%;
+    position: relative;
+    /* border-bottom: 1px solid #444444; */
+    margin-bottom: -11px;
+}
+.show{
+    width: 100%;
+    height: calc(100% - 120px);
+    margin: 10px 0;
+    overflow: auto;
+    border: 1px solid #444444;
+}
+.show-center{
+    width: 100%;
+    height: calc(50% - 120px);
+    margin: 10px 0;
+    overflow: auto;
+    /* border: 1px solid #444444; */
+}
+.show-center th{
+    color: #56bcfd;
+    padding: 4px 0;
+}
+.show-list,.show-text{
+    width: 50%;
+    height: 100%;
+    overflow: auto;
+}
+.show-text .title{
+    height: 10%;
+    width: 100%;
+}
+.show-text .nr{
+    height: 90%;
+    width: 100%;
+}
+#chart-box{
+    width: 100%;
+    height: calc(50% + 100px);
+    margin: 10px 0;
+    /* margin-top:50px; */
+}
+.top-text{
+    height: 50%;
+    line-height: 50px;
+    width: 100%;
+    position: relative;
+}
+.top2{
+    width: 100%;
+    height: 30px;
+    position: relative;
+    margin-bottom: -5px;
+}
+.top-text .ipt-box{
+    height: 100%;
+    position: relative;
+    display: inline-block;
+}
+.top-text .ipt-box span{
+    display: inline-block;
+    position: relative;
+    top: -6px;
+}
+.top-text .ipt-box .ipt{
+    height: 24px;
+    width: 160px;
+    overflow: hidden;
+    line-height: 24px;
+    padding: 0 0 0 10px;
+    position: relative;
+    background-color: #1f2024;
+    display: inline-block;
+    border: 1px solid #444444;
+}
+.ipt:after{
+    content: url(../resource/img/cobDown.png);
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 1px;
+    line-height: 22px;
+    width: 20px;
+    opacity: 0.6;
+    text-align: center;
+    height: 22px;
+}
+.ipt:hover::after{
+    opacity: 1;
+/*     background-color: #000000; */
+}
+.top-text2{
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+}
+.top-text2 span{
+    margin-left: 20px;
+}
+#search .ipt:after{
+    content:'';
+}
+#date{
+    position: absolute;
+    top: 38px;
+    width: 132px;
+    height: 24px;
+    right: 50px;
+    line-height: 24px;
+    padding: 0 10px;
+    border: 1px solid #444444;
+    margin-top: -25px;
+}
+#date2,#zhou{
+    position: absolute;
+    top: 38px;
+    width: 132px;
+    height: 24px;
+    right: 50px;
+    line-height: 24px;
+    padding: 0 10px;
+    border: 1px solid #444444;
+    margin-top: -25px;
+}
+#zhou{
+    position: relative;
+    float: right;
+    right: 100px;
+}
+#zhouselect{
+    left: 0;
+    top: 24px;
+}
+.top-text ul{
+    display: none;
+    position: absolute;
+    top: 31px;
+    right: 0;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y:auto ;
+    border: 1px solid #444444;
+    background-color: #1f2024;
+}
+.top-text ul li{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    padding:0 10px;
+}
+.ipt-box ul li:hover,.ipt-box ul li.active{
+    background-color: #327cc0;
+    color: #ffffff;
+}
+
+
+#list2 th{
+    color:  #56bcfd;
+    padding: 10px 20px;
+}
+#list2 td{
+    padding: 10px 20px;
+}
+#list2 tr:hover td{
+    border:solid #444444!important;
+    border-width:1px 0!important;
+}
+#list2 tr:first-child:hover{
+    border: 1px solid transparent;
+}
+#list2 tr:hover td{
+    background-color: #FFFFFF;
+    color:#ffffff;
+}
+#list2 tr.active td{
+    background-color:#FFFFFF ;
+    border-top: 1px solid #444444;
+    border-bottom: 1px solid #444444;
+}
+#list2 tr.active{
+    border: 1px solid #444444;
+}
+
+#list{
+   /*  border-collapse:collapse; */
+}
+#list th{
+    color:  #56bcfd;
+    padding: 10px 20px;
+}
+#list td{
+    padding: 10px 20px;
+}
+#list tr:hover td{
+    border:solid #444444!important;
+    border-width:1px 1px 1px 0!important;
+}
+#list tr:first-child:hover{
+    border: 1px solid transparent;
+}
+#list tr:hover td{
+    background-color: #FFFFFF;
+    color:#ffffff;
+}
+#list tr.active td{
+    background-color:#FFFFFF ;
+    border: 1px solid #444444;
+    border-left: none;
+}
+#list tr.active{
+    border: 1px solid #444444;
+}
+.scrollT,.scrollL{
+    position: relative;
+    background-color: #1f2024;
+}
+.scrollL{
+    z-index: 99;
+}
+.scrollT{
+    z-index: 100;
+}
+.scrollL.scrollT{
+    z-index: 101;
+}
+#noDataResult{
+    position: absolute;
+    top:50%;
+    left:50%;
+}
+.highcharts-range-selector-buttons{
+    display: none;
+}
+.midLogo{
+margin: 22px 10px;
+}
+
+
+/*hover到滚动条上*/
+::-webkit-scrollbar-thumb:horizontal:hover {
+    /*background-color: rgba(255, 255, 255, 1);*/
+    background-color: #474A4D;
+}
+/*当前窗口未激活的情况下*/
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #ffffff;
+}

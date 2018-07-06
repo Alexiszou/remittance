@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: springboot-mybatis-redis :: 整合 Mybatis 并�
+ �用 Redis 作为缓存
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: THINK
+Implementation-Vendor-Id: remittance
+Created-By: IntelliJ IDEA
+Build-Jdk: 1.8.0_144
+Main-Class: ${start-class}
+

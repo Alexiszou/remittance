@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" style="width: 100%;">
+<head>
+	<meta charset="UTF-8">
+	<meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0">
+	<meta content="telephone=no" name=format-detection>
+	<title>二宝平台-添加学校</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/second.css">
+</head>
+<style>
+	.seePw{
+		right: 20px;
+		top: 55px;
+	}
+</style>
+<body style="width: 100%;">
+	<div class="header-contentL">
+			<ul>
+				<a href="../remittance/hksy.html"><li>留学付款</li></a>
+				<a href="../personal/bzzx.html"><li>帮助中心</li></a>
+				<a href="../personal/gywm.html"><li>关于我们</li></a>
+				<a href="tel:0755-86525927"><li>0755-86525927</li></a>
+				<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3264465415&amp;site=qq&amp;menu=yes" style="padding: 0;margin: 0 auto;display: block;"><li>QQ在线咨询</li></a>
+			</ul>
+			<div class="header-contentL-bot">
+				<img src="../images/kexin.png" alt=""/>
+				<img src="../images/smyz.png" alt=""/>
+				<p>闽ICP备16005894号-1<br>闽公网安备35020602000154号</p>
+			</div>
+		</div>
+		<div class="header-contentR">
+			<h1></h1>
+			<ul>
+				<a href="../personal/wddd.html"><li>汇款订单</li></a>
+				<a href="../personal/grzl.html"><li>个人资料</li></a>
+				<li class="out">安全退出</li>
+			</ul>
+		</div>
+		<header>
+			<div class="header-btnL"></div>
+			<img src="../images/logo.jpg" alt="">
+			<div class="header-btnR"></div>
+		</header>
+	<article class="move-content hkwdl">
+		<div class="hkwdl-auditing">
+			<div class="clear">
+				<label class="fl" for="">学校信息 </label>
+				<input class="fl enName" type="text" placeholder="请输入院校英文名称"><span class="true fl"></span><span class="false fl">内容不能为空</span>
+			</div>
+			<div class="clear">
+				<label class="fl" for="">收款账号 <span>Account N0.IBAN N0. </span></label>
+				<input class="fl accountNo" type="text" placeholder="请输入院校收款账号"><span class="true fl"></span><span class="false fl">内容不能为空</span>
+			</div>
+			<p>请您仔细核对以上信息，确保无误即可。</p>
+			<div class="schoolsAdd">确认学校添加</div>
+			<h3 class="addText"></h3>
+		</div>
+	</article>
+</body>
+<script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/second.js"></script>
+<script>
+	$('.hkwdl-auditing input').removeAttr('readonly').css('background','#fff');
+	/*  添加学校 */
+	$('.schoolsAdd').click(function(){
+		if (sessionStorage.id||localStorage.id){/*判断是否未为登录状态*/
+			$('.hkwdl-auditing span.false').hide();
+			var auditingNum=0;/*添加学校输入框验证*/
+			for (var i = 0; i < $('.hkwdl-auditing input').length ; i++) {
+				if ($('.hkwdl-auditing input').eq(i).val()=='') {auditingNum++}
+			}
+			if (auditingNum==0&&!isNaN($('.hkwdl-auditing input.accountNo').val())) {
+				$('.hkwdl .addText').html('学校信息已接收，客服人员将立即与您联系核实信息。您也可以点击<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3264465415&amp;site=qq&amp;menu=yes">在线客服</a>，处理速度更快哦！');
+				var dataS={
+					accountNo:$('.accountNo').val(),
+					enName:$('.enName').val()
+				}
+				$.ajax({
+		            type: "POST",
+		            url:ip+'/schools/add',
+		            data:JSON.stringify(dataS),
+		            async: false,
+		            dataType: "json",
+		            contentType:"application/json",
+		            error: function(request) {
+		                alert("Connection error");
+		            },
+		            success: function(data) {
+		            	console.log(data)
+		            	sessionStorage.openShools=1;
+		            	$('.hkwdl-auditing span.false').hide();
+		            	$('.hkwdl-auditing span.true').show();
+		            	sessionStorage.schoolsID=data;
+		            	$('.hkwdl .addText').html('学校信息已接收，客服人员将立即与您联系核实信息。您也可以点击<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3264465415&amp;site=qq&amp;menu=yes">在线客服</a>，处理速度更快哦！');
+		            }
+		        })
+			}else{
+				for (var i = 0; i < $('.hkwdl-auditing input').length ; i++) {
+					if ($('.hkwdl-auditing input').eq(i).val()=='') {
+						$('.hkwdl-auditing input').eq(i).next().next().show();
+					}
+				}
+			}
+		}else{
+			$('.hkwdl .addText').text('请先登录。');
+			$('.header-login .login-left').click();
+		}
+	})
+</script>
+</html>

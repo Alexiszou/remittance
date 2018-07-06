@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dfans.dao.SchoolMapper">
+
+    <select id="select_schoolList" resultType="hashmap" parameterType="hashmap">
+        SELECT
+		    A.ID,
+		    AccountName,
+		    AccountNo,
+		    ChName,
+		    EnName,
+		    Country,
+		    LogoUrl,
+		    Location,
+		    SortCode,
+		    IBANNo,
+		    BIC,
+		    BankAddress,
+		    BankName,
+		    Referencing,
+		    CreatedTime,
+		    UpdateTime,
+		    B.`Name` AS Unit,
+		    B.Mark AS Rate,
+		    B.Text As UnitText
+		FROM
+		    tb_school A
+		LEFT JOIN tb_basicdict B ON Country = B.`Code`
+        WHERE
+            A.CTFlag  = 0
+        AND (
+            AccountName LIKE CONCAT('%',#{key},'%') 
+		OR 
+            AccountNo LIKE CONCAT('%',#{key},'%') 
+		OR
+			ChName LIKE CONCAT('%',#{key},'%') 
+		OR
+			EnName LIKE CONCAT('%',#{key},'%') 
+		OR
+            Country LIKE CONCAT('%',#{key},'%') 
+         )
+
+    </select>
+    
+    <select id="select_schoolDetail" resultType="hashmap" parameterType="hashmap">
+        SELECT
+            A.ID,
+            AccountName,
+            AccountNo,
+            ChName,
+            EnName,
+            Country,
+            LogoUrl,
+            Location,
+            SortCode,
+            IBANNo,
+            BIC,
+            BankAddress,
+            BankName,
+            Referencing,
+            CreatedTime,
+            UpdateTime,
+            B.`Name` AS Unit,
+            B.Mark AS Rate,
+            B.Text As UnitText
+        FROM
+            tb_school A
+        LEFT JOIN tb_basicdict B ON Country = B.`Code`
+        WHERE
+            A.ID = #{id}
+    </select>
+    
+    
+    <insert id="insert_school" useGeneratedKeys="true" keyProperty="id"
+        parameterType="com.dfans.model.School">
+        insert into tb_school
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="accountName != null">
+                AccountName,
+            </if>
+            <if test="accountNo != null">
+                AccountNo,
+            </if>
+            <if test="chName != null">
+                ChName,
+            </if>
+            <if test="enName != null">
+                EnName,
+            </if>
+            <if test="country != null">
+                Country,
+            </if>
+            <if test="logoUrl != null">
+                LogoUrl,
+            </if>
+            <if test="location != null">
+                Location,
+            </if>
+            <if test="sortCode != null">
+                SortCode,
+            </if>
+            <if test="ibanno != null">
+                IBANNo,
+            </if>
+            <if test="bic != null">
+                BIC,
+            </if>
+            <if test="bankAddress != null">
+                BankAddress,
+            </if>
+            <if test="referencing != null">
+                Referencing,
+            </if>
+            <if test="bankName != null">
+                BankName,
+            </if>
+                CreatedTime,
+                UpdateTime,
+                CTFlag
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="accountName != null">
+                #{accountName, jdbcType=VARCHAR},
+            </if>
+            <if test="accountNo != null">
+                #{accountNo, jdbcType=INTEGER},
+            </if>
+            <if test="chName != null">
+                #{chName, jdbcType=VARCHAR},
+            </if>
+            <if test="enName != null">
+                #{enName, jdbcType=VARCHAR},
+            </if>
+            <if test="country != null">
+                #{country, jdbcType=VARCHAR},
+            </if>
+            <if test="logoUrl != null">
+                #{logoUrl, jdbcType=VARCHAR},
+            </if>
+            <if test="location != null">
+                #{location, jdbcType=VARCHAR},
+            </if>
+            <if test="sortCode != null">
+                #{sortCode, jdbcType=VARCHAR},
+            </if>
+            <if test="ibanno != null">
+                #{ibanno, jdbcType=VARCHAR},
+            </if>
+            <if test="bic != null">
+                #{bic, jdbcType=VARCHAR},
+            </if>
+            <if test="bankAddress != null">
+                #{bankAddress, jdbcType=VARCHAR},
+            </if>
+            <if test="referencing != null">
+                #{referencing, jdbcType=VARCHAR},
+            </if>
+            <if test="bankName != null">
+                #{bankName, jdbcType=VARCHAR},
+            </if>
+                NOW(),
+                NOW(),
+                1
+        </trim>
+    </insert>
+    
+    <insert id="admininsert_school" useGeneratedKeys="true" keyProperty="id"
+        parameterType="com.dfans.model.School">
+        insert into tb_school
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="accountName != null">
+                AccountName,
+            </if>
+            <if test="accountNo != null">
+                AccountNo,
+            </if>
+            <if test="chName != null">
+                ChName,
+            </if>
+            <if test="enName != null">
+                EnName,
+            </if>
+            <if test="country != null">
+                Country,
+            </if>
+            <if test="logoUrl != null">
+                LogoUrl,
+            </if>
+            <if test="location != null">
+                Location,
+            </if>
+            <if test="sortCode != null">
+                SortCode,
+            </if>
+            <if test="ibanno != null">
+                IBANNo,
+            </if>
+            <if test="bic != null">
+                BIC,
+            </if>
+            <if test="bankAddress != null">
+                BankAddress,
+            </if>
+            <if test="referencing != null">
+                Referencing,
+            </if>
+            <if test="bankName != null">
+                BankName,
+            </if>
+                CreatedTime,
+                UpdateTime,
+                CTFlag
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="accountName != null">
+                #{accountName, jdbcType=VARCHAR},
+            </if>
+            <if test="accountNo != null">
+                #{accountNo, jdbcType=INTEGER},
+            </if>
+            <if test="chName != null">
+                #{chName, jdbcType=VARCHAR},
+            </if>
+            <if test="enName != null">
+                #{enName, jdbcType=VARCHAR},
+            </if>
+            <if test="country != null">
+                #{country, jdbcType=VARCHAR},
+            </if>
+            <if test="logoUrl != null">
+                #{logoUrl, jdbcType=VARCHAR},
+            </if>
+            <if test="location != null">
+                #{location, jdbcType=VARCHAR},
+            </if>
+            <if test="sortCode != null">
+                #{sortCode, jdbcType=VARCHAR},
+            </if>
+            <if test="ibanno != null">
+                #{ibanno, jdbcType=VARCHAR},
+            </if>
+            <if test="bic != null">
+                #{bic, jdbcType=VARCHAR},
+            </if>
+            <if test="bankAddress != null">
+                #{bankAddress, jdbcType=VARCHAR},
+            </if>
+            <if test="referencing != null">
+                #{referencing, jdbcType=VARCHAR},
+            </if>
+            <if test="bankName != null">
+               #{bankName, jdbcType=VARCHAR},
+            </if>
+                NOW(),
+                NOW(),
+                0
+        </trim>
+    </insert>
+
+    <update id="updatetb_school" parameterType="com.dfans.model.School">
+        update tb_school
+        <set>
+            <if test="accountName != null">
+              AccountName = #{accountName, jdbcType=VARCHAR },
+            </if>
+            <if test="accountNo != null">
+              AccountNo = #{accountNo, jdbcType=INTEGER },
+            </if>
+            <if test="chName != null">
+              ChName = #{chName, jdbcType=VARCHAR },
+            </if>
+            <if test="enName != null">
+              EnName = #{enName, jdbcType=VARCHAR },
+            </if>
+            <if test="country != null">
+              Country = #{country, jdbcType=VARCHAR },
+            </if>
+            <if test="logoUrl != null">
+              LogoUrl = #{logoUrl, jdbcType=VARCHAR },
+            </if>
+            <if test="location != null">
+              Location = #{location, jdbcType=VARCHAR },
+            </if>
+            <if test="sortCode != null">
+              SortCode = #{sortCode, jdbcType=VARCHAR },
+            </if>
+            <if test="ibanno != null">
+              IBANNo = #{ibanno, jdbcType=VARCHAR },
+            </if>
+            <if test="bic != null">
+              BIC = #{bic, jdbcType=VARCHAR },
+            </if>
+            <if test="bankAddress != null">
+              BankAddress = #{bankAddress, jdbcType=VARCHAR },
+            </if>
+            <if test="referencing != null">
+              Referencing = #{referencing, jdbcType=VARCHAR },
+            </if>
+            <if test="bankName != null">
+               BankName = #{bankName, jdbcType=VARCHAR},
+            </if>
+            <!--<if test="ctFlag != null and ctFlag != '' ">
+                CTFlag = #{ctFlag, jdbcType=INTEGER},
+            </if>-->
+              CTFlag=#{ctFlag},
+              UpdateTime = NOW()
+        </set>
+        where
+            id = #{id}
+    </update>
+    
+    <delete id="delete_schoolById" parameterType="long">
+        delete from tb_school 
+        where
+            id = #{id}
+    </delete>
+    
+    <select id = "selectRate" resultType="hashmap" parameterType="hashmap">
+    SELECT
+	    `Name`,
+	    Text,
+	    Mark,
+	    Code AS country
+	FROM
+	    tb_basicdict
+	WHERE
+	    Type = '0001'
+	ORDER BY id
+    </select>
+
+	<select id="select_schoolCount"  resultType="int" parameterType="hashmap">
+	
+	    SELECT
+	        count(1)
+        FROM
+            tb_school
+         WHERE 1=1
+        <if test="country != null and country != '' ">
+            AND Country = #{country}
+        </if>
+        <if test="ctFlag != null and ctFlag != '' ">
+            AND CTFlag = #{ctFlag}
+        </if>
+         <if test="timeBegin!=null">
+            AND DATE_FORMAT(CreatedTime,'%Y-%m-%d') >=  #{timeBegin,jdbcType=VARCHAR}
+        </if>
+        <if test="timeEnd!=null">
+            <![CDATA[  
+            AND DATE_FORMAT(CreatedTime,'%Y-%m-%d') <= #{timeEnd,jdbcType=VARCHAR}
+            ]]>
+        </if>
+        <if test="key!=null">
+        AND(
+                AccountName LIKE CONCAT('%',#{key},'%') 
+            OR 
+                AccountNo LIKE CONCAT('%',#{key},'%') 
+            OR
+                BIC LIKE CONCAT('%',#{key},'%') 
+            OR
+                EnName LIKE CONCAT('%',#{key},'%') 
+            OR
+                BankAddress LIKE CONCAT('%',#{key},'%') 
+          )
+         </if>
+	</select>
+
+    <select id="selecttb_schoolList" resultType="hashmap" parameterType="hashmap">
+        SELECT
+           id,
+           accountName,
+           accountNo,
+           chName,
+           enName,
+           country,
+           location,
+           sortCode,
+           ibanno,
+           bic,
+           bankAddress,
+           referencing,
+           createdTime,
+           updateTime,
+           ctFlag,
+           bankName
+        FROM
+             tb_school
+        WHERE 1=1
+        <if test="country != null and country != '' ">
+            AND Country = #{country}
+        </if>
+        <if test="ctFlag != null and ctFlag != '' ">
+            AND CTFlag = #{ctFlag}
+        </if>
+         <if test="timeBegin!=null">
+            AND DATE_FORMAT(CreatedTime,'%Y-%m-%d') >=  #{timeBegin,jdbcType=VARCHAR}
+        </if>
+        <if test="timeEnd!=null">
+            <![CDATA[  
+            AND DATE_FORMAT(CreatedTime,'%Y-%m-%d') <= #{timeEnd,jdbcType=VARCHAR}
+            ]]>
+        </if>
+        <if test="key!=null">
+        AND(
+                AccountName LIKE CONCAT('%',#{key},'%') 
+	        OR 
+	            AccountNo LIKE CONCAT('%',#{key},'%') 
+	        OR
+	            BIC LIKE CONCAT('%',#{key},'%') 
+	        OR
+	            EnName LIKE CONCAT('%',#{key},'%') 
+	        OR
+	            BankAddress LIKE CONCAT('%',#{key},'%') 
+	      )
+         </if>
+        ORDER BY tb_school.CreatedTime DESC
+            LIMIT #{page}, #{count}
+    </select>
+    </mapper>

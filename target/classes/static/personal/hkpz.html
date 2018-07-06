@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>二宝平台-汇款凭证</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/second.css">
+</head>
+<body>
+	<div class="hkpz">
+		<div class="hkpz-top container clear">
+			<div class="fl">订单编号：<span></span><br>Payment ID</div>
+			<div class="fr"><span></span><br>Date</div>
+		</div>
+		<h1>汇款凭证<br><span>Payment Confirmation</span></h1>
+		<table>
+			<tr>
+				<th style="width: 23%">学生姓名<br>Student Name</th>
+				<td style="width: 23%">/td>
+				<th style="width: 23%">收款账户<br>Account Name</th>
+				<td style="width: 31%"></td>
+			</tr>
+			<tr>
+				<th style="width: 23%">汇款附言<br>Information</th>
+				<td style="width: 23%">Li yuanfeng</td>
+				<th style="width: 23%">收款账号<br>Account Number</th>
+				<td style="width: 31%">0376542</td>
+			</tr>
+			<tr>
+				<th style="width: 23%">汇款人民币<br>Total Amount of RMB</th>
+				<td style="width: 23%">19153.00 RMB</td>
+				<th style="width: 23%">到账金额<br>Recrived Amount</th>
+				<td style="width: 31%">2215.00 GBP</td>
+			</tr>
+		</table>
+		<p class="container">
+			感谢您使用【二宝平台】跨境留学汇款平台，我们将竭诚为您服务。<br>
+			Thank you for completing your payment. Should you have any questions or comments, please contact StudyPayment.
+		</p>
+		<div class="img container">
+			<img src="../images/second/hksy8.jpg" alt="" height="40">
+			<img src="../images/second/hksy9.jpg" alt="" height="40">
+			<img src="../images/second/hksy10.jpg" alt="" height="40">
+			<img src="../images/second/hksy11.png" alt="" height="40">
+			<img src="../images/second/hksy12.png" alt="" height="40">
+		</div>
+		<div class="hkpz-foot">
+			<div class="container clear">
+				<div class="fl">客服热线（Tel）：0755-86525927</div>
+				<div class="fr">网址（Website）：www.erbaopay.com</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/second.js"></script>
+<script>
+	$.ajax({
+            type: "GET",
+            url:ip+'/orders/getDetail/'+sessionStorage.ordersId,
+            //data:JSON.stringify(dataS),
+            //contentType: "application/json",
+            async: false,
+            dataType: "json",
+            error: function(request) {
+                alert("Connection error");
+            },
+            success: function(data) {
+            	console.log(data)
+                $('.hkpz-top span:eq(0)').text(data[0].OrderNo);
+                $('.hkpz-top span:eq(1)').text(format(data[0].CreatedTime.time));
+                $('.hkpz td:eq(0)').text(data[0].ChName);
+                $('.hkpz td:eq(1)').text(data[0].EnName);
+                $('.hkpz td:eq(2)').text(data[0].Remarks);
+                $('.hkpz td:eq(3)').text(data[0].AccountName);
+                $('.hkpz td:eq(4)').text(data[0].PriceCN+' RMB');
+                $('.hkpz td:eq(5)').text(data[0].PriceEN+' '+data[0].UnitText);
+            }	
+        })
+</script>
+</html>

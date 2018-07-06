@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dfans.dao.StudentMapper">
+
+    <insert id="inserttb_student" useGeneratedKeys="true" keyProperty="id"
+        parameterType="com.dfans.model.Student">
+        insert into tb_student
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="chName != null">
+                ChName,
+            </if>
+            <if test="pyName != null">
+                PyName,
+            </if>
+            <if test="cardNo != null">
+                CardNo,
+            </if>
+            <if test="referenceNo != null">
+                ReferenceNo,
+            </if>
+            <if test="remarks != null">
+                Remarks,
+            </if>
+            <if test="voucherUrl != null">
+                VoucherUrl,
+            </if>
+                CreatedTime,
+                UpdateTime
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="chName != null">
+                #{chName, jdbcType=VARCHAR},
+            </if>
+            <if test="pyName != null">
+                #{pyName, jdbcType=VARCHAR},
+            </if>
+            <if test="cardNo != null">
+                #{cardNo, jdbcType=VARCHAR},
+            </if>
+            <if test="referenceNo != null">
+                #{referenceNo, jdbcType=VARCHAR},
+            </if>
+            <if test="remarks != null">
+                #{remarks, jdbcType=VARCHAR},
+            </if>
+            <if test="voucherUrl != null">
+                #{voucherUrl, jdbcType=VARCHAR},
+            </if>
+                NOW(),
+                NOW()
+        </trim>
+    </insert>
+
+    <select id="selecttb_studentDetail" resultType="hashmap" parameterType="hashmap">
+        SELECT
+            ID,
+            ChName,
+            pyName,
+            CardNo,
+            ReferenceNo,
+            Remarks,
+            VoucherUrl,
+            CreatedTime,
+            UpdateTime
+        FROM
+             tb_student
+        WHERE
+            id= #{id}
+    </select>
+    
+	<update id="updatetb_student" parameterType="com.dfans.model.Student">
+		update tb_student
+		<set>
+			<if test="chName != null">
+			  ChName = #{chName, jdbcType=VARCHAR },
+			</if>
+			<if test="pyName != null">
+			  PyName = #{PyName, jdbcType=VARCHAR },
+			</if>
+			<if test="cardNo != null">
+			  CardNo = #{cardNo, jdbcType=VARCHAR },
+			</if>
+			<if test="referenceNo != null">
+			  ReferenceNo = #{referenceNo, jdbcType=VARCHAR },
+			</if>
+			<if test="remarks != null">
+			  Remarks = #{remarks, jdbcType=VARCHAR },
+			</if>
+			<if test="voucherUrl != null">
+              VoucherUrl = #{voucherUrl, jdbcType=VARCHAR },
+            </if>
+			  UpdateTime = NOW()
+		</set>
+		where
+			id = #{id}
+	</update>
+    
+   	<delete id="deletetb_studentById" parameterType="int">
+		delete from tb_student 
+		where
+			id = #{id}
+	</delete>
+    
+    </mapper>

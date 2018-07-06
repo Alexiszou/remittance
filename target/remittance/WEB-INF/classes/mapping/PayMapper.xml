@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dfans.dao.PayMapper">
+
+
+    <insert id="insertpay" useGeneratedKeys="true" keyProperty="id"
+        parameterType="com.dfans.model.Pay">
+        insert into tb_pay
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+           <if test="id != null">
+                ID,
+            </if>
+            <if test="priceCn != null">
+                PriceCN,
+            </if>
+            <if test="priceEn != null">
+                PriceEN,
+            </if>
+            <if test="payStyle != null">
+                PayStyle,
+            </if>
+            <if test="payUser != null">
+                PayUser,
+            </if>
+            <if test="payTel != null">
+                PayTel,
+            </if>
+            <if test="endDate != null">
+                EndDate,
+            </if>
+                CreatedTime,
+                UpdateTime
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id, jdbcType=INTEGER},
+            </if>
+            <if test="priceCn != null">
+                #{priceCn, jdbcType=DECIMAL},
+            </if>
+            <if test="priceEn != null">
+                #{priceEn, jdbcType=DECIMAL},
+            </if>
+            <if test="payStyle != null">
+                #{payStyle, jdbcType=INTEGER},
+            </if>
+            <if test="payUser != null">
+                #{payUser, jdbcType=VARCHAR},
+            </if>
+            <if test="payTel != null">
+                #{payTel, jdbcType=INTEGER},
+            </if>
+            <if test="endDate != null">
+                #{endDate},
+            </if>
+                NOW(),
+                NOW()
+        </trim>
+    </insert>
+
+    <update id="update_pay" parameterType="com.dfans.model.Pay">
+        update tb_pay
+        <set>
+            <if test="priceCn != null">
+              PriceCN = #{priceCn, jdbcType=DECIMAL },
+            </if>
+            <if test="priceEn != null">
+              PriceEN = #{priceEn, jdbcType=DECIMAL },
+            </if>
+            <if test="payStyle != null">
+              PayStyle = #{payStyle, jdbcType=INTEGER },
+            </if>
+            <if test="payUser != null">
+              PayUser = #{payUser, jdbcType=VARCHAR },
+            </if>
+            <if test="payTel != null">
+              PayTel = #{payTel, jdbcType=INTEGER },
+            </if>
+            <if test="createdTime != null">
+              CreatedTime = #{createdTime, jdbcType=TIMESTAMP },
+            </if>
+            <if test="updateTime != null">
+              UpdateTime = #{updateTime, jdbcType=TIMESTAMP },
+            </if>
+        </set>
+        where
+            id = #{id}
+    </update>
+
+    <select id="select_payDetail" resultType="hashmap" parameterType="hashmap">
+        SELECT
+            ID,
+            PriceCN,
+            PriceEN,
+            PayStyle,
+            PayUser,
+            PayTel,
+            CreatedTime,
+            UpdateTime
+        FROM
+             tb_pay
+        WHERE
+            id=#{id}
+    </select>
+
+   	<delete id="deletetb_payById" parameterType="int">
+		delete from tb_pay 
+		where
+			id = #{id}
+	</delete>
+    
+    </mapper>

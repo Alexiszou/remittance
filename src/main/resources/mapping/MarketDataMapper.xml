@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dfans.dao.MarketDataMapper">
+<!--或者命名空间直接写 "MarketDataMapper"-->
+	<sql id="comInfo">
+		M.enddate,
+		M.TotalListComNum,
+		M.NewListComNum,
+		M.NewListComShare,
+		M.NRSharesOfNLC,
+		M.TotalShares,
+		M.NRShares,
+		M.RestrictedShare,
+		M.TotalMV,
+		M.AveragePE
+	</sql>
+
+	<select id="selectComInfoByDay" resultType="hashmap" parameterType="hashmap">
+		SELECT 'L1',
+		<include refid="comInfo"></include>
+		FROM
+			sj_db.NQ_MarkListCom M
+		LEFT JOIN
+			sj_db.nq_systemconst S 
+		ON
+			S.DM = M.StatPeriod
+		WHERE
+			S.LB = 1074
+		AND M.StatPeriod = #{statPeriod}
+		AND M.EndDate = #{date}
+		AND M.StatType = 1
+		UNION ALL
+		SELECT 'L2',
+		<include refid="comInfo"></include>
+		FROM
+			sj_db.NQ_MarkListCom M
+		LEFT JOIN
+			sj_db.nq_systemconst S
+		ON
+			S.DM = M.StatPeriod
+		WHERE
+			S.LB = 1074
+		AND M.StatPeriod = #{statPeriod}
+		AND M.EndDate = #{date}
+		AND M.StatType = 2
+		UNION ALL
+		SELECT 'A',
+		<include refid="comInfo"></include>
+		FROM
+			sj_db.NQ_MarkListCom M
+		LEFT JOIN
+			sj_db.nq_systemconst S
+		ON
+			S.DM = M.StatPeriod
+		WHERE
+			S.LB = 1074
+		AND M.StatPeriod = #{statPeriod}
+		AND M.EndDate = #{date}
+		AND M.StatType = 3
+	</select>
+
+	<select id="selectComListByStat" resultType = "hashmap" parameterType="hashmap">
+		SELECT 'List',
+		<include refid="comInfo"></include>
+	 	FROM
+	 		sj_db.NQ_MarkListCom M
+		LEFT JOIN
+			sj_db.nq_systemconst S ON S.DM = M.StatPeriod
+		WHERE
+			S.LB = 1074
+		AND M.StatPeriod = #{statPeriod}
+		<![CDATA[
+		AND M.EndDate <= #{date}
+		]]>
+		AND M.StatType = 3 
+		ORDER BY
+			M.EndDate DESC
+	</select>
+	
+    <select id="selectMinDateGpgs" resultType = "hashmap">
+		SELECT
+		    MIN(EndDate) minDate
+		FROM
+		    sj_db.NQ_MarkListCom WHERE StatPeriod = 5
+    </select>
+
+    <select id="selectMinDateJysj" resultType = "hashmap" parameterType="hashmap">
+        SELECT
+            MIN(EndDate) minDate
+        FROM
+            sj_db.NQ_SecuTrading WHERE StatPeriod = #{statPeriod}
+    </select>    
+    
+    <select id="selectMinDateJypm" resultType = "hashmap" parameterType="hashmap">
+        SELECT
+            MIN(EndDate) minDate
+        FROM
+            sj_db.NQ_TradingRank WHERE StatPeriod = #{statPeriod}
+    </select>
+
+
+    <select id="selectMinDateGpfx" resultType = "hashmap" parameterType="hashmap">
+    SELECT
+        MIN(EndDate) minDate
+    FROM
+        sj_db.nq_markshareiss WHERE StatDimension !=5
+    </select>
+
+	<select id="selectTradingInfo" resultType = "hashmap" parameterType="hashmap">
+	SELECT
+		EndDate,
+		StatType,
+		TradingStockNum,
+		TurnoverValue,
+		TradingVolume,
+		TradingNumber,
+		AveTradingPrice
+	FROM
+		sj_db.NQ_SecuTrading
+	WHERE
+		1=1
+	<if test="statPeriod == 5">
+		AND  EndDate = #{date}
+	</if>
+	<if test="statPeriod == 6">
+		AND EndDate BETWEEN #{date} AND #{date2}
+	</if>
+		AND (StatType =1 OR StatType = 2 OR StatType =3)
+		AND StatPeriod = #{statPeriod}
+	ORDER BY
+		EndDate DESC
+	</select>
+
+	<select id="selectTradingList" resultType = "hashmap" parameterType="hashmap">
+	SELECT
+		EndDate,
+		StatType,
+		TradingStockNum,
+		TurnoverValue,
+		TradingVolume,
+		TradingNumber,
+		AveTradingPrice
+	FROM
+		sj_db.NQ_SecuTrading
+	WHERE
+		StatType =3
+		<if test="statPeriod != 1">
+		<![CDATA[
+            AND EndDate < #{date}
+        ]]>
+	    </if>
+		AND StatPeriod = #{statPeriod}
+	ORDER BY
+		EndDate DESC
+	</select>
+
+	<select id="selectShareListByWeek" resultType = "hashmap" parameterType="hashmap">
+	SELECT
+		EndDate,
+		StatDimension,
+		IssueState,
+		IssueComNum,
+		IssueFrequency,
+		IssueVolume,
+		IssueValue,
+		AveIssuePrice
+	FROM
+		sj_db.nq_markshareiss
+	WHERE
+		EndDate BETWEEN #{date} AND #{date2}
+	AND
+		(StatDimension = 1
+		OR StatDimension = 2
+		OR StatDimension = 3
+		OR StatDimension = 4
+		)
+	ORDER BY EndDate DESC
+	</select>
+	
+	<select id="selectShareListByMonth" resultType = "hashmap" parameterType="hashmap">
+	SELECT
+		EndDate,
+		StatDimension,
+		IssueState,
+		IssueComNum,
+		IssueFrequency,
+		IssueVolume,
+		IssueValue,
+		AveIssuePrice
+	FROM
+		sj_db.nq_markshareiss
+	WHERE
+		StatDimension = 5
+	AND
+		IssueState = #{IssueState}
+	ORDER BY EndDate DESC
+	</select>
+
+
+	<select id="selectShareList" resultType = "hashmap" parameterType="hashmap">
+	SELECT
+		EndDate,
+		StatDimension,
+		IssueState,
+		IssueComNum,
+		IssueFrequency,
+		IssueVolume,
+		IssueValue,
+		AveIssuePrice
+	FROM
+		sj_db.nq_markshareiss
+	WHERE
+		StatDimension = #{statDimension}
+	<if test = "statDimension == 5">
+		AND IssueState = #{issueState}
+	</if>
+	<if test = "statDimension != 5">
+        <![CDATA[
+            AND EndDate < #{date}
+        ]]>
+    </if>
+	ORDER BY
+		EndDate DESC
+	</select>
+
+	<select id="selectTradingRank" resultType = "hashmap" parameterType="hashmap">
+	SELECT
+		K.EndDate,
+		K.StatPeriod,
+		K.RankingBasis,
+		K.Ranking,
+		K.SecuCode,
+		K.SecuAbbr,
+		K.TransType,
+		K.AveTradingPrice,
+		K.TradingVolume,
+		K.TurnoverValue,
+		K.TurnoverRate,
+		T.MS AS TransTypeNm
+	FROM
+		sj_db.NQ_TradingRank K
+	LEFT JOIN
+		sj_db.nq_systemconst T
+	ON
+		T.DM = K.TransType
+	AND		T.LB = 1853
+	WHERE
+		K.StatPeriod = #{statPeriod}
+	<if test = "statPeriod == 1">
+		AND date_format(K.EndDate, '%Y-%m') = date_format(#{date}, '%Y-%m')
+	</if>
+	<if test = "statPeriod == 6">
+		AND K.EndDate BETWEEN #{date} AND #{date2}
+	</if>
+	AND
+		K.RankingBasis = #{rankingBasis}
+	ORDER BY
+		K.Ranking
+	</select>
+	
+	<select id="selectExamList"  resultType="hashmap">
+	SELECT
+		M.CompanyName,
+		M.CompanyCode,
+		M.ProvinceName,
+		M.IndustryName,
+		M.SecuCompanyName,
+		M.ProjectManager,
+		M.LawOfficeName,
+		M.Lawyer,
+		M.AcctOfficeName,
+		M.SignatureCPA,
+		M.ListedAndIssue,
+		T1.MS AS LAName,
+		IFNULL(M.ExamProgress,T2.MS) AS EPName
+	FROM
+		sj_db.nq_listcoinexam M
+	JOIN sj_db.secumain s  ON m.CompanyCode = s.CompanyCode
+	LEFT JOIN
+		sj_db.nq_systemconst T1 
+	ON 
+		T1.DM = M.ListedAndIssue AND T1.LB = 999
+	LEFT JOIN 
+		sj_db.nq_systemconst T2 
+	ON
+		T2.DM = M.ExamProgressCD AND T2.LB = 1888
+	WHERE s.ListedState NOT IN (1,11,12)
+	GROUP BY CompanyName
+    ORDER BY EndDate DESC
+	LIMIT #{page},#{count}
+	</select>
+	
+    <select id="selectMaxDateCom"  resultType="hashmap">
+    SELECT
+        DATE_FORMAT(MAX(enddate), '%Y-%m-%d') MAX_TRADEDATE
+    FROM
+        sj_db.NQ_MarkListCom
+    </select>
+
+    <select id="selectMaxDateTra"  resultType="hashmap">
+    SELECT
+        DATE_FORMAT(MAX(enddate), '%Y-%m-%d') MAX_TRADEDATE
+    FROM
+        sj_db.NQ_SecuTrading
+    WHERE StatPeriod =  #{statPeriod}
+    </select>
+    
+    <select id="selectShareMaxDate"  resultType="hashmap" parameterType="hashmap">
+    SELECT
+         DATE_FORMAT(MAX(enddate), '%Y%m%d') maxDate
+    FROM
+        sj_db.nq_markshareiss
+    WHERE
+        StatDimension = #{statDimension}
+    </select>
+    
+    <select id="selectTradingMaxDate"  resultType="hashmap"  parameterType="hashmap">
+    SELECT
+         DATE_FORMAT(MAX(enddate), '%Y%m%d') maxDate
+    FROM
+        sj_db.NQ_TradingRank
+    WHERE
+        StatPeriod = #{statPeriod}
+    </select>
+    
+    
+</mapper>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<!-- <base href="http://localhost:8080/admin/" />
+ --><base href="http://www.erbaopay.com/remittance/admin/" />
+    <head>
+        <meta charset="UTF-8">
+        <title>管理后台--学校信息管理</title>
+        
+    <link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.4/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.4/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.4/demo/demo.css">
+     <script src="js/jquery-3.2.0.min.js"></script>
+        <!-- <script type="text/javascript" src="../js/jquery-easyui-1.4.4/jquery.min.js"></script> -->
+    <script type="text/javascript" src="../js/jquery-easyui-1.4.4/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-easyui-1.4.4/locale/plugins/jquery.validatebox.js"></script>
+    <script type="text/javascript" src = "../js/dateformat.js"></script>
+    <script type="text/javascript" src="../js/json2.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/dateformat.js"></script>
+    </head>
+
+    <body>
+
+        <div id="maindiv" class="easyui-layout" style="width:100%;height:100%;margin-top:0px;margin-left:10px;">
+            <div data-options="region:'north',border:false" style="height:130px">
+                <div id="searchbox" style="margin:10px">
+                    <form id="searchform">
+                        <table>
+                            <tr height="27px">
+                                <td colspan="4" valign="top">
+                                    <b>后台管理 > 学校管理> </b>
+                            </td>
+                        </tr>
+                        <tr>    
+                            <td style="width: 60px;height:27px;">搜&nbsp;索&nbsp;关&nbsp;键&nbsp;字:</td>        
+                            <td style="width: 170px">
+                                &nbsp;<input placeholder="账号/账户/SWIFT/学校名" type="text" id="key" name="key" style="width:150px;cursor: auto;"/>
+                            </td>
+                            <td style="width: 60px;height:27px;">&nbsp;&nbsp;&nbsp;国&nbsp;&nbsp;&nbsp;家&nbsp;&nbsp;:&nbsp;&nbsp;</td>       
+                            <td>
+                                <select  class="easyui-combobox"  id="qSource" data-options="panelHeight:'192',editable:false" name="qSource"  style="width:100px;">
+                                <option value ="">全部</option>  
+                              <option value="UK">英国(UK)</option>  
+                              <option value="JP">日本(JP)</option>
+                              <option value="US">美国(US)</option>
+                              <option value="AU">澳洲(AU)</option>
+                              <option value="EU">欧洲(EU)</option>
+                              <option value="CA">加拿大(CA)</option>
+                              <option value="SF">瑞士(SF)</option>
+                              <option value="HK">香港(HK)</option>
+                              
+                             <!--  <option value="UK">英国</option>  
+                              <option value="JP">日本</option>
+                              <option value="US">美国</option>
+                              <option value="AU">澳洲</option>
+                              <option value="EU">欧洲</option>
+                              <option value="CA">加拿大</option>
+                              <option value="SF">瑞士</option>
+                              <option value="HK">香港</option>
+                              
+                               -->
+                                </select>
+                            </td>
+                            
+                            <td style="width: 60px;height:27px;padding-left: 15px;">审核状态:
+                                <select  class="easyui-combobox"  id="qCTflag" data-options="panelHeight:'75',editable:false" name="qSource"  style="width:100px;">
+                                <option value ="">全部</option>  
+                              <option value="1">待审核</option>  
+                              <option value="0">已通过</option>
+                                </select>
+                            </td>
+                        </tr>   
+                        <tr>    
+                            <td style="width: 60px;height:27px;">注&nbsp;册&nbsp;时&nbsp;间&nbsp;:</td>     
+                            <td>
+                                <!--
+                                    作者：zhangyn_fight@163.com
+                                    时间：2017-10-30
+                                    描述：formatter:myformatter,
+                                -->
+                                &nbsp;<input class="easyui-datebox" data-options="formatter:myformatter,parser:myparser,"    style="width:157px" id="qcreatedTimeBegin" name="qcreatedTimeBegin">
+                            </td>
+                            <td>
+                            -- &nbsp;截&nbsp;至&nbsp; --
+                            </td>
+                            <td>
+                                <input class="easyui-datebox"  data-options="formatter:myformatter,parser:myparser,"  style="width:157px" id="qcreatedTimeEnd" name="qcreatedTimeEnd">
+                            </td>
+                            <td valign="bottom" >
+                                <a style="margin-left:12px;" href="javascript:void(0)" onclick="searchitem()"><img src="../images/search.gif" style="cursor: pointer;" align="bottom" border="0"/></a>
+                                <a style="margin-left:5px;" href="javascript:void(0)" onclick="clean()"><img src="../images/qingkong.png" style="cursor: pointer;" align="bottom" border="0"/></a>
+                            </td>
+                        </tr>   
+                    </table>
+                 </form>
+                 <br/>
+                
+        </div>
+        </div>
+        
+    <div id="dlg-buttons">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" id="sv" onclick="save()">保存</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-del" id="de" onclick="del()">删除</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+    </div>
+        <div data-options="region:'center',border:false,iconCls:'icon-ok'">
+                   <table id="dg"  style="width:100%;height:500px;"
+                             method="get" options="minWidth:50,minHeight:50" >
+                        <thead>
+                            <tr>
+                                <th data-options="field:'ck',checkbox:true" />
+                                <th field="enName" width="50">学校名称</th>
+                                <th field="accountName" width="50">账户名</th>
+                                <th field="accountNo" width="50">账户账号</th>
+                                <th field="country" width="25">国家</th>
+                               <!--  <th field="sortCode"  width="25" >SORT CODE</th> -->
+                               <!--  <th field="ibanno"  width="25" >IBANNo.</th> -->
+                                <th field="bic"  width="50" >SWIFT CODE.</th>
+                                <!-- <th field="bankAddress"  width="25" >银行地址</th>
+                                <th field="bankName"  width="25" >银行名</th> -->
+                               <!--  <th field="bankName"  width="25" >银行名</th> -->
+                                <th field="createdTime"  width="50" >创建时间</th>
+                                <th field="ctFlag"  width="25" >审核状态</th>
+                            </tr>
+                        </thead>
+                    </table>
+        </div>
+    </div>
+        
+    <div id="dlg"  class="easyui-dialog" style="width:500px;height:425px;padding:10px 5px;"  closed="true" buttons="#dlg-buttons"  modal="true" >
+        <form id="fm" method="post" validate>
+            <table style="width:100%">
+                <tr>
+                    <td>
+                        <div class="fitem">
+                            <label>国家:</label>
+                        </div>
+                    </td>
+                    <td colspan="2" >
+                        <div class="fitem" >
+                               <select class="easyui-combobox;easyui-validatebox" id="country" data-options="panelHeight:'160';required:true" name="country"  style="width:157px;">
+                                  <option value="UK">英国(UK)</option>  
+                                  <option value="JP">日本(JP)</option>
+                                  <option value="US">美国(US)</option>
+                                  <option value="AU">澳洲(AU)</option>
+                                  <option value="EU">欧洲(EU)</option>
+                                  <option value="CA">加拿大(CA)</option>
+                                  <option value="SF">瑞士(SF)</option>
+                                  <option value="HK">香港(HK)</option>
+                             <!--  <option value="UK">英国</option>  
+                              <option value="JP">日本</option>
+                              <option value="US">美国</option>
+                              <option value="AU">澳洲</option>
+                              <option value="EU">欧洲</option>
+                              <option value="CA">加拿大</option>
+                              <option value="SF">瑞士</option>
+                              <option value="HK">香港</option>
+                              
+                               -->
+                                </select>
+                        </div>
+                    </td>
+                  </tr>
+                  
+                <tr>
+                    <td>
+                        <div class="fitem">
+                            <label>学校名称:</label>
+                        </div>
+                    </td>
+                    <td colspan="2">
+                        <div class="fitem"> <!-- data-options="required:true"  -->
+                                <input name="enName" id="enName" data-options="required:true"  class="easyui-validatebox" style="width:270px"/>
+                        </div>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td>
+                        <div class="fitem">
+                            <label>学校地址:</label>
+                        </div>
+                    </td>
+                    <td colspan="2">
+                        <div class="fitem"> <!-- data-options="required:true"  -->
+                                <input name="location" id="location" data-options="required:true"  class="easyui-validatebox" style="width:270px"/>
+                        </div>
+                    </td>
+                  </tr>
+                  
+                  
+                  <tr>
+                    <td>
+                        <div class="fitem">
+                            <label>账户:</label>
+                        </div>
+                    </td>
+                    <td colspan="2">
+                        <div class="fitem"> <!-- data-options="required:true"  -->
+                                <input name="accountName" id="accountName" data-options="required:true" class="easyui-validatebox" style="width:270px"/>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <div class="fitem">
+                            <label>账号:</label>
+                        </div>
+                    </td>
+                    <td colspan="2">
+                        <div class="fitem"> <!-- data-options="required:true"  -->
+                                <input name="accountNo" id="accountNo" data-options="required:true" class="easyui-validatebox" style="width:270px"/>
+                        </div>
+                    </td>
+                  </tr>
+                  
+                  
+                  <tr>
+                    <td>
+                        <div class="fitem">
+                            <label>银行名称:</label>
+                        </div>
+                    </td>
+                    <td colspan="2" >
+                        <div class="fitem" >
+                                <input name="bankName" class="easyui-validatebox"  data-options="required:true" id="bankName" style="width:270px" />
+                        </div>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td>
+                        <div class="fitem">
+                            <label>银行地址:</label>
+                        </div>
+                    </td>
+                    <td colspan="2" >
+                        <div class="fitem" >
+                                <input name="bankAddress" class="easyui-validatebox"  data-options="required:true" id="bankAddress" style="width:270px" />
+                        </div>
+                    </td>
+                  </tr>
+                  
+                  
+                  <tr>
+                    <td>
+                        <div class="fitem">
+                            <label>SWIFTCODE:</label>
+                        </div>
+                    </td>
+                    <td colspan="2" >
+                        <div class="fitem" >
+                                <input name="bic" id="bic" class="easyui-validatebox"  data-options="required:true" style="width:270px" />
+                        </div>
+                    </td>
+                  </tr>
+                  
+                  
+                  <tr id = "ctTime" hidden="true">
+                    <td>
+                        <div class="fitem">
+                            <label>创建时间:</label>
+                        </div>
+                    </td>
+                    <td colspan="2" >
+                        <div class="fitem" >
+                                <input name="createdTime" id="createdTime" style="width:270px" />
+                        </div>
+                    </td>
+                  </tr>
+                  
+                  <input name="id" id="id" type="hidden"/>
+            </table>
+        </form>
+    </div>
+  
+    <script type="text/javascript">
+    
+    function clean(){
+        $('#searchform').form('clear');
+        $('#qSource').combobox('setValue', ''); 
+        $('#qCTflag').combobox('setValue', ''); 
+    }
+    
+    function searchitem(){
+        var qp = {
+                key:$('#key').val(),
+                country:$('#qSource').combobox('getValue'),
+                ctFlag:$('#qCTflag').combobox('getValue') 
+          }
+          if($('#qcreatedTimeBegin').datebox('getValue') != ''){
+              qp.timeBegin = $('#qcreatedTimeBegin').datebox('getValue').trim();
+          }
+          if($('#qcreatedTimeEnd').datebox('getValue') != ''){
+              qp.timeEnd = $('#qcreatedTimeEnd').datebox('getValue').trim();
+          }
+          $('#dg').datagrid({
+              queryParams:qp
+          });
+    }
+    
+    $().ready(function(){
+        var user = sessionStorage.getItem("admin"); 
+        if (!user){
+            location.href='/admin/admLogin.html';
+        }
+        $.ajaxSetup({cache:false});
+        //datagrid初始化  
+        $('#dg').datagrid({
+            title:'学校列表',
+            iconCls:'icon-ok',//图标  
+          /*   width: 1360,   */
+            height: 616-40, 
+            nowrap: false,  
+            striped: true,  
+            border: true,  
+            collapsible:false,//是否可折叠的  
+            fit: false,//自动大小  
+            fitColumns:true,
+            url:ip +'/schools/admin/getSchoolList',  
+            remoteSort:false,   
+            idField:'productid',  
+            singleSelect:true,//是否单选  
+            selectOnCheck:true,
+            pagination:true,//分页控件  
+            rownumbers:true,//行号  
+           // pageNumber:1,
+            pageSize:20,
+            loadFilter: function (data){
+                var rowsTemp = data.rows;
+                for(var n=0; n<data.rows.length; n++){
+                     if(rowsTemp[n].createdTime){
+                         var timestamp = new Date(rowsTemp[n].createdTime.time);  
+                         rowsTemp[n].createdTime = timestamp.format("yyyy-MM-dd hh:mm:ss");
+                     }
+                     if(rowsTemp[n].updateTime){
+                         var timestamp = new Date(rowsTemp[n].updateTime.time);  
+                         rowsTemp[n].updateTime = timestamp.format("yyyy-MM-dd hh:mm:ss");
+                     } 
+                     if(rowsTemp[n].ctFlag != null){
+                         if (rowsTemp[n].ctFlag == 0){
+                             rowsTemp[n].ctFlag = "已通过";
+                         } else if(rowsTemp[n].ctFlag == 1){
+                             rowsTemp[n].ctFlag = "待审核";
+                         }
+                     }
+                }
+                return data;
+            },
+            toolbar: [{
+                text: '查看',  
+                iconCls: 'icon-search',  
+                handler: function(){  
+                    detail();  
+                }  
+            }, '-', {
+                text: '增加',  
+                iconCls: 'icon-add',
+                handler: function() {
+                    add();  
+                }  
+            }, '-',{
+                text: '编辑',  
+                iconCls: 'icon-edit',
+                handler: function() {
+                    edit();  
+                }  
+            }, '-',{
+                text: '删除',  
+                iconCls: 'icon-remove',  
+                handler: function() {
+                    destory();  
+                }
+            }],  
+        });
+        
+        $('#dlg').window('move',{
+	        left:50, 
+	        top:50 
+      });
+    });
+
+    function add() {
+       $('#dlg-buttons').show();
+       $('#sv').show();
+       $('#de').hide();
+       $('#ctTime').hide();
+       $('#dlg').find('input, textarea, button, select, checkbox, combobox').removeAttr('disabled');
+       $('#dlg').dialog('open').dialog('setTitle','添加学校信息');
+       requireC(true);
+       $('#fm').form('clear');
+       url = ip +'/schools/admin/add';
+    }
+    
+    function requireC( flg ){
+    	if (true){
+    		$('#dlg').find('input, combobox').validatebox({
+                required: flg
+            });
+    	}
+    }
+    
+/* 
+    function require(flg){
+
+        $("#country").validatebox({
+            required: flg;
+        });
+        $("#enName").validatebox({
+            required: flg;
+        });
+        $("#location").validatebox({
+            required: flg;
+        });
+        $("#accountName").validatebox({
+            required: flg;
+        });
+        $("#accountNo").validatebox({
+            required: flg;
+        });
+        $("#bankName").validatebox({
+            required: flg;
+        });
+        $("#bankAddress").validatebox({
+            required: flg;
+        });
+        $("#bic").validatebox({
+            required: flg;
+        });
+    }
+     */
+    function edit() {
+        var rows = $('#dg').datagrid('getChecked');
+        $('#dlg-buttons').show();
+        $('#sv').show();
+        $('#de').hide();
+        $('#ctTime').hide();
+        //判断是否选择行
+        if (!rows || rows.length == 0 || rows.length>1) {
+            $.messager.alert('提示', '请选择一个要修改的学校!', 'info');
+            return;
+        }
+        var row = rows[0];
+        
+        $('#dlg').find('input').removeAttr('disabled');
+        $('#dlg').dialog('open').dialog('setTitle','更新学校信息');
+        requireC(true);
+        $('#fm').form('load', row);
+
+        url = ip +'/schools/admin/update';
+    }
+
+    function detail() {
+        var rows = $('#dg').datagrid('getChecked');
+        //判断是否选择行
+        if (!rows || rows.length == 0 || rows.length>1) {
+            $.messager.alert('提示', '请选择一个要查看的学校!', 'info');
+            return;
+        }
+        var row = rows[0];
+        
+        $('#dlg-buttons').show();
+        $('#ctTime').show();
+        $('#sv').hide();
+        $('#de').hide();
+        
+        $('#dlg').find('input, textarea, button, select, checkbox, combobox').attr('disabled','disabled');
+        $('#dlg').dialog('open').dialog('setTitle','查看学校信息');
+        
+        requireC(false);
+        $('#fm').form('load', row);
+        
+        url=ip+"/users/admin/delUser/"+row.id;
+    }
+
+    function save() {
+    	var jsonParams = $("#fm").serializeJson();
+        
+    	delete jsonParams["createdTime"];
+        var params = JSON.stringify(jsonParams);
+        console.log("params:"+params);
+        var passed = $('#fm').form('validate');
+        
+        if (true) {
+            $.ajax(url, {
+                type : 'POST',
+                data : params,
+                contentType : 'application/json',
+                success : function(data) {
+                        if (data > 0){
+                            $('#dg').datagrid('reload');
+                            $('#dlg').dialog('close');
+                            $.messager.show({
+                                   title: '消息',
+                                   msg: '保存成功',
+                                   showType:'fade',
+                            });
+                        } else {
+                            $.messager.show({
+                                title: '消息',
+                                msg: '保存失败',
+                                showType:'fade',
+                         });
+                        }
+                    },
+                error: function (jqXHR, textStatus, errorThrown) {
+                        $.messager.alert('消息','发送请求出错！','info');
+                    }
+                })
+            }
+        // 取消选择
+        $('#dg').datagrid('clearSelections');
+        }
+
+    function destory(){
+        var rows = $('#dg').datagrid('getChecked');
+        $('#dlg-buttons').show();
+        $('#sv').hide();
+        $('#de').show();
+        $('#ctTime').show();
+        //判断是否选择行
+        if (!rows || rows.length == 0 || rows.length>1) {
+            $.messager.alert('提示', '请选择一个要删除的学校!', 'info');
+            return;
+        }
+        var row = rows[0];
+        
+        $('#dlg').find('input').attr('disabled','disabled');
+        $('#dlg').dialog('open').dialog('setTitle','更新学校信息');
+        
+        requireC(false);
+        $('#fm').form('load', row);
+        url = ip +'/schools/admin/'+Number(row.id);
+    }
+    
+    function del(){
+         var jsonParams = $("#fm").serializeJson();
+         var params = JSON.stringify(jsonParams);
+         var passed = $('#fm').form('validate');
+         if (passed) {
+             $.ajax(url, {
+                 type : 'DELETE',
+                 data : {},
+                 contentType : 'application/json',
+                 success : function(data) {
+                     var massage = '删除失败';
+                     if(data==1){
+                         massage = '删除成功';
+                     }
+                      $('#dlg').dialog('close');
+                      $('#dg').datagrid('reload');
+                      $('#dg').datagrid('clearSelections');
+                      $.messager.show({
+                             title: '消息',
+                             msg: massage,
+                             showType:'fade',
+                      });
+                     },
+                     error: function (jqXHR, textStatus, errorThrown) {
+                         $.messager.alert('消息','发送请求出错！','info');
+                      /*错误信息处理*/
+                  }
+                 })
+             }
+         }
+</script>
+    
+    <style type="text/css">
+        #fm{
+            margin:0;
+            padding:30px 30px;
+        }
+        .ftitle{
+            font-size:14px;
+            font-weight:bold;
+            padding:5px 0;
+            margin-bottom:10px;
+            border-bottom:1px solid #ccc;
+        }
+        .fitem{
+            margin-bottom:5px;
+        }
+        .fitem label{
+            display:inline-block;
+            width:80px;
+        }
+      
+    </style>
+    </body>
+</html>

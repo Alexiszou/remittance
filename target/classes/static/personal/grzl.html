@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>二宝平台-个人资料</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/second.css">
+</head>
+<body>
+	<header>
+		<div class="headerC clear">
+			<a class="headerLogo" href="../index.html"><img  src="../images/logo.jpg"/></a>
+			<nav class="fl clear">
+				<a href="../index.html"><div class="fl">首页</div></a>
+				<a href="../remit/hksy.html"><div class="fl">留学汇款</div></a>
+				<a href="bzzx.html?"><div class="fl">帮助中心</div></a>
+				<a href="wddd.html"><div class="fl active">我的订单</div></a>
+			</nav>
+			<ul class="header-right fr">
+				<li class="fl phone">
+					<div class="img"></div>
+					<div class="phoneHover">0755-86525927</div>
+				客服电话</li>
+				<li class="fl weixin">
+					<div class="img"></div>
+					<div class="codeHover">
+						<img src="../images/twoCode.png" alt="">
+						<p>二宝公众号</p>
+					</div>
+				微信咨询</li>
+				<li class="fl">
+					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3264465415&amp;site=qq&amp;menu=yes" style="padding: 0;margin: 0 auto;display: block;">
+                            <div class="img"></div>
+                        </a>
+				QQ咨询</li>
+				<!-- <li class="fl emil">
+					<div class="img"></div>
+				留言建议</li> -->
+			</ul>
+			<div class="header-user fr clear">
+				<div class="header-userId fr"></div>
+				<div class="header-userImg fr"></div>
+				<ul>
+					<li class="wddd"><div class="radius"></div>汇款订单</li>
+					<li class="grzl"><div class="radius"></div>个人中心</li>
+					<li class="out"><div class="radius"></div>安全退出</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<article class="grzl">
+		<article class="container  grzlC">
+			<div class="title">个人资料</div>
+			<div class="clear">
+				<div class="input clear">
+					<label class="fl" for="">电子邮箱：</label><input class="fl email" type="text" readonly="readonly" placeholder="">
+				</div>
+				<div class="input clear">
+					<label class="fl" for="">电话号码：</label><input class="fl phone" type="text" readonly="readonly" placeholder="">
+				</div>
+				<div class="input clear">
+					<label class="fl" for="">姓名：</label><input class="fl name" type="text" readonly="readonly" placeholder="">
+				</div>
+			</div>
+			<div class="btn">修改密码</div>
+		</article>
+	</article>
+	<div class="shadow-xiugai">
+		<div class="xgpassW">
+			<div class="close"></div>
+			<h1>修改密码</h1>
+			<div class="input">
+				<label class="fl" for="">原密码</label>
+				<input class="fl password" type="password" placeholder="请输入原密码">
+				<div class="true" ></div><div class="false">格式输入错误</div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">新密码</label>
+				<input class="fl passwordXin" type="password" placeholder="请设置6-20位登录密码">
+				<div class="true" ></div><div class="false">格式不正确</div>
+				<div class="seePw"></div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">重复密码</label>
+				<input class="fl passwordAg" type="password" placeholder="再次输入密码">
+				<div class="true" ></div><div class="false">密码不一致</div>
+				<div class="seePw"></div>
+			</div>	
+			<div class="header-xgpassW-btn">修改密码</div>
+		</div>
+	</div>
+	<footer>
+		<div class="footerC clear">
+			<div class="footL fl">
+				<ul class="clear">
+					<a href="bzzx.html?"><li class="fl">帮助中心</li></a>
+					<a href="bzzx.html"><li class="fl">关于我们</li></a>
+					<a href="bzzx.html"><li class="fl"></li></a>
+				</ul>
+				<dl>
+					<dd>邮箱</dd>
+					<dt>erbao@leadingmax.com</dt>
+				</dl>
+				<dl>
+					<dd>电话</dd>
+					<dt>0755-86525927</dt>
+				</dl>
+			</div>
+			<div class="footC fl">
+				<img src="../images/smyz.png" alt="" height="60"><img src="../images/kexin.png" alt="" height="60">
+			</div>
+			<div class="footR fr">
+				<img src="../images/twoCode.png" alt="">
+				<p>二宝平台公众号</p>
+			</div>
+		</div>
+		<div class="footB">Copyright©2017 二宝平台<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;闽公网安备<span></span>35020602000154号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;闽ICP备16005894号-1 --></div>
+	</footer>
+</body>
+<script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/second.js"></script>
+<script>
+	$.ajax({
+            type: "GET",
+            url:ip+'/users/getUserInfo?userId='+sessionStorage.id,
+            //data:JSON.stringify(dataS),
+            //contentType: "application/json",
+            async: false,
+            dataType: "json",
+            error: function(request) {
+                alert("Connection error");
+            },
+            success: function(data) {
+            	console.log(data)
+            	$('.grzlC input.email').val(data[0].Email);
+            	$('.grzlC input.name').val(data[0].Name);
+            	$('.grzlC input.phone').val(data[0].Telphone);
+            }
+        })
+	$('.shadow-xiugai input.password').blur(function(){
+		isPassword($('.shadow-xiugai input.password'))
+		$('.shadow-xiugai .false:eq(0)').text('格式输入错误');
+	})
+	$('.shadow-xiugai input.passwordXin').blur(function(){
+		isPassword($('.shadow-xiugai input.passwordXin'))
+	})
+	$('.shadow-xiugai input.passwordAg').blur(function(){
+		if ($('.shadow-xiugai input.passwordXin').val()==$('.shadow-xiugai input.passwordAg').val()) {
+			isStyle($('.shadow-xiugai input.passwordAg'))
+		}else{
+			isStyle1($('.shadow-xiugai input.passwordAg'))
+		}
+		$('.shadow-xiugai .true:eq(2)').text('');
+	})
+	$('.header-xgpassW-btn').click(function(){
+		$('.shadow-xiugai .false:eq(0)').text('格式输入错误');
+		$('.shadow-xiugai .true:eq(2)').text('');
+		if (!$(".shadow-xiugai .true").is(":hidden")){
+			var dataS={
+				oldPassword:$('.shadow-xiugai input.password').val(),
+				newPassword:$('.shadow-xiugai input.passwordXin').val()
+			}
+			$.ajax({
+	            type: "POST",
+	            url:ip+'/users/update/'+sessionStorage.id,
+	            data:JSON.stringify(dataS),
+	            contentType: "application/json",
+	            async: false,
+	            dataType: "json",
+	            error: function(request) {
+	                alert("Connection error");
+	            },
+	            success: function(data) {
+	            	console.log(data)
+	            	if(data==0){
+	            		$('.shadow-xiugai .true:eq(0)').hide();
+	            		$('.shadow-xiugai .false:eq(0)').show().text('密码输入错误');
+	            	}else{
+	            		$('.shadow-xiugai .false:eq(2)').hide();
+	            		$('.shadow-xiugai .true:eq(2)').show().text('修改成功');
+	            	}
+	            }
+	        })
+		}
+	})
+</script>
+</html>

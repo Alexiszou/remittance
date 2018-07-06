@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0">
+	<meta content="telephone=no" name=format-detection>
+	<title>二宝平台-忘记密码</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/second.css">
+</head>
+<body>
+	<div class="header-contentL">
+			<ul>
+				<a href="../remittance/hksy.html"><li>留学付款</li></a>
+				<a href="../personal/bzzx.html"><li>帮助中心</li></a>
+				<a href="../personal/gywm.html"><li>关于我们</li></a>
+				<a href="tel:0755-86525927"><li>0755-86525927</li></a>
+				<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3264465415&amp;site=qq&amp;menu=yes" style="padding: 0;margin: 0 auto;display: block;"><li>QQ在线咨询</li></a>
+			</ul>
+			<div class="header-contentL-bot">
+				<img src="../images/kexin.png" alt=""/>
+				<img src="../images/smyz.png" alt=""/>
+				<p>闽ICP备16005894号-1<br>闽公网安备35020602000154号</p>
+			</div>
+		</div>
+		<div class="header-contentR">
+			<h1></h1>
+			<ul>
+				<a href="../personal/wddd.html"><li>汇款订单</li></a>
+				<a href="../personal/grzl.html"><li>个人资料</li></a>
+				<li class="out">安全退出</li>
+			</ul>
+		</div>
+		<header>
+			<div class="header-btnL"></div>
+			<img src="../images/logo.jpg" alt="">
+			<div class="header-btnR"></div>
+		</header>
+	<article class="move-content shadow-xiugai">
+		<div class="xgpassW">
+			<h1>修改密码</h1>
+			<div class="input">
+				<label class="fl" for="">原密码</label>
+				<input class="fl password" type="password" placeholder="请输入原密码">
+				<div class="true" ></div><div class="false">格式输入错误</div>
+			</div>
+			<div class="input"> 
+				<label class="fl" for="">新密码</label>
+				<input class="fl passwordXin" type="password" placeholder="请设置6-20位登录密码">
+				<div class="true" ></div><div class="false">格式不正确</div>
+				<div class="seePw"></div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">重复密码</label>
+				<input class="fl passwordAg" type="password" placeholder="再次输入密码">
+				<div class="true" ></div><div class="false">密码不一致</div>
+				<div class="seePw"></div>
+			</div>	
+			<div class="header-xgpassW-btn">修改密码</div>
+		</div>
+	</article>
+</body>
+<script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/second.js"></script>
+<script>
+/*密码显示*/
+	for (var i =0; i < $('.seePw').length; i++) {
+		$('.seePw').eq(i).get(0).addEventListener('touchstart',function(event){
+		var event = event || window.event;  
+			$(this).css({'background':'url(../images/seePw.png) no-repeat center','background-size':'100% 90%'}).parent().find('input').attr('type','text');
+		})
+		$('.seePw').eq(i).get(0).addEventListener('touchend',function(event){
+			var event = event || window.event;  
+			$(this).css({'background':'url(../images/noSeePw.png) no-repeat center','background-size':'100% 90%'}).parent().find('input').attr('type','password');
+		})
+	}
+$('.shadow-xiugai input.password').blur(function(){
+		isPassword($('.shadow-xiugai input.password'))
+		$('.shadow-xiugai .false:eq(0)').text('格式输入错误');
+	})
+	$('.shadow-xiugai input.passwordXin').blur(function(){
+		isPassword($('.shadow-xiugai input.passwordXin'))
+	})
+	$('.shadow-xiugai input.passwordAg').blur(function(){
+		$('.shadow-xiugai .true:eq(2)').text('');
+		if ($('.shadow-xiugai input.passwordXin').val()==$('.shadow-xiugai input.passwordAg').val()) {
+			isStyle($('.shadow-xiugai input.passwordAg'))
+		}else{
+			isStyle1($('.shadow-xiugai input.passwordAg'))
+		}
+	})
+	$('.header-xgpassW-btn').click(function(){
+		$('.shadow-xiugai .false:eq(0)').text('格式输入错误');
+		$('.shadow-xiugai .true:eq(2)').text('');
+		if (!$(".shadow-xiugai .true").is(":hidden")){
+			var dataS={
+				oldPassword:$('.shadow-xiugai input.password').val(),
+				newPassword:$('.shadow-xiugai input.passwordXin').val()
+			}
+			$.ajax({
+	            type: "POST",
+	            url:ip+'/users/update/'+sessionStorage.id,
+	            data:JSON.stringify(dataS),
+	            contentType: "application/json",
+	            async: false,
+	            dataType: "json",
+	            error: function(request) {
+	                alert("Connection error");
+	            },
+	            success: function(data) {
+	            	console.log(data)
+	            	if(data==0){
+	            		$('.shadow-xiugai .true:eq(0)').hide();
+	            		$('.shadow-xiugai .false:eq(0)').show().text('密码输入错误');
+	            	}else{
+	            		$('.shadow-xiugai .false:eq(2)').hide();
+	            		$('.shadow-xiugai .true:eq(2)').show().text('修改成功');
+	            	}
+	            }
+	        })
+		}
+	})
+</script>
+</html>

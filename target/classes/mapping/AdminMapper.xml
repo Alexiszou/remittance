@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dfans.dao.AdminMapper">
+
+    <select id="selectUserInfo" resultType="hashmap" parameterType="hashmap">
+        SELECT
+            userName,
+            password
+        FROM
+            tb_admin
+        WHERE
+         userName = #{userName}
+         AND password = #{password}
+    </select>
+    
+    <select id="getAdmTel" resultType="hashmap">
+        SELECT
+		    telphone
+		FROM
+		    tb_admin
+		LIMIT 1
+    </select>
+    
+
+	<update id="resetPasswrod"  parameterType="hashmap">
+	 update tb_user
+	   <set>
+       <if test="password != null">
+                Password = #{password, jdbcType=VARCHAR },
+            </if>
+            UpdateTime = NOW()
+      </set>
+      WHERE Email = #{userName} 
+      OR Telphone = #{userName} 
+	</update>
+
+</mapper>

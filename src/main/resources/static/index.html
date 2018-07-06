@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>二宝平台-首页</title>
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script type="text/javascript">
+		function toRemittance() {
+			location.href = "remit/hksy.html";
+        }
+	</script>
+</head>
+<body>
+	<div class="shadow-login" >
+		<div class="login">
+			<div class="close"></div>
+			<h1>登录二宝平台</h1>
+			<div class="input">
+				<label class="fl" for="">用户名</label>
+				<input class="name fl" type="text" placeholder="请输入电子邮箱/手机号码">
+				<div class="true" ></div><div class="false"></div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">密码</label>
+				<input class="fl password" type="password" placeholder="">
+				<div class="true"></div><div class="false">用户名或密码错误</div>
+				<div class="seePw"></div>
+			</div>
+			<div class="box clear">
+				<div class="box-btn fl cur"></div>
+				<p class="fl">自动登录<a href="javascript:void(0)">忘记密码？</a></p>
+			</div>
+			<div class="header-login-btn clear">
+				<div class="header-login-btnL fl">立即登录</div>
+				<div class="header-login-btnR fr">新用户注册</div>
+			</div>
+		</div>
+		<div class="RegisteredIn">
+			<div class="close"></div>
+			<h1>欢迎注册二宝平台</h1>
+			<div class="input">
+				<label class="fl" for="">电子邮箱</label>
+				<input class="fl email" type="text" placeholder="请填写正确的邮箱地址">
+				<div class="true" ></div><div class="false">邮箱输入错误</div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">姓名</label>
+				<input class="fl name" type="text" placeholder="请输入中文姓名">
+				<div class="true" ></div><div class="false">请输入正确的中文姓名</div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">联系电话</label>
+				<input class="fl phone" type="text" placeholder="请输入手机号码">
+				<div class="true" ></div><div class="false">电话输入错误</div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">密码</label>
+				<input class="fl password" type="password" placeholder="请设置6-20位登录密码">
+				<div class="true" ></div><div  class="false">密码格式不对</div>
+				<div class="seePw"></div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">确认密码</label>
+				<input class="fl passwordAg" type="password" placeholder="请再次输入新密码">
+				<div class="true" ></div><div class="false">与密码不一致</div>
+				<div class="seePw"></div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">验证码</label>
+				<input class="fl codeNum" type="text" placeholder="右侧验证码">
+				<div class="code fr"><img class="codeNum" src="" width="100%" height="100%" alt=""></div>
+				<div class="true"></div><div class="false" >验证码错误</div>
+			</div>
+			<div class="box clear">
+				<div class="box-btn fl cur"></div>
+				<p class="fl">我同意二宝平台的<span>使用条款和隐私政策。</span></p>
+			</div>
+			<div class="header-RegisteredIn-btn">注册账户</div>
+			<div class="RegisteredIn-btn">已有账户？立即登录</div>
+		</div>
+		<div class="fgpassW">
+			<div class="close"></div>
+			<h1>忘记密码</h1>
+			<div class="input">
+				<label class="fl" for="">用户名</label>
+				<input class="fl name" type="text" placeholder="请输入电子邮箱/手机号码">
+				<div class="true" ></div><div class="false">该用户不存在</div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">新密码</label>
+				<input class="fl password" type="password" placeholder="请设置6-20位登录密码">
+				<div class="true" ></div><div class="false">格式输入错误</div>
+				<div class="seePw"></div>
+			</div>
+			<div class="input codeSix">
+				<label class="fl" for="">验证码</label>
+				<input class="fl checkCode" type="text" placeholder="6位数字，10分钟内有效">
+				<div class="true" ></div><div class="false">验证码错误</div>
+				<div class="codeBtn">获取</div>
+			</div>
+			<div class="header-fgpassW-btn">修改密码</div>
+		</div>
+	</div>
+	<!-- 头部 -->
+	<header>
+		<div class="headerC clear">
+			<a class="headerLogo"><img  src="./images/logo.jpg"/></a>
+			<nav class="fl clear flex" >
+				<div class="fl cur">首页</div>
+				<a href="remit/hksy.html"><div class="fl">留学汇款</div></a>
+				<a href="personal/bzzx.html?"><div class="fl">帮助中心</div></a>
+				<a href="personal/wddd.html"><div class="fl active">我的订单</div></a>
+			</nav>
+			<ul class="header-right fr">
+				<li class="fl phone">
+					<div class="img"></div>
+					<div class="phoneHover">0755-86525927</div>
+				客服电话</li>
+				<li class="fl weixin">
+					<div class="img"></div>
+					<div class="codeHover">
+						<img src="images/twoCode.png" alt="">
+						<p>二宝公众号</p>
+					</div>
+				微信咨询</li>
+				<li class="fl">
+					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3264465415&amp;site=qq&amp;menu=yes" style="padding: 0;margin: 0 auto;display: block;">
+                            <div class="img"></div>
+                        </a>
+				QQ咨询</li>
+				<!-- <li class="fl emil">
+					<div class="img"></div>
+				留言建议</li> -->
+			</ul>
+			<div class="header-login fr clear">
+				<div class="login-left fl">登录</div>
+				<div class="login-right fl">注册</div>
+			</div>
+			<div class="header-user fr clear">
+				<div class="header-userId fr"></div>
+				<div class="header-userImg fr"></div>
+				<ul>
+					<li class="wddd"><div class="radius"></div>汇款订单</li>
+					<li class="grzl"><div class="radius"></div>个人中心</li>
+					<li class="out"><div class="radius"></div>安全退出</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<div class="ad">
+		<div class="adC">
+			<h1>让境外教育<span>支付</span>在您手边</h1>
+			<p>学费、住宿费、培训、申请费等一键支付到账</p>
+			<div class="addssBtn" onclick="toRemittance()">开始汇款</div>
+		</div>
+		<div class="addssRight">
+			<ul>
+				<!-- <li class="clear">
+					<div class="ad-right-r fl"></div>
+					<p class="fl">二分钟极速汇款</p>
+				</li>
+				<li class="clear">
+					<div class="ad-right-r fl"></div>
+					<p class="fl">双重支付保障</p>
+				</li>
+				<li class="clear">
+					<div class="ad-right-r fl"></div>
+					<p class="fl">二个工作日内到账</p>
+				</li> -->
+			</ul>
+			<div class="adRightShdow">
+				本产品由以上保险提供全程支付保障
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="footerC clear">
+			<div class="footL fl">
+				<ul class="clear">
+					<a href="personal/bzzx.html?"><li class="fl">帮助中心</li></a>
+					<a href="personal/bzzx.html"><li class="fl">关于我们</li></a>
+					<a href="personal/bzzx.html"><li class="fl"></li></a>  
+				</ul>
+				<dl>
+					<dd>邮箱</dd>
+					<dt>erbao@leadingmax.com</dt>
+				</dl>
+				<dl>
+					<dd>电话</dd>
+					<dt>0755-86525927</dt>
+				</dl>
+			</div>
+			<div class="footC fl">
+				<img src="images/smyz.png" alt="" height="60"><img src="images/kexin.png" alt="" height="60">
+			</div>
+			<div class="footR fr">
+				<img src="images/twoCode.png" alt="">
+				<p>二宝平台公众号</p>
+			</div>
+		</div>
+		<div class="footB">Copyright©2017 二宝平台<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;闽公网安备<span></span>35020602000154号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;闽ICP备16005894号-1 --></div>
+	</footer>
+</body>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</html>

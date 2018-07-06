@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dfans.dao.UserMapper">
+
+    <select id="selectUserInfo" resultType="hashmap" parameterType="hashmap">
+        SELECT
+            ID,
+            Email,
+            Name,
+            Telphone,
+            Password,
+            CreatedTime,
+            UpdateTime
+        FROM
+            tb_user
+        WHERE
+        1=1
+        <if test="name != null">
+            AND Name = #{name}
+        </if>
+        <if test="password != null">
+            AND Password = #{password}
+        </if>
+        <if test="telphone != null">
+            AND Telphone = #{telphone}
+        </if>
+        <if test="email != null">
+            AND Email = #{email}
+        </if>
+        <if test="id != null">
+            AND ID = #{id}
+        </if>
+        <if test="userName != null">
+            AND (Email = #{userName} OR Telphone = #{userName} )
+        </if>
+    </select>
+
+    <select id="selectUserInfoAdm" resultType="hashmap" parameterType="hashmap">
+        SELECT
+            ID id,
+            Email email,
+            Name name,
+            Telphone telphone,
+            Password password,
+            CreatedTime createdTime,
+            UpdateTime updateTime
+        FROM
+            tb_user
+        WHERE
+        1=1
+    </select>
+
+
+    <select id="checkUserInfo" resultType="hashmap" parameterType="hashmap">
+        SELECT
+           COUNT(1) count
+        FROM
+            tb_user
+        WHERE
+            Email = #{account}
+        OR 
+            Telphone = #{account}
+    </select>
+
+    <select id="checkUserBypassword" resultType="hashmap" parameterType="hashmap">
+        SELECT
+           ID
+        FROM
+            tb_user
+        WHERE
+            ID = #{id}
+        AND
+            Password = #{oldPassword}
+    </select>
+
+
+	<insert id="insertUser" useGeneratedKeys="true" keyProperty="id"
+		parameterType="com.dfans.model.User">
+		insert into tb_user
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="email != null">
+				Email,
+			</if>
+			<if test="name != null">
+				Name,
+			</if>
+			<if test="telphone != null">
+				Telphone,
+			</if>
+			<if test="password != null">
+                Password,
+            </if>
+            <if test="source != null">
+                Source,
+            </if>
+			CreatedTime,
+			UpdateTime
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="email != null">
+				#{email, jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				#{name, jdbcType=VARCHAR},
+			</if>
+			<if test="telphone != null">
+				#{telphone, jdbcType=INTEGER},
+			</if>
+			<if test="password != null">
+				#{password, jdbcType=VARCHAR},
+			</if>
+			<if test="source != null">
+                #{source},
+            </if>
+			NOW(),
+			NOW()
+		</trim>
+	</insert>
+	
+	<update id="resetPasswrod"  parameterType="hashmap">
+	 update tb_user
+	   <set>
+       <if test="password != null">
+                Password = #{password, jdbcType=VARCHAR },
+            </if>
+            UpdateTime = NOW()
+      </set>
+      WHERE
+      Email =#{userName}
+      OR
+      Telphone = #{userName}
+	</update>
+
+	<update id="updateuser" parameterType="com.dfans.model.User">
+		update tb_user
+		<set>
+			<if test="email != null">
+				Email = #{email, jdbcType=VARCHAR },
+			</if>
+			<if test="name != null">
+				Name = #{name, jdbcType=VARCHAR },
+			</if>
+			<if test="telphone != null">
+				Telphone = #{telphone, jdbcType=INTEGER },
+			</if>
+			<if test="password != null">
+				Password = #{password, jdbcType=VARCHAR },
+			</if>
+			UpdateTime = NOW()
+		</set>
+		where
+		id = #{id}
+	</update>
+
+	<delete id="deletetb_userById" parameterType="int">
+		delete from tb_user
+		where
+		id = #{id}
+	</delete>
+
+    <select id="selectUserCount"  resultType="int" parameterType="hashmap">
+    SELECT
+           count(1)
+        FROM
+            tb_user
+        WHERE 1=1
+        <if test="key != null and key!=''">
+            AND( Name LIKE CONCAT('%',#{key},'%')
+            OR Telphone LIKE CONCAT('%',#{key},'%') 
+            OR Email LIKE CONCAT('%',#{key},'%') 
+            )
+        </if>
+        <if test="source !=null and source!=''">
+            AND source = #{source}
+        </if>
+        <if test="timeBegin!=null">
+            AND DATE_FORMAT(CreatedTime,'%Y-%m-%d') >=  #{timeBegin,jdbcType=VARCHAR}
+        </if>
+        <if test="timeEnd!=null">
+            <![CDATA[  
+            AND DATE_FORMAT(CreatedTime,'%Y-%m-%d') <= #{timeEnd,jdbcType=VARCHAR}
+            ]]>
+        </if>
+    </select>
+
+    <select id="selectUserList" resultType="hashmap" parameterType="hashmap">
+        SELECT
+            id,
+            email,
+            name,
+            telphone,
+            password,
+            source,
+            createdTime,
+            updateTime
+        FROM
+            tb_user
+        WHERE 1=1
+        <if test="key != null and key!='' ">
+            AND( Name LIKE CONCAT('%',#{key},'%')
+            OR Telphone LIKE CONCAT('%',#{key},'%') 
+            OR Email LIKE CONCAT('%',#{key},'%') 
+            )
+        </if>
+        <if test="source !=null and source!=''">
+            AND source = #{source}
+        </if>
+       <if test="timeBegin!=null">
+            AND DATE_FORMAT(CreatedTime,'%Y-%m-%d') >=  #{timeBegin,jdbcType=VARCHAR}
+        </if>
+        <if test="timeEnd!=null">
+            <![CDATA[  
+            AND DATE_FORMAT(CreatedTime,'%Y-%m-%d') <= #{timeEnd,jdbcType=VARCHAR}
+            ]]>
+        </if>
+        ORDER BY CreatedTime DESC 
+        LIMIT #{page},#{count}
+    </select>
+
+    <delete id="delUser" parameterType="Long">
+    DELETE
+        FROM
+            tb_user
+        WHERE
+            id = #{id}
+    </delete>
+    
+    
+
+    <insert id="insertLog"  parameterType="hashmap">
+    INSERT tb_log (`user`, time, action)
+    VALUES(#{user},NOW(),#{action})
+    </insert>
+
+</mapper>

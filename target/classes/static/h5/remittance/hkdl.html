@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0">
+	<meta content="telephone=no" name=format-detection>
+	<title>二宝平台-汇款登录</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/second.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" /> -->
+	<link rel="stylesheet" type="text/css" href="../css/zzsc.css">
+	<link rel="stylesheet" href="../css/ssi-uploader.css"/>
+</head>
+<body>
+	<div class="header-contentL">
+			<ul>
+				<a href="../remittance/hksy.html"><li>留学付款</li></a>
+				<a href="../personal/bzzx.html"><li>帮助中心</li></a>
+				<a href="../personal/gywm.html"><li>关于我们</li></a>
+				<a href="tel:0755-86525927"><li>0755-86525927</li></a>
+				<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3264465415&amp;site=qq&amp;menu=yes" style="padding: 0;margin: 0 auto;display: block;"><li>QQ在线咨询</li></a>
+			</ul>
+			<div class="header-contentL-bot">
+				<img src="../images/kexin.png" alt=""/>
+				<img src="../images/smyz.png" alt=""/>
+				<p>闽ICP备16005894号-1<br>闽公网安备35020602000154号</p>
+			</div>
+		</div>
+		<div class="header-contentR">
+			<h1></h1>
+			<ul>
+				<a href="../personal/wddd.html"><li>汇款订单</li></a>
+				<a href="../personal/grzl.html"><li>个人资料</li></a>
+				<li class="out">安全退出</li>
+			</ul>
+		</div>
+		<header>
+			<div class="header-btnL"></div>
+			<img src="../images/logo.jpg" alt="">
+			<div class="header-btnR"></div>
+		</header>
+	<article class="move-content hkwdl-content">
+		<div class="container hkdl-auditing" id="hkdl-auditing">
+			<div class="clear">
+				<label class="fl" for="">学校信息 </label>
+				<input class="fl enName" type="text" placeholder="请输入院校英文名称">
+			</div>
+			<!-- <div class="clear">
+				<label class="fl" for="">学校地址：</label>
+				<input class="fl location" type="text" placeholder="请输入学校地址">
+			</div>
+			<div class="clear">
+				<label class="fl" for="">收款账户 <span>Account Name</span></label>
+				<input class="fl accountName" type="text" placeholder="请输入院校收款账户">
+			</div> -->
+			<div class="clear">
+				<label class="fl" for="">收款账号 <span>Account N0 </span></label>
+				<input class="fl accountNo" type="text" placeholder="请输入院校收款账号">
+			</div>
+			<!-- <div class="clear">
+				<label class="fl" for="">银行名称：</label>
+				<input class="fl bankName" type="text" placeholder="请输入银行名称">
+			</div>
+			<div class="clear">
+				<label class="fl" for="">银行地址：</label>
+				<input class="fl bankAddress" type="text" placeholder="请输入银行地址">
+			</div>
+			<div class="clear">
+				<label class="fl" for="">SWIFTCODE：</label>
+				<input class="fl bic" type="text" placeholder="请输入SWIFTCODE"><span class="true fl">添加成功</span><span class="false fl">内容不能为空</span>
+			</div> -->
+			<p>请您仔细核对以上信息，确保无误即可。</p>
+			<div class="schoolsAdd">确认学校添加</div>
+		</div>
+		<!-- 支付信息 -->
+		<section class="hkwdl-zhifu" id="hkdl-zhifu">
+			<div class="title">支付信息</div>
+			<div class="hkwdl-zhifu-top">
+				<label for="">汇款金额</label>
+				<div class="input clear">
+					<div class="inputL fl"></div>
+					<input type="text" class="fl" placeholder="0.00">
+					<div class="inputR fl"><span>英镑</span>
+						<ul>
+						</ul>
+					</div>
+				</div>
+				<div class="table">
+					<ul class="flex table-top">
+						<li class="flex3">付款方式</li>
+						<li class="flex2">应付人民币</li>
+						<li class="flex1"></li>
+					</ul>
+					<ul class="flex table-bot table-bot1">
+						<li class="flex3"><div class="radius-btn cur"></div>网银支付(T+0)</li>
+						<li class="flex2 red cur">0.00</li>
+						<li class="flex1"></li>
+					</ul>
+					<ul class="flex table-bot table-bot2">
+						<li class="flex3"><div class="radius-btn"></div>网银支付(T+2)</li>
+						<li class="flex2 red">0.00</li>
+						<li class="flex1"></li>
+					</ul>
+					<div class="table-text" style="display: none">
+							<p>若实现当日到账，需在当日12:00之前完成支付。</p>
+							<p>此价格已包含所有的<span>手续费</span>、电报费及<span>中转行清算费</span>，保证<span>足额</span>到账。</p>
+							<p>支持国内所有主流银行的银行卡，付款金额上限与银行及客户类型有关。<a href="../personal/bzzx.html" class="line">银行限额表</a></p>
+							<p>上述 T 指工作日，如遇周末及法定节假日，到账时间顺延。</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- 留学生账户 -->
+		<section class="container hkdl-zhanghu" id="hkdl-zhanghu">
+			<div class="title">留学生信息</div>
+			<div class="clear hkdl-zhanghuC">
+				<form action="" class="fl">
+					<div class="input clear">
+						<label class="fl" for="">中文姓名</label><input class="name" type="text" placeholder="请与身份证保持一致">
+						<div class="true" ></div><div class="false">姓名有误</div>
+					</div>
+					<div class="input clear">
+						<label class="fl" for="">姓名拼音</label>
+						<div class="pinyin fl">姓</div><input class="fl pinyin" type="text" placeholder="请以护照为准">
+						<div class="pinyin fl">名</div><input class="fl pinyin" type="text" placeholder="请以护照为准">
+						<div class="true" ></div><div class="false">拼音有误</div>
+					</div>
+					<div class="input clear">
+						<label class="fl" for="">身份证号码</label><input class="idCard" type="text" placeholder="请与身份证保持一致">
+						<div class="true" ></div><div class="false">身份证有误</div>
+					</div>
+					<div class="input clear">
+						<label class="fl" for="">汇款留言</label>
+						<textarea maxlength="120" placeholder="只能填写数字、字母和常用的英文符号，至多输入120个字符"></textarea>
+						<div class="true" ></div><div class="false">附言格式不对</div>
+					</div>
+				</form>
+				<div class="text fr">
+					<p>请您如实填写留学生的个人身份信息，外管局将进行留学生身份实时核验。如果信息填写不正确，不仅校方将无法确认您的身份，延误到账时间，可能还会给您造成不必要的损失。</p>
+					<p>汇款附言：系统已自动为您填写“姓名”请勿删除，确保学校能快速确认汇款学生。如果您有学号可填写在汇款留言中。如果您的院校对汇款附言有特别的要求，请用英文继续填写。<span style="color: #e36d6e">只能由英文、数字、空格组成</span></p>
+				</div>
+			</div>
+		</section>
+		<!-- 上传资料 -->
+		<section class="container hkdl-shangchuan" id="hkdl-shangchuan">
+			<div class="title">上传资料</div>
+			<div class="text" style="padding: 15px 0;">
+				<!-- 身份证正反面、 护照、-->留学凭证（支持JPG/PDG/PNG/bmp/jpeg格式）<span style="color: #e36d6e">上传文件个数需为一个</span><strong style="color: #e36d6e;font-size: 16px;display: none;">　　　　(上传个数或格式不对！！！)</strong>
+			</div>
+			<input type="file" multiple id="ssi-upload"/>
+			<ul>
+				<li>按照外管局备案要求，我们需要您上传留学缴费证明，例如：	学生要缴费金额的截图、或I-20表的截图、或录取通知书截图等。</li>
+				<li>上传图片扫描或拍照均可，要求字迹清晰可辨认，必须包含缴费金额，学生英文姓名或学号（ID）</li>
+				<li>如果您找不到证明材料，请联系我们的在线客服或拨打0755-86525927.</li>
+			</ul>
+		</section>
+		<div class="hkdl-box clear">
+			<div class="box-btn cur fl"></div>
+			<p class="fl">我同意二宝平台的<a target="_blank" href="../personal/bzzx.html">使用条款和隐私政策。</a></p>
+		</div>
+		<!-- <a href="qrfkxx.html"><input type="Submit" class="hkdl-Submit" value="下一步"/></a> -->
+		<input type="Submit" class="hkdl-Submit cur" onclick="Submit();" value="下一步"/>
+	</article>
+
+</body>
+<script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/second.js"></script>
+<script type="text/javascript" src="../js/ssi-uploader.js"></script>
+<script>
+/*上传控件*/
+	$('#ssi-upload').ssi_uploader({url:ip+'/upload/uploadFile/'+sessionStorage.id+'/'+new Date().getTime()+''+(Math.floor(Math.random()*900)+100),maxFileSize:6,allowed:['jpg','bmp','png','pdf','jpeg']});
+	/*添加新建订单开关，判断是否需要从新新建订单*/
+		sessionStorage.openOrders=0;/*新建订单开启*/
+	/*汇款金额查看更多*/
+	$('.hkwdl-zhifu .table-bot1 li:eq(2)').click(function(){
+		!$(".table-text").is(":hidden")?$(".table-text").hide():$(".table-text").show();
+	})
+/*支付方式选择*/
+	$('.hkwdl-zhifu .table-bot .radius-btn').click(function(){
+		var thisIndex=$('.hkwdl-zhifu .table-bot .radius-btn').index($(this));
+		$('.hkwdl-zhifu .table-bot .radius-btn').removeClass('cur');
+		$(this).addClass('cur');
+		$('.hkwdl-zhifu .table-bot li.red').removeClass('cur');
+		$('.hkwdl-zhifu .table-bot li.red:eq('+thisIndex+')').addClass('cur');
+	})
+	var rate;/*汇率变量*/
+	/*学生信息缓存载入*/
+	if (sessionStorage.lxsData) {
+		$('.hkdl-zhanghu input.name').val(JSON.parse(sessionStorage.lxsData).chName)
+		$('.hkdl-zhanghu input.pinyin:eq(0)').val(JSON.parse(sessionStorage.lxsData).pyName1);
+		$('.hkdl-zhanghu input.pinyin:eq(1)').val(JSON.parse(sessionStorage.lxsData).pyName2);
+		$('.hkdl-zhanghu input.idCard').val(JSON.parse(sessionStorage.lxsData).cardNo);
+		$('.hkdl-zhanghuC textarea').val(JSON.parse(sessionStorage.lxsData).remarks);
+		$(".hkdl-zhanghuC .true").show();
+	}
+	if (sessionStorage.schoolsID) {/*判断汇款首页是否输入*/
+		if(sessionStorage.openShools==0){/*第一次进入载入*/
+			$('.schoolsAdd').hide();/*隐藏添加学校按钮*/
+			$('.hkwdl-zhifu-top .inputR').removeClass('cur');/*隐藏汇率选项*/
+	    	$('.hkdl-auditing input').attr('readonly','').css('background','rgb(221, 223, 223)');/*学校信息禁止输入*/
+	    	var schoolsJson=JSON.parse(sessionStorage.schoolsData)/*学校信息录入*/
+	        $('.hkdl-auditing input:eq(0)').val(schoolsJson.EnName==''?' ':schoolsJson.EnName);
+	       /* $('.hkdl-auditing input:eq(1)').val(schoolsJson.Location==''?' ':schoolsJson.Location);
+	        $('.hkdl-auditing input:eq(2)').val(schoolsJson.AccountName==''?' ':schoolsJson.AccountName);*/
+	        $('.hkdl-auditing input:eq(1)').val(schoolsJson.AccountNo==''?' ':schoolsJson.AccountNo);
+	        /*$('.hkdl-auditing input:eq(4)').val(schoolsJson.BankName==''?' ':schoolsJson.BankName);
+	        $('.hkdl-auditing input:eq(5)').val(schoolsJson.BankAddress==''?' ':schoolsJson.BankAddress);
+	        $('.hkdl-auditing input:eq(6)').val(schoolsJson.BIC==''?' ':schoolsJson.BIC);*/
+	        rate=schoolsJson.Rate;
+	        $('.hkwdl-zhifu-top .inputR').text(schoolsJson.UnitText);
+		}else{
+			$.ajax({/*添加学校后从新载入*/
+	            type: "GET",
+	            url:ip+'/schools/'+sessionStorage.schoolsID,
+	            //data:JSON.stringify(dataS),
+	            async: false,
+	           	// dataType: "json",
+	            //contentType:"application/json",
+	            error: function(request) {
+	                alert("Connection error");
+	            },
+	            success: function(data) {
+	            	console.log(data)
+	            	$('.schoolsAdd').hide();/*隐藏添加学校按钮*/
+	            	$('.hkdl-auditing input').attr('readonly','').css('background','rgb(221, 223, 223)');/*学校信息禁止输入*/
+	            	$('.hkwdl-zhifu-top .inputR').addClass('cur');
+	            	$('.hkdl-auditing input:eq(0)').val(data[0].EnName==''?' ':data[0].EnName);
+			        /*$('.hkdl-auditing input:eq(1)').val(data[0].Location==''?' ':data[0].Location);
+			        $('.hkdl-auditing input:eq(2)').val(data[0].AccountName==''?' ':data[0].AccountName);*/
+			        $('.hkdl-auditing input:eq(1)').val(data[0].AccountNo==''?' ':data[0].AccountNo);
+			        /*$('.hkdl-auditing input:eq(4)').val(data[0].BankName==''?' ':data[0].BankName);
+			        $('.hkdl-auditing input:eq(5)').val(data[0].BankAddress==''?' ':data[0].BankAddress);
+			        $('.hkdl-auditing input:eq(6)').val(data[0].BIC==''?' ':data[0].BIC);*/
+			        $.ajax({/*载入汇率下拉框*/
+			            type: "GET",
+			            url:ip+'/schools/getRate',
+			            //data:JSON.stringify(dataS),
+			            async: false,
+			           // dataType: "json",
+			            contentType:"application/json",
+			            error: function(request) {
+			                alert("Connection error");
+			            },
+			            success: function(data) {
+			            	console.log(data)
+			            	var content='';
+			            	for (var i = 0; i < data.length; i++) {
+			            		content+='<li onclick="markF(this)" id='+data[i].Mark+' ct='+data[i].country+'>'+data[i].Text+'</li>';
+			            	}
+			            	$('.hkwdl-zhifu-top .inputR ul').html(content);
+			            	rate=data[0].Mark;
+			            	sessionStorage.schoolsCt=data[0].country/*缓存国家*/
+			            	//sessionStorage.schoolsMy=data[0].Text/*缓存钱币单位*/
+			            }
+			        })
+	            }
+	        })
+		}
+	}else{
+	     $('.hkwdl-zhifu-top .inputR').addClass('cur');
+		 $('.hkdl-auditing input').removeAttr('readonly').css('background','#fff');
+		 $('.schoolsAdd').show();
+		 $.ajax({/*载入汇率下拉框*/
+            type: "GET",
+            url:ip+'/schools/getRate',
+            //data:JSON.stringify(dataS),
+            async: false,
+           // dataType: "json",
+            contentType:"application/json",
+            error: function(request) {
+                alert("Connection error");
+            },
+            success: function(data) {
+            	console.log(data)
+            	var content='';
+            	for (var i = 0; i < data.length; i++) {
+            		content+='<li onclick="markF(this)" id='+data[i].Mark+' ct='+data[i].country+'>'+data[i].Text+'</li>';
+            	}
+            	$('.hkwdl-zhifu-top .inputR ul').html(content);
+            	rate=data[0].Mark;
+            	sessionStorage.schoolsCt=data[0].country/*缓存国家*/
+			    //sessionStorage.schoolsMy=data[0].Text/*缓存钱币单位*/
+            }
+        })
+	}
+	/*汇率选择*/
+	function markF(obj){
+		$('.hkwdl-zhifu-top .inputR span').text($(obj).text());
+		$('.hkwdl-zhifu-top .inputR li').removeClass('cur');
+		$(obj).addClass('cur');
+		rate=$(obj).attr('id');
+		sessionStorage.schoolsCt=$(obj).attr('ct');/*缓存国家*/
+		$('.hkwdl-zhifu-top input').val(0);/*input框单位换算*/
+		//$(obj).parent().hide();
+		//sessionStorage.schoolsMy=$(obj).text()/*缓存钱币单位*/
+		//console.log(sessionStorage.schoolsCt);
+	}
+	/*  添加学校 */
+	$('.schoolsAdd').click(function(){
+		var auditingNum=0;/*添加学校输入框验证*/
+		for (var i = 0; i < $('.hkdl-auditing input').length ; i++) {
+			if ($('.hkdl-auditing input').eq(i).val()=='') {auditingNum++}
+		}
+		if (auditingNum==0&&!isNaN($('.hkdl-auditing input.accountNo').val())) {
+			var dataS={
+				/*accountName:$('.accountName').val(),*/
+				accountNo:$('.accountNo').val(),
+				enName:$('.enName').val()
+				/*location:$('.location').val(),
+				bankName:$('.bankName').val(),
+				bankAddress:$('.bankAddress').val(),
+				bic:$('.bic').val()*/
+			}
+			$.ajax({
+	            type: "POST",
+	            url:ip+'/schools/add',
+	            data:JSON.stringify(dataS),
+	            async: false,
+	            dataType: "json",
+	            contentType:"application/json",
+	            error: function(request) {
+	                alert("Connection error");
+	            },
+	            success: function(data) {
+	            	console.log(data)
+	            	sessionStorage.openShools=1;
+	            	$('.hkdl-auditing span.false').hide();
+	            	$('.hkdl-auditing span.true').show();
+	            	sessionStorage.schoolsID=data;
+	            	$('.schoolsAdd').hide();
+	            }
+	        })
+		}else{
+			$('.hkdl-auditing span.false').show();
+		}
+	})
+	/*汇率计算*/
+	$('.hkwdl-zhifu-top input').keyup(function(){
+		if ($(this).val().indexOf('.')==-1) {/*判断整数位不能超过6位*/
+			if ($(this).val().length>6) {
+				$(this).val($(this).val().substring(0,6));
+			}
+		}else{
+			if ($(this).val().split('.')[0].length>6) {
+				$(this).val($(this).val().split('.')[0].substring(0,6)+'.'+$(this).val().split('.')[1])
+			};
+		}
+		if (!isNaN($(this).val())&&$(this).val()!='') {
+			/*当日到账*/
+			if (($(this).val()*(rate/100))*0.0075<300) {
+				$('.hkwdl-zhifu .table-bot li.red:eq(0)').text((($(this).val()*(rate/100))+300).toFixed(2));
+			}else{
+				$('.hkwdl-zhifu .table-bot li.red:eq(0)').text((($(this).val()*(rate/100))+(($(this).val()*(rate/100))*0.0075)).toFixed(2));
+			}
+			/*普通到账*/
+			if(($(this).val()*(rate/100))*0.0065<300) {
+				$('.hkwdl-zhifu .table-bot li.red:eq(1)').text((($(this).val()*(rate/100))+300).toFixed(2));
+			}else{
+				$('.hkwdl-zhifu .table-bot li.red:eq(1)').text((($(this).val()*(rate/100))+(($(this).val()*(rate/100))*0.0065)).toFixed(2));
+			}
+		}else{
+			$('.hkwdl-zhifu .table-bot li.red:eq(0),.hkwdl-zhifu .table-bot li.red:eq(1)').text('0.00');
+		}
+	})
+	/*留学生信息验证*/
+	$('.hkdl-zhanghu input.name').blur(function(){/*中文姓名*/
+		isName($('.hkdl-zhanghu input.name'))
+	})
+	$('.hkdl-zhanghu input.pinyin:eq(1),.hkdl-zhanghu input.pinyin:eq(0)').blur(function(){/*拼音*/
+		if ($('.hkdl-zhanghu input.pinyin:eq(1)').val()!='') {
+			if(/^[A-Za-z]+$/.test($('.hkdl-zhanghu input.pinyin:eq(0)').val())&&/^[A-Za-z]+$/.test($('.hkdl-zhanghu input.pinyin:eq(1)').val())){
+			  isStyle($('.hkdl-zhanghu input.pinyin:eq(1)'));
+			  $('.hkdl-zhanghuC textarea').val($('.hkdl-zhanghu input.pinyin:eq(0)').val()+' '+$('.hkdl-zhanghu input.pinyin:eq(1)').val());
+			}else{
+			  isStyle1($('.hkdl-zhanghu input.pinyin:eq(1)'));
+			}
+		}
+		
+	})
+	$('.hkdl-zhanghu input.idCard').blur(function(){/*身份证*/
+		isIdcard($('.hkdl-zhanghu input.idCard'))
+	})
+	$('.hkdl-zhanghuC textarea').blur(function(){/*输入框*/
+		isNull($('.hkdl-zhanghuC textarea'))
+	})
+	/*页面提交*/
+	function Submit(){
+		if (!$(".hkdl-zhanghuC .true").is(":hidden")&&$('.hkdl-box .box-btn').hasClass('cur')&&!$(".hkdl-zhanghu .input .true").is(":hidden")&&voucherUrlArr.length==1) {
+			if (sessionStorage.schoolsCt) {/*判断是否新添加学校提交订单*/
+				var dataS={
+					country:sessionStorage.schoolsCt
+				}
+				$.ajax({/*更新学校信息*/
+		            type: "POST",
+		            url:ip+'/schools/update/'+sessionStorage.schoolsID,
+		            data:JSON.stringify(dataS),
+		            async: false,
+		            dataType: "json",
+		            contentType:"application/json",
+		            error: function(request) {
+		                alert("Connection error");
+		            },
+		            success: function(data) {
+		            	console.log(data)
+		            }
+		        })
+			}
+			/*上传文件拼接*/
+			var voucherfileUrl='';
+			voucherfileUrl=voucherUrlArr[0][0]. fileUrl/*+','+voucherUrlArr[1][0]. fileUrl+','+voucherUrlArr[2][0]. fileUrl+','+voucherUrlArr[3][0]. fileUrl*/;
+			/*上传文件orderSeq缓存*/
+			sessionStorage.orderSeq=voucherUrlArr[0][0].orderSeq;
+			
+			console.log(voucherfileUrl+','+sessionStorage.orderSeq)
+			var dataS={/*留学生信息*/
+				chName:$('.hkdl-zhanghu input.name').val(),
+				pyName:$('.hkdl-zhanghu input.pinyin:eq(0)').val()+','+$('.hkdl-zhanghu input.pinyin:eq(1)').val(),
+				cardNo:$('.hkdl-zhanghu input.idCard').val(),
+				remarks:$('.hkdl-zhanghuC textarea').val(),
+				voucherUrl:voucherfileUrl
+			}
+			if ($('.hkdl-zhifu .table-bot .radius-btn').index($('.hkdl-zhifu .table-bot .radius-btn.cur'))==0) {
+				var rateIf=1;
+			}else{
+				var rateIf=0;
+			}
+			var dataS1={
+						priceCn:Math.abs($('.hkdl-zhifu .table-bot li.red.cur').text()),
+						priceEn:Math.abs($('.hkwdl-zhifu-top input').val()),
+						payStyle:rateIf
+					}
+			$.ajax({
+	            type: "POST",
+	            url:ip+'/students/add',
+	            data:JSON.stringify(dataS),
+	            async: false,
+	            dataType: "json",
+	            contentType:"application/json",
+	            error: function(request) {
+	                alert("Connection error");
+	            },
+	            success: function(data) {
+	            	console.log(data)
+	            	sessionStorage.studentsId=data;/*学生信息ID*/
+			        $.ajax({
+			            type: "POST",
+			            url:ip+'/pays/add/'+sessionStorage.schoolsID,
+			            data:JSON.stringify(dataS1),
+			            async: false,
+			            dataType: "json",
+			            contentType:"application/json",
+			            error: function(request) {
+			                alert("Connection error");
+			            },
+			            success: function(data) {
+			            	//console.log(data)
+			            	sessionStorage.paysId=data;/*支付信息ID*/
+			            	sessionStorage.openWddd=0/*重置我的订单开关*/
+			            	var lxsData={/*留学生信息存储*/
+			            		chName:$('.hkdl-zhanghu input.name').val(),
+								pyName1:$('.hkdl-zhanghu input.pinyin:eq(0)').val(),
+								pyName2:$('.hkdl-zhanghu input.pinyin:eq(1)').val(),
+								cardNo:$('.hkdl-zhanghu input.idCard').val(),
+								remarks:$('.hkdl-zhanghuC textarea').val()
+							}
+							sessionStorage.lxsData=JSON.stringify(lxsData);/*留学生信息缓存*/
+			            	window.location.href='qrfkxx.html';
+			            }
+			        })
+	            }
+	        })
+		}else{
+			if (voucherUrlArr.length!=4) {
+				window.location.href='#hkdl-shangchuan';
+				$('.hkdl-shangchuan .text strong').show();
+			}
+			if ($(".hkdl-zhanghuC .true").is(":hidden")) {
+				window.location.href='#hkdl-zhanghu';
+			}
+			if ($('.hkwdl-zhifu-top input').val()=='') {
+				window.location.href='#hkdl-zhifu';
+			}
+			var auditingNum=0;/*添加学校输入框验证*/
+			for (var i = 0; i < $('.hkdl-auditing input').length ; i++) {
+				if ($('.hkdl-auditing input').eq(i).val()=='') {auditingNum++}
+			}
+			if(auditingNum!=0){/*添加学校输入框验证跳转*/
+				$('.hkdl-auditing span.false').show();
+				window.location.href='#hkdl-auditing';
+			}
+			isName($('.hkdl-zhanghu input.name'));
+			if(/^[A-Za-z]+$/.test($('.hkdl-zhanghu input.pinyin:eq(0)').val())&&/^[A-Za-z]+$/.test($('.hkdl-zhanghu input.pinyin:eq(1)').val())){
+			  isStyle($('.hkdl-zhanghu input.pinyin:eq(1)'));
+			}else{
+			  isStyle1($('.hkdl-zhanghu input.pinyin:eq(1)'));
+			}
+			isNull($('.hkdl-zhanghuC textarea'));
+			isIdcard($('.hkdl-zhanghu input.idCard'));
+		}
+	}
+	/*汇率输入框显示*/
+	$('.hkwdl-zhifu-top .inputR.cur').click(function(){
+		if ($(this).find('ul').is(":hidden")) {
+			$(this).find('ul').show();
+		}else{
+			$(this).find('ul').hide();
+		}
+	})
+</script>
+</html>

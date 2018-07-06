@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dfans.dao.PriceMapper">
+
+	<update id="updatePrice" parameterType="hashmap">
+		UPDATE tb_basicdict
+		SET Mark = CASE `Name`
+		<if test="GBP!=null">
+		WHEN 'GBP' THEN  #{GBP}
+		</if>
+		<if test="JPY!=null">
+		WHEN 'JPY' THEN  #{JPY}
+		</if>
+		<if test="USD!=null">
+		WHEN 'USD' THEN  #{USD}
+		</if>
+		<if test="AUD!=null">
+		WHEN 'AUD' THEN  #{AUD}
+		</if>
+		<if test="EUR!=null">
+		WHEN 'EUR' THEN  #{EUR}
+		</if>
+		<if test="CAD!=null">
+		WHEN 'CAD' THEN  #{CAD}
+		</if>
+		<if test="HKD!=null">
+		WHEN 'HKD' THEN  #{HKD}
+		</if>
+		<if test="CNY!=null">
+		WHEN 'CNY' THEN  #{CNY}
+		</if>
+		<if test="CHF!=null">
+		WHEN 'CHF' THEN  #{CHF}
+		</if>
+		END
+		WHERE
+		`Name` IN ('GBP','JPY','USD','AUD','EUR','CAD','HKD','CNY','CHF' )
+		AND Type = '0001'
+	</update>
+
+</mapper>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0">
+	<meta content="telephone=no" name=format-detection>
+	<title>二宝平台-确认付款信息</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/second.css">
+</head>
+<body>
+	<div class="header-contentL">
+			<ul>
+				<a href="../remittance/hksy.html"><li>留学付款</li></a>
+				<a href="../personal/bzzx.html"><li>帮助中心</li></a>
+				<a href="../personal/gywm.html"><li>关于我们</li></a>
+				<a href="tel:0755-86525927"><li>0755-86525927</li></a>
+				<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3264465415&amp;site=qq&amp;menu=yes" style="padding: 0;margin: 0 auto;display: block;"><li>QQ在线咨询</li></a>
+			</ul>
+			<div class="header-contentL-bot">
+				<img src="../images/kexin.png" alt=""/>
+				<img src="../images/smyz.png" alt=""/>
+				<p>闽ICP备16005894号-1<br>闽公网安备35020602000154号</p>
+			</div>
+		</div>
+		<div class="header-contentR">
+			<h1></h1>
+			<ul>
+				<a href="../personal/wddd.html"><li>汇款订单</li></a>
+				<a href="../personal/grzl.html"><li>个人资料</li></a>
+				<li class="out">安全退出</li>
+			</ul>
+		</div>
+		<header>
+			<div class="header-btnL"></div>
+			<img src="../images/logo.jpg" alt="">
+			<div class="header-btnR"></div>
+		</header>
+	<article class="move-content qehkxx-content">
+		<div class="qehkxx-p">
+			<strong>付款信息</strong>
+			您将通过网银支付： <span>0.00</span>人民币<br>赫特伍德豪斯学校将足额收到： <span>0.00</span>
+		</div>
+		<!-- 收款账户信息 -->
+		<section class="container qehkxx-xinxi">
+			<div class="title">收款账户信息</div>
+			<ul>
+				<li>收款账户　　　　　　　<span>123</span></li>
+				<li>收款账号　　　　　　　<span>123</span></li>
+				<li>汇款金额　　　　　　　<span>123</span></li>
+				<li>汇款附言　　　　　　　<span>123</span></li>
+				<li>银行国际代码　　　　　<span></span></li>
+			</ul>
+		</section>
+		<!-- 留学生信息 -->
+		<section class="container qehkxx-xinxi">
+			<div class="title">留学生信息</div>
+			<ul>
+				<li>姓名中文　　　　　　　<span>1231231</span></li>
+				<li>姓名拼音　　　　　　　<span>123123</span></li>
+				<li>身份证号　　　　　　　<span>123123</span></li>
+			</ul>
+		</section>
+		<!-- 上传资料 -->
+		<section class="container qehkxx-xinxi">
+			<div class="title">上传资料</div>
+			<ul>
+				<li><!-- 身份证个人照片页、护照、缴费证明 -->缴费证明　　　　<span></span></li>
+			</ul>
+		</section>
+		<div class="qehkxx-btn clear">
+			<!-- <a href="ddfk.html"><div class="qehkxx-btnL fl">确定</div></a> -->
+			<div class="qehkxx-btnL fl">确定</div>
+			<a href="hkdl.html"><div class="qehkxx-btnR fr">返回修改</div></a>
+		</div>
+	</article>
+</body>
+<script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/second.js"></script>
+<script>
+	if(sessionStorage.openWddd==0){
+		$('.qehkxx-btnR').show();
+		/*确认汇款信息*/
+		/*学生信息*/
+		$.ajax({
+            type: "GET",
+            url:ip+'/students/getInfo/'+sessionStorage.studentsId,
+            //data:JSON.stringify(dataS),
+            contentType: "application/json",
+            async: false,
+            dataType: "json",
+            error: function(request) {
+                alert("Connection error");
+            },
+            success: function(data) {
+            	console.log(data)
+                $('.qehkxx-xinxi li:eq(3) span').text(data[0].Remarks);
+                $('.qehkxx-xinxi li:eq(5) span').text(data[0].ChName);
+                $('.qehkxx-xinxi li:eq(6) span').text(data[0].pyName);
+                $('.qehkxx-xinxi li:eq(7) span').text(data[0].CardNo);
+                var sczl=data[0].VoucherUrl.split(',');
+                for (var i = 0; i < sczl.length; i++) {
+                	sczl[i]=sczl[i].substring(sczl[i].lastIndexOf('/')+1);
+                }
+                $('.qehkxx-xinxi li:eq(8) span').text(sczl[0]+','+sczl[1]+','+sczl[2]+','+sczl[3]);
+            }
+        })
+        /*学校信息*/
+        $.ajax({
+            type: "GET",
+            url:ip+'/schools/'+sessionStorage.schoolsID,
+            //data:JSON.stringify(dataS),
+            async: false,
+            dataType: "json",
+            error: function(request) {
+                alert("Connection error");
+            },
+            success: function(data) {
+            	console.log(data)
+            	$('.qehkxx-xinxi li:eq(0) span').text(data[0].AccountName);
+            	$('.qehkxx-xinxi li:eq(1) span').text(data[0].AccountNo);
+            	$('.qehkxx-xinxi li:eq(4) span').text(data[0].BIC);
+            	var UnitText=data[0].UnitText;
+            	var EnName=data[0].EnName;
+            	/*支付信息*/
+            	$.ajax({
+		            type: "GET",
+		            url:ip+'/pays/'+sessionStorage.paysId,
+		            //data:JSON.stringify(dataS),
+		            contentType: "application/json",
+		            async: false,
+		            dataType: "json",
+		            error: function(request) {
+		                alert("Connection error");
+		            },
+		            success: function(data) {
+		            	console.log(data)
+						$('.qehkxx-p').html('<strong>付款信息</strong><br>您将通过网银支付： <span>'+data[0].PriceCN+'</span>人民币'+EnName+'将足额收到： <span>'+data[0].PriceEN+'</span>'+UnitText);
+		            	$('.qehkxx-xinxi li:eq(2) span').text(data[0].PriceCN+'人民币');
+		            
+		            }
+		        })
+            }
+        })
+        $('.qehkxx-btnL').one("click",function(){
+        	$('.qehkxx-btnL').css({'background':'#ccc','border':'1px solid #ccc','box-shadow':'0 0','cursor':'auto'})
+        	if(sessionStorage.openOrders==0){/*判断是否需要新建订单*/
+	        	var dataS={
+	        		userId:sessionStorage.id,
+	        		schoolId:sessionStorage.schoolsID,
+	        		studentId:sessionStorage.studentsId,
+	        		payId:sessionStorage.paysId,
+	        		orderSeq:sessionStorage.orderSeq
+	        	}
+	        	$.ajax({
+		            type: "POST",
+		            url:ip+'/orders/add',
+		            data:JSON.stringify(dataS),
+		            contentType: "application/json",
+		            async: false,
+		            dataType: "json",
+		            error: function(request) {
+		                alert("Connection error");
+		            },
+		            success: function(data) {
+		           		if (data[0].result<1) {
+		            		alert('提交失败!')
+		            	}else{
+		            		sessionStorage.ordersId=data[0].result/*记录订单ID*/
+		           			window.location.href='ddfk.html';
+		            	}
+		            }
+		        })
+	        }else{
+	        	window.location.href='ddfk.html';
+	        }
+        });
+    }else{
+    	$('.qehkxx-btnR').hide();
+    	$.ajax({
+            type: "GET",
+            url:ip+'/orders/getDetail/'+sessionStorage.ordersId,
+            //data:JSON.stringify(dataS),
+            //contentType: "application/json",
+            async: false,
+            dataType: "json",
+            error: function(request) {
+                alert("Connection error");
+            },
+            success: function(data) {
+            	console.log(data)
+            	$('.qehkxx-p').html('<strong>付款信息</strong><br>您将通过网银支付： <span>'+data[0].PriceCN+'</span>人民币'+data[0].EnName+'将足额收到： <span>'+data[0].PriceEN+'</span>'+data[0].UnitText);
+            	$('.qehkxx-xinxi li:eq(0) span').text(data[0].AccountName);
+            	$('.qehkxx-xinxi li:eq(1) span').text(data[0].AccountNo);
+		        $('.qehkxx-xinxi li:eq(2) span').text(data[0].PriceCN+'人民币');
+            	$('.qehkxx-xinxi li:eq(3) span').text(data[0].Remarks);
+                $('.qehkxx-xinxi li:eq(4) span').text(data[0].ChName);
+                $('.qehkxx-xinxi li:eq(5) span').text(data[0].PyName);
+                $('.qehkxx-xinxi li:eq(6) span').text(data[0].CardNo);
+                var sczl=data[0].VoucherUrl.split(',');
+                for (var i = 0; i < sczl.length; i++) {
+                	sczl[i]=sczl[i].substring(sczl[i].lastIndexOf('/')+1);
+                }
+                $('.qehkxx-xinxi li:eq(7) span').text(sczl[0]+','+sczl[1]+','+sczl[2]+','+sczl[3]);
+            }	
+        })
+         $('.qehkxx-btnL').click(function(){
+         	window.location.href='../personal/wddd.html';
+         })
+    }
+</script>
+</html>

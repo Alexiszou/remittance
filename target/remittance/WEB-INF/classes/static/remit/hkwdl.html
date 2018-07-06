@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>二宝平台-汇款未登录</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/second.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+	<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap-datetimepicker.zh-CN.js"></script>
+
+</head>
+<body>
+<div class="shadow-login">
+		<div class="login">
+			<div class="close"></div>
+			<h1>登录二宝平台</h1>
+			<div class="input">
+				<label class="fl" for="">用户名</label>
+				<input class="name fl" type="text" placeholder="请输入电子邮箱/手机号码">
+				<div class="true" ></div><div class="false"></div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">密码</label>
+				<input class="fl password" type="password" placeholder="">
+				<div class="true"></div><div class="false">用户名或密码错误</div>
+				<div class="seePw"></div>
+			</div>
+			<div class="box clear">
+				<div class="box-btn fl cur"></div>
+				<p class="fl">自动登录<a href="javascript:void(0)">忘记密码？</a></p>
+			</div>
+			<div class="header-login-btn clear">
+				<div class="header-login-btnL fl">立即登录</div>
+				<div class="header-login-btnR fr">新用户注册</div>
+			</div>
+		</div>
+		<div class="RegisteredIn">
+			<div class="close"></div>
+			<h1>欢迎注册二宝平台</h1>
+			<div class="input">
+				<label class="fl" for="">电子邮箱</label>
+				<input class="fl email" type="text" placeholder="请填写正确的邮箱地址">
+				<div class="true" ></div><div class="false">邮箱输入错误</div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">姓名</label>
+				<input class="fl name" type="text" placeholder="请输入中文姓名">
+				<div class="true" ></div><div class="false">请输入正确的中文姓名</div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">联系电话</label>
+				<input class="fl phone" type="text" placeholder="请输入手机号码">
+				<div class="true" ></div><div class="false">电话输入错误</div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">密码</label>
+				<input class="fl password" type="password" placeholder="请设置6-20位登录密码">
+				<div class="true" ></div><div  class="false">密码格式不对</div>
+				<div class="seePw"></div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">确认密码</label>
+				<input class="fl passwordAg" type="password" placeholder="请再次输入新密码">
+				<div class="true" ></div><div class="false">与密码不一致</div>
+				<div class="seePw"></div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">验证码</label>
+				<input class="fl codeNum" type="text" placeholder="右侧验证码">
+				<div class="code fr"><img class="codeNum" src="" width="100%" height="100%" alt=""></div>
+				<div class="true"></div><div class="false" >验证码错误</div>
+			</div>
+			<div class="box clear">
+				<div class="box-btn fl cur"></div>
+				<p class="fl">我同意二宝平台的<span>使用条款和隐私政策。</span></p>
+			</div>
+			<div class="header-RegisteredIn-btn">注册账户</div>
+			<div class="RegisteredIn-btn">已有账户？立即登录</div>
+		</div>
+		<div class="fgpassW">
+			<div class="close"></div>
+			<h1>忘记密码</h1>
+			<div class="input">
+				<label class="fl" for="">用户名</label>
+				<input class="fl name" type="text" placeholder="请输入电子邮箱/手机号码">
+				<div class="true" ></div><div class="false">该用户不存在</div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">新密码</label>
+				<input class="fl password" type="password" placeholder="请设置6-20位登录密码">
+				<div class="true" ></div><div class="false">格式输入错误</div>
+				<div class="seePw"></div>
+			</div>
+			<div class="input codeSix">
+				<label class="fl" for="">验证码</label>
+				<input class="fl checkCode" type="text" placeholder="6位数字，10分钟内有效">
+				<div class="true" ></div><div class="false">验证码错误</div>
+				<div class="codeBtn">获取</div>
+			</div>
+			<div class="header-fgpassW-btn">修改密码</div>
+		</div>
+	</div>
+	<header>
+		<div class="headerC clear">
+			<a class="headerLogo" href="../index.html"><img  src="../images/logo.jpg"/></a>
+			<nav class="fl clear">
+				<a href="../index.html"><div class="fl">首页</div></a>
+				<a href="hksy.html"><div class="fl cur">留学汇款</div></a>
+				<a href="../personal/bzzx.html?"><div class="fl">帮助中心</div></a>
+				<a href="../personal/wddd.html"><div class="fl active">我的订单</div></a>
+			</nav>
+			<ul class="header-right fr">
+				<li class="fl phone">
+					<div class="img"></div>
+					<div class="phoneHover">0755-86525927</div>
+				客服电话</li>
+				<li class="fl weixin">
+					<div class="img"></div>
+					<div class="codeHover">
+						<img src="../images/twoCode.png" alt="">
+						<p>二宝公众号</p>
+					</div>
+				微信咨询</li>
+				<li class="fl">
+					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3264465415&amp;site=qq&amp;menu=yes" style="padding: 0;margin: 0 auto;display: block;">
+                            <div class="img"></div>
+                        </a>
+				QQ咨询</li>
+				<!-- <li class="fl emil">
+					<div class="img"></div>
+				留言建议</li> -->
+			</ul>
+			<div class="header-login fr clear">
+				<div class="login-left fl">登录</div>
+				<div class="login-right fl">注册</div>
+			</div>
+			<div class="header-user fr clear">
+				<div class="header-userId fr"></div>
+				<div class="header-userImg fr"></div>
+				<ul>
+					<li class="wddd"><div class="radius"></div>汇款订单</li>
+					<li class="grzl"><div class="radius"></div>个人中心</li>
+					<li class="out"><div class="radius"></div>安全退出</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<article class="hkwdl">
+		<div class="container hkwdl-auditing">
+			<div class="clear">
+				<label class="fl" for="">学校信息：</label>
+				<input class="fl enName" type="text" placeholder="请输入院校英文名称"><span class="true fl"></span><span class="false fl">内容不能为空</span>
+			</div>
+			<!-- <div class="clear">
+				<label class="fl" for="">学校地址：</label>
+				<input class="fl location" type="text" placeholder="请输入学校地址"><span class="true fl"></span><span class="false fl">内容不能为空</span>
+			</div>
+			<div class="clear">
+				<label class="fl" for="">收款账户：<br><span>Account Name</span></label>
+				<input class="fl accountName" type="text" placeholder="请输入院校收款账户"><span class="true fl"></span><span class="false fl">内容不能为空</span>
+			</div> -->
+			<div class="clear">
+				<label class="fl" for="">收款账号：<br><span>Account N0.</span></label>
+				<input class="fl accountNo" type="text" placeholder="请输入院校收款账号"><span class="true fl"></span><span class="false fl">内容不能为空</span>
+			</div>
+			<!-- <div class="clear">
+				<label class="fl" for="">银行名称：</label>
+				<input class="fl bankName" type="text" placeholder="请输入银行名称"><span class="true fl"></span><span class="false fl">内容不能为空</span>
+			</div>
+			<div class="clear">
+				<label class="fl" for="">银行地址：</label>
+				<input class="fl bankAddress" type="text" placeholder="请输入银行地址"><span class="true fl"></span><span class="false fl">内容不能为空</span>
+			</div>
+			<div class="clear">
+				<label class="fl" for="">SWIFTCODE：</label>
+				<input class="fl bic" type="text" placeholder="请输入SWIFTCODE"><span class="true fl"></span><span class="false fl">内容不能为空</span>
+			</div> -->
+			<p>请您仔细核对以上信息，确保无误即可。</p><div class="fl schoolsAdd">确认学校添加</div><span class="schoolsAddtrue fl">添加成功</span><span class="schoolsAddfalse fl">添加失败</span>
+		</div>
+		<!-- 支付信息 -->
+		<section class="container hkwdl-zhifu">
+			<div class="title">支付信息</div>
+			<div class="hkwdl-zhifu-top clear">
+				<label class="fl" for="">汇款金额</label>
+				<div class="input clear">
+					<div class="inputL fl"></div>
+					<input type="text" class="fl" placeholder="0.00">
+					<div class="inputR fl"><span>英镑</span>
+						<ul>
+						</ul>
+					</div>
+				</div>
+				<div class="table">
+					<ul class="flex table-top">
+						<li class="flex3">付款方式</li>
+						<li class="flex2">应付人民币</li>
+						<li class="flex2">到账时间</li>
+						<li class="flex4">预约到账日期</li>
+					</ul>
+					<ul class="flex table-bot">
+						<li class="flex3"><div class="radius-btn cur"></div>网银支付(T+0预约)</li>
+						<li class="flex2 red cur">0.00</li>
+						<li class="flex2">按指定时间到账</li>
+						<li class="flex4" >
+							<div  class="input-append date" id="datetimepicker"  data-date-format="yyyy-mm-dd">
+								<input style="text-align: center;width: 70%" size="16" type="text" value="" readonly>
+								<span class="add-on"><i class="icon-th"></i></span>
+							</div>
+						</li>
+					</ul>
+					<ul class="flex table-bot">
+						<li class="flex3"><div class="radius-btn"></div>网银支付(T+2)</li>
+						<li class="flex2 red">0.00</li>
+						<li class="flex2">T+2</li>
+						<li class="flex4"></li>
+					</ul>
+					<div class="table-text table-bot" style="padding:20px 0px">
+						<p>此价格已包含所有的<span>手续费</span>、电报费及<span>中转行清算费</span>，保证<span>足额</span>到账。</p>
+						<p>支持国内所有主流银行的银行卡，付款金额上限与银行及客户类型有关。<a href="../personal/bzzx.html?" class="line" hidden>银行限额表</a></p>
+						<p>上述 T 指工作日，如遇周末及法定节假日，到账时间顺延。</p>
+						<p>T+0预约会按照您指定的日期到账。</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- 留学生账户 -->
+		<section class="container hkwdl-zhanghu">
+			<div class="title">留学生账户</div>
+			<ul class="hkwdl-zhanghu-top clear">
+				<li class="clear fl">
+					<div class="radius-btn cur fl"></div>
+					<p class="fl">新建账户</p>
+				</li>
+				<li class="clear fl">
+					<div class="radius-btn fl"></div>
+					<p class="fl">使用已有账户</p>
+				</li>
+			</ul>
+			<div class="wdl">
+				<div class="input clear">
+					<label class="fl" for="">电子邮箱</label><input class="fl email" type="text" placeholder="我们将通过该邮箱，实时发送汇款进度给您">
+					<div class="fl true" ></div><div class="fl false">邮箱格式输入错误</div>
+				</div>
+				<div class="input clear">
+					<label class="fl" for="">姓名</label><input class="fl name" type="text" placeholder="请与身份证保持一致">
+					<div class="fl true"></div><div  class="fl false">请输入正确的中文姓名</div>
+				</div>
+				<div class="input clear">
+					<label class="fl" for="">联系电话</label><input class="fl phone" type="text"  placeholder="请如实填写，以便与您保持联系">
+					<div class="fl true" ></div><div class="fl false">电话格式输入有误</div>
+				</div>
+				<div class="input clear">
+					<label class="fl" for="">密码</label><input class="fl password" type="password" placeholder="只能为数字或大小写字母的组合">
+					<div class="fl true" ></div><div  class="fl false">密码格式输入有误</div>
+					<div class="seePw" style="right: 490px;top: 13px"></div>
+				</div>
+				<div class="input clear">
+					<label class="fl" for="">确认密码</label><input class="fl passwordAg" type="password">
+					<div class="fl true" ></div><div class="fl false">两次密码输入不一致</div>
+					<div class="seePw" style="right: 490px;top: 13px"></div>
+				</div>
+				<div class="input clear">
+					<label class="fl" for="">验证码</label>
+					<input style="width:400px;" class="fl codeNum" type="text" placeholder="右侧验证码">
+					<div class="code fl"><img class="codeNum" src="" width="100%" height="100%" alt=""></div>
+					<div class="true fl" style="margin-left: 120px"></div><div class="codefalse false fl" style="margin-left: 120px">验证码错误</div>
+				</div>
+				<div class="box clear">
+					<div class="box-btn fl cur"></div>
+					<p class="fl">我同意二宝平台的<a target="_blank" href="../personal/bzzx.html?">使用条款和隐私政策。</a></p>
+				</div>
+			</div>
+			<div class="dl" style="display: none">
+				<div class="input clear">
+					<label class="fl" for="">用户名</label><input class="fl name" type="text" placeholder="请输入电子邮箱/手机号码">
+					<div class="fl true" ></div><div class="fl false">用户名或密码错误</div>
+				</div>
+				<div class="input clear">
+					<label class="fl" for="">密码</label><input class="fl password" type="password" placeholder="数字、大小写字母">
+					<div class="fl true" ></div><div class="fl false"></div>
+					<div class="seePw" style="right: 490px;top: 13px"></div>
+				</div>
+			</div>
+			<div class="Submit">
+				<input type="Submit" class="cur" onclick='SubmitI()' value="继续汇款"/><span>忘记密码？</span>
+			</div>
+		</section>
+	</article>
+	<footer>
+		<div class="footerC clear">
+			<div class="footL fl">
+				<ul class="clear">
+					<a href="../personal/bzzx.html?"><li class="fl">帮助中心</li></a>
+					<a href="../personal/bzzx.html"><li class="fl">关于我们</li></a>
+					<a href="../personal/bzzx.html"><li class="fl"></li></a>
+				</ul>
+				<dl>
+					<dd>邮箱</dd>
+					<dt>erbao@leadingmax.com</dt>
+				</dl>
+				<dl>
+					<dd>电话</dd>
+					<dt>0755-86525927</dt>
+				</dl>
+			</div>
+			<div class="footC fl">
+				<img src="../images/smyz.png" alt="" height="60"><img src="../images/kexin.png" alt="" height="60">
+			</div>
+			<div class="footR fr">
+				<img src="../images/twoCode.png" alt="">
+				<p>二宝平台公众号</p>
+			</div>
+		</div>
+		<div class="footB">Copyright©2017 二宝平台<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;闽公网安备<span></span>35020602000154号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;闽ICP备16005894号-1 --></div>
+	</footer>
+</body>
+<script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/second.js"></script>
+<script>
+	/*支付方式选择*/
+	$('.hkwdl-zhifu .table-bot .radius-btn').click(function(){
+		var thisIndex=$('.hkwdl-zhifu .table-bot .radius-btn').index($(this));
+		$('.hkwdl-zhifu .table-bot .radius-btn').removeClass('cur');
+		$(this).addClass('cur');
+		$('.hkwdl-zhifu .table-bot li.red').removeClass('cur');
+		$('.hkwdl-zhifu .table-bot li.red:eq('+thisIndex+')').addClass('cur');
+	})
+	/*生成二维码*/
+	newTime=new Date().getTime();
+	$('img.codeNum').attr('src',ip+'/captcha/image.html?ctoken='+newTime);
+
+	var rate;/*汇率变量*/
+
+	if (sessionStorage.schoolsID) {/*判断汇款首页是否输入*/
+		if(sessionStorage.openShools==0){/*第一次进入载入*/
+			$('.schoolsAdd').hide();/*隐藏添加学校按钮*/
+			$('.hkwdl-zhifu-top .inputR').removeClass('cur');/*隐藏汇率选项*/
+	    	$('.hkwdl-auditing input').attr('readonly','').css('background','rgb(221, 223, 223)');/*学校信息禁止输入*/
+	    	var schoolsJson=JSON.parse(sessionStorage.schoolsData)/*学校信息录入*/
+	    	console.log(schoolsJson)
+	        $('.hkwdl-auditing input:eq(0)').val(schoolsJson.EnName==''?' ':schoolsJson.EnName);
+	        /*$('.hkwdl-auditing input:eq(1)').val(schoolsJson.Location==''?' ':schoolsJson.Location);
+	        $('.hkwdl-auditing input:eq(2)').val(schoolsJson.AccountName==''?' ':schoolsJson.AccountName);*/
+	        $('.hkwdl-auditing input:eq(1)').val(schoolsJson.AccountNo==''?' ':schoolsJson.AccountNo);
+	        /*$('.hkwdl-auditing input:eq(4)').val(schoolsJson.BankName==''?' ':schoolsJson.BankName);
+	        $('.hkwdl-auditing input:eq(5)').val(schoolsJson.BankAddress==''?' ':schoolsJson.BankAddress);
+	        $('.hkwdl-auditing input:eq(6)').val(schoolsJson.BIC==''?' ':schoolsJson.BIC);*/
+	        rate=schoolsJson.Rate;
+	        $('.hkwdl-zhifu-top .inputR').text(schoolsJson.UnitText);
+		}else{
+			$.ajax({/*添加学校后从新载入*/
+	            type: "GET",
+	            url:ip+'/schools/'+sessionStorage.schoolsID,
+	            //data:JSON.stringify(dataS),
+	            async: false,
+	           	// dataType: "json",
+	            //contentType:"application/json",
+	            error: function(request) {
+	                alert("Connection error");
+	            },
+	            success: function(data) {
+	            	console.log(data)
+	            	$('.schoolsAdd').hide();/*隐藏添加学校按钮*/
+	            	$('.hkwdl-auditing input').attr('readonly','').css('background','rgb(221, 223, 223)');/*学校信息禁止输入*/
+	            	$('.hkwdl-zhifu-top .inputR').addClass('cur');
+	            	$('.hkwdl-auditing input:eq(0)').val(data[0].EnName==''?' ':data[0].EnName);
+			        /*$('.hkwdl-auditing input:eq(1)').val(data[0].Location==''?' ':data[0].Location);
+			        $('.hkwdl-auditing input:eq(2)').val(data[0].AccountName==''?' ':data[0].AccountName);*/
+			        $('.hkwdl-auditing input:eq(1)').val(data[0].AccountNo==''?' ':data[0].AccountNo);
+			        /*$('.hkwdl-auditing input:eq(4)').val(data[0].BankName==''?' ':data[0].BankName);
+			        $('.hkwdl-auditing input:eq(5)').val(data[0].BankAddress==''?' ':data[0].BankAddress);
+			        $('.hkwdl-auditing input:eq(6)').val(data[0].BIC==''?' ':data[0].BIC);*/
+			        $.ajax({/*载入汇率下拉框*/
+			            type: "GET",
+			            url:ip+'/schools/getRate',
+			            //data:JSON.stringify(dataS),
+			            async: false,
+			           // dataType: "json",
+			            contentType:"application/json",
+			            error: function(request) {
+			                alert("Connection error");
+			            },
+			            success: function(data) {
+			            	console.log(data)
+			            	var content='';
+			            	for (var i = 0; i < data.length; i++) {
+			            		content+='<li onclick="markF(this)" id='+data[i].Mark+' ct='+data[i].country+'>'+data[i].Text+'</li>';
+			            	}
+			            	$('.hkwdl-zhifu-top .inputR ul').html(content);
+			            	rate=data[0].Mark;
+			            	sessionStorage.schoolsCt=data[0].country/*缓存国家*/
+			            	//sessionStorage.schoolsMy=data[0].Text/*缓存钱币单位*/
+			            }
+			        })
+	            }
+	        })
+		}
+	}else{
+	     $('.hkwdl-zhifu-top .inputR').addClass('cur');
+		 $('.hkwdl-auditing input').removeAttr('readonly').css('background','#fff');
+		 $('.schoolsAdd').show();
+		 $.ajax({/*载入汇率下拉框*/
+            type: "GET",
+            url:ip+'/schools/getRate',
+            //data:JSON.stringify(dataS),
+            async: false,
+           // dataType: "json",
+            contentType:"application/json",
+            error: function(request) {
+                alert("Connection error");
+            },
+            success: function(data) {
+            	console.log(data)
+            	var content='';
+            	for (var i = 0; i < data.length; i++) {
+            		content+='<li onclick="markF(this)" id='+data[i].Mark+' ct='+data[i].country+'>'+data[i].Text+'</li>';
+            	}
+            	$('.hkwdl-zhifu-top .inputR ul').html(content);
+            	rate=data[0].Mark;
+            	sessionStorage.schoolsCt=data[0].country/*缓存国家*/
+			    //sessionStorage.schoolsMy=data[0].Text/*缓存钱币单位*/
+            }
+        })
+	}
+	/*汇率选择*/
+	function markF(obj){
+		$('.hkwdl-zhifu-top .inputR span').text($(obj).text());
+		$('.hkwdl-zhifu-top .inputR li').removeClass('cur');
+		$(obj).addClass('cur');
+		rate=$(obj).attr('id');
+		sessionStorage.schoolsCt=$(obj).attr('ct');/*缓存国家*/
+		$('.hkwdl-zhifu-top input').val(0);/*input框单位换算*/
+		//sessionStorage.schoolsMy=$(obj).text()/*缓存钱币单位*/
+		//console.log(sessionStorage.schoolsCt);
+	}
+	/*  添加学校 */
+	$('.schoolsAdd').click(function(){
+		$('.hkwdl-auditing span.false').hide();
+		var auditingNum=0;/*添加学校输入框验证*/
+		for (var i = 0; i < $('.hkwdl-auditing input').length ; i++) {
+			if ($('.hkwdl-auditing input').eq(i).val()=='') {auditingNum++}
+		}
+		if (auditingNum==0&&!isNaN($('.hkwdl-auditing input.accountNo').val())) {
+			var dataS={
+				/*accountName:$('.accountName').val(),*/
+				accountNo:$('.accountNo').val(),
+				enName:$('.enName').val()
+				/*location:$('.location').val(),
+				bankName:$('.bankName').val(),
+				bankAddress:$('.bankAddress').val(),
+				bic:$('.bic').val()*/
+			}
+			//console.log(dataS)
+			$.ajax({
+	            type: "POST",
+	            url:ip+'/schools/add',
+	            data:JSON.stringify(dataS),
+	            async: false,
+	            dataType: "json",
+	            contentType:"application/json",
+	            error: function(request) {
+	                alert("Connection error");
+	            },
+	            success: function(data) {
+	            	console.log(data)
+	            	sessionStorage.openShools=1;
+	            	$('.hkwdl .hkwdl-auditing span.schoolsAddtrue').show();
+	            	$('.schoolsAdd').hide();
+	            	sessionStorage.schoolsID=data;
+	            }
+	        })
+		}else{
+			for (var i = 0; i < $('.hkwdl-auditing input').length ; i++) {
+				if ($('.hkwdl-auditing input').eq(i).val()=='') {
+					$('.hkwdl-auditing input').eq(i).next().next().show();
+				}
+			}
+		}
+	})
+	
+	/*汇率计算*/
+	$('.hkwdl-zhifu-top input').keyup(function(){
+		if ($(this).val().indexOf('.')==-1) {/*判断整数位不能超过6位*/
+			if ($(this).val().length>6) {
+				$(this).val($(this).val().substring(0,6));
+			}
+		}else{
+			if ($(this).val().split('.')[0].length>6) {
+				$(this).val($(this).val().split('.')[0].substring(0,6)+'.'+$(this).val().split('.')[1])
+			};
+		}
+		if (!isNaN($(this).val())&&$(this).val()!='') {/*汇率计算*/
+			/*当日到账*/
+			if (($(this).val()*(rate/100))*0.004<360) {
+				$('.hkwdl-zhifu .table-bot li.red:eq(0)').text((($(this).val()*(rate/100))+360+100).toFixed(2));
+			}else{
+				$('.hkwdl-zhifu .table-bot li.red:eq(0)').text((($(this).val()*(rate/100))+(($(this).val()*(rate/100))*0.004)+100).toFixed(2));
+			}
+			/*普通到账*/
+			if(($(this).val()*(rate/100))*0.004<360) {
+				$('.hkwdl-zhifu .table-bot li.red:eq(1)').text((($(this).val()*(rate/100))+360+80).toFixed(2));
+			}else{
+				$('.hkwdl-zhifu .table-bot li.red:eq(1)').text((($(this).val()*(rate/100))+(($(this).val()*(rate/100))*0.004)+80).toFixed(2));
+			}
+		}else{
+			$('.hkwdl-zhifu .table-bot li.red:eq(0),.hkwdl-zhifu .table-bot li.red:eq(1)').text('0.00');
+		}
+	})
+
+
+	$(function () {
+        $.noConflict()
+		var startDate;
+		var curDate = new Date();
+        if(curDate.getDay() == 3 ||curDate.getDay() == 4 || curDate.getDay() == 5){
+            //当天为周三或者周四或者周五
+			startDate = new Date(curDate.setDate(curDate.getDate()+5))
+		}else if(curDate.getDay() == 6){
+            //当天为周三
+            startDate = new Date(curDate.setDate(curDate.getDate()+4))
+		}else{
+            startDate = new Date(curDate.setDate(curDate.getDate()+3))
+		}
+
+        $('#datetimepicker').datetimepicker({
+            language: 'zh-CN',//显示中文
+            format: 'yyyy-mm-dd',//显示格式
+            minView: "month",//设置只显示到月份
+            initialDate: new Date(),//初始化当前日期
+            autoclose: true,//选中自动关闭
+            todayBtn: false,//显示今日按钮
+            startDate:startDate,
+            daysOfWeekDisabled: [0,6]
+        })
+    })
+
+</script>
+</html>

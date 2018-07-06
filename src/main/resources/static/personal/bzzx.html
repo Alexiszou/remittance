@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>二宝平台-帮助中心</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/second.css">
+	<style type="text/css">
+		.contactUs{
+			border: 1px solid  #dadada;
+			border-radius: 10px;
+			width: 100%;
+			text-align: left;
+			font: 16px/39px "微软雅黑";
+			text-indent: 30px;
+			padding: 20px 0;
+		}
+		.contactUs input{
+			border: 1px solid  #dadada;
+			border-radius: 5px;
+			padding: 5px;
+			width: 40%;
+			font: 16px "微软雅黑";
+			margin-top: 10px;
+		}
+		.contactUs textarea{
+			border: 1px solid  #dadada;
+			border-radius: 5px;
+			padding: 5px;
+			font: 16px "微软雅黑";
+			width: 80%;
+			height: 200px;
+			margin-top: 0px;
+			margin-left: 25px;
+		}
+		.submitFeedback{
+			padding: 10px 50px;
+			background: #8e98b1;
+			border: 1px solid #848fab;
+			border-radius:10px;
+			cursor: pointer;
+			color: #fff;
+
+		}
+		.submitFeedback:hover{
+			background: #a7b2cd;
+		}
+		.submitFeedback:active{
+			background: #7a859e;
+		}
+	</style>
+
+	<script type="text/javascript">
+		function submitFeedback() {
+			//console.log("test");
+			if(!$("#name").val().trim()){
+                $("#name").val("");
+			    alert("请输入姓名");
+			    return;
+			}
+            if(!$("#email").val().trim()){
+                $("#email").val("");
+                alert("请输入邮箱");
+                return;
+            }
+            if(!$("#tel").val().trim()){
+                $("#tel").val("");
+                alert("请输入电话");
+                return;
+            }
+            if(!$("#content").val().trim()){
+                $("#content").val("");
+                alert("请输入留言");
+                return;
+            }
+            console.log("serialize:"+$('#feedbackForm').serialize());
+            console.log("json:"+JSON.stringify($('#feedbackForm').serialize()));
+            $.ajax({
+                //几个参数需要注意一下
+                type: "POST",//方法类型
+                dataType: "json",//预期服务器返回的数据类型
+                url: ip+"/users/feedback",//url
+                data: $('#feedbackForm').serialize(),
+                success: function (result) {
+                    console.log(result);//打印服务端返回的数据(调试用)
+                    if (result == 1) {
+                        alert("提交成功");
+                        $("#content").val("");
+                        //window.location.href = "add_room.html?apartmentId=" + result.data.id;
+
+                    } else {
+                        alert("提交失败");
+                    }
+
+                },
+                error: function (result) {
+                    //console.log(result);
+                    alert("网络异常！");
+                }
+            });
+        }
+	</script>
+</head>
+<body>
+<div class="shadow-login">
+		<div class="login">
+			<div class="close"></div>
+			<h1>登录二宝平台</h1>
+			<div class="input">
+				<label class="fl" for="">用户名</label>
+				<input class="name fl" type="text" placeholder="请输入电子邮箱/手机号码">
+				<div class="true" ></div><div class="false">用户名错误</div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">密码</label>
+				<input class="fl password" type="password" placeholder="">
+				<div class="true"></div><div class="false">用户名或密码错误</div>
+			</div>
+			<div class="box clear">
+				<div class="box-btn fl cur"></div>
+				<p class="fl">自动登录<a href="javascript:void(0)">忘记密码？</a></p>
+			</div>
+			<div class="header-login-btn clear">
+				<div class="header-login-btnL fl">立即登录</div>
+				<div class="header-login-btnR fr">新用户注册</div>
+			</div>
+		</div>
+		<div class="RegisteredIn">
+			<div class="close"></div>
+			<h1>欢迎注册二宝平台</h1>
+			<div class="input">
+				<label class="fl" for="">电子邮箱</label>
+				<input class="fl email" type="text" placeholder="请填写正确的邮箱地址">
+				<div class="true" ></div><div class="false">邮箱输入错误</div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">姓名</label>
+				<input class="fl name" type="text" placeholder="请输入中文姓名">
+				<div class="true" ></div><div class="false">请输入正确的中文姓名</div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">联系电话</label>
+				<input class="fl phone" type="text" placeholder="请输入手机号码">
+				<div class="true" ></div><div class="false">电话输入错误</div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">密码</label>
+				<input class="fl password" type="password" placeholder="请设置6-20位登录密码">
+				<div class="true" ></div><div  class="false">密码格式不对</div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">确认密码</label>
+				<input class="fl passwordAg" type="password" placeholder="请再次输入新密码">
+				<div class="true" ></div><div class="false">与密码不一致</div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">验证码</label>
+				<input class="fl codeNum" type="text" placeholder="右侧验证码">
+				<div class="code fr"><img class="codeNum" src="" width="100%" height="100%" alt=""></div>
+				<div class="true"></div><div class="false" >验证码错误</div>
+			</div>
+			<div class="box clear">
+				<div class="box-btn fl cur"></div>
+				<p class="fl">我同意二宝平台的<span>使用条款和隐私政策。</span></p>
+			</div>
+			<div class="header-RegisteredIn-btn">注册账户</div>
+			<div class="RegisteredIn-btn">已有账户？立即登录</div>
+		</div>
+		<div class="fgpassW">
+			<div class="close"></div>
+			<h1>忘记密码</h1>
+			<div class="input">
+				<label class="fl" for="">用户名</label>
+				<input class="fl name" type="text" placeholder="请输入电子邮箱/手机号码">
+				<div class="true" ></div><div class="false">该用户不存在</div>
+			</div>
+			<div class="input">
+				<label class="fl" for="">新密码</label>
+				<input class="fl password" type="password" placeholder="请设置6-20位登录密码">
+				<div class="true" ></div><div class="false">格式输入错误</div>
+			</div>
+			<div class="input codeSix">
+				<label class="fl" for="">验证码</label>
+				<input class="fl checkCode" type="text" placeholder="6位数字，10分钟内有效">
+				<div class="true" ></div><div class="false">验证码错误</div>
+				<div class="codeBtn">获取</div>
+			</div>
+			<div class="header-fgpassW-btn">修改密码</div>
+		</div>
+	</div>
+	<header>
+		<div class="headerC clear">
+			<a class="headerLogo" href="../index.html"><img  src="../images/logo.jpg"/></a>
+			<nav class="fl clear flex">
+				<a href="../index.html"><div class="fl">首页</div></a>
+				<a href="../remit/hksy.html"><div class="fl">留学汇款</div></a>
+				<a href="bzzx.html?"><div class="fl">帮助中心</div></a>
+				<a href="wddd.html"><div class="fl active">我的订单</div></a>
+			</nav>
+			<ul class="header-right fr">
+				<li class="fl phone">
+					<div class="img"></div>
+					<div class="phoneHover">0755-86525927</div>
+				客服电话</li>
+				<li class="fl weixin">
+					<div class="img"></div>
+					<div class="codeHover">
+						<img src="../images/twoCode.png" alt="">
+						<p>二宝公众号</p>
+					</div>
+				微信咨询</li>
+				<li class="fl">
+					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3264465415&amp;site=qq&amp;menu=yes" style="padding: 0;margin: 0 auto;display: block;">
+                            <div class="img"></div>
+                        </a>
+				QQ咨询</li>
+				<!-- <li class="fl emil">
+					<div class="img"></div>
+				留言建议</li> -->
+			</ul>
+			<div class="header-login fr clear">
+				<div class="login-left fl">登录</div>
+				<div class="login-right fl">注册</div>
+			</div>
+			<div class="header-user fr clear">
+				<div class="header-userId fr"></div>
+				<div class="header-userImg fr"></div>
+				<ul>
+					<li class="wddd"><div class="radius"></div>汇款订单</li>
+					<li class="grzl"><div class="radius"></div>个人中心</li>
+					<li class="out"><div class="radius"></div>安全退出</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<article class="bzzx">
+		<img src="../images/second/bzzxbg.jpg" alt="" width="100%" style="min-width: 1200px">
+		<section class="container bzzxC clear">
+			<div class="bzzxL fl">
+				<ul>
+					<li>关于我们</li>
+					<li>留学汇款帮助</li>
+					<!-- <li>用户协议</li> -->
+					<li>支付流程帮助</li>
+					<li>联系我们</li>
+				</ul>
+				<!-- <p>免费电话：400-800-2423<br>时间：8:00-20:00</p> -->
+			</div>
+			<div class="bzzxR fr">
+				<div class="bzzxR1"><div class="title">关于我们</div>
+				<p>
+						二宝平台是一家全球跨境教育金融服务供应商，其总部设在英国伦敦金融城。一站式互联网金融服务，安全、方便、快捷，是多家中国第三方支付机构的海外合作方，同数家全球领先的银行机构及支付渠道建立了战略合作关系。
+				</p></div>
+				<div class="bzzxR2" style="display: none;">
+					<div class="title">留学汇款帮助</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">1. 为什么用二宝平台？</div>
+					</div>
+					<div class="bzzxR-text">
+						通过二宝平台平台，资金被妥善保管于人民银行监管下的银行机构，由系统全程跟踪支付进度。此外，通过系统的加密技术，保障资金与相关数据的隐私及安全。<br>
+						二宝提供包括国内银行间人民币转账、中国银联在线支付、网上银行等多种付款途径。<br>
+						通过二宝平台可以随时通过平台查看支付进程；付款的每个环节都会实时的通知您。
+					</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">2. 在平台上找不到支付院校怎么办？</div>
+					</div>
+					<div class="bzzxR-text">
+						支付首页的院校中包含学校名称及汇款账号等，如果您的海外学校不在列表中，您      可以随时微信客服，核对学校名称，收款账号等具体信息。
+					</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">3. 什么是汇款凭证？</div>
+					</div>
+					<div class="bzzxR-text">
+						有学生个人信息及费用明细的学费缴费通知单、学生录取通知书（内容包含押金及学费信息）、留美学生的I20表等。
+					</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">4. 二宝平台的外汇汇率？</div>
+					</div>
+					<div class="bzzxR-text">
+						我们的外汇汇率是每天人民币离岸的实时汇率。
+					</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">5. 付款人和学生可以是不同人嘛？</div>
+					</div>
+					<div class="bzzxR-text">
+						不管您是学生、家长、亲朋都可以帮忙支付学费。
+					</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">6. 学校什么时间可以收到你的支付？</div>
+					</div>
+					<div class="bzzxR-text">
+						二宝提供当天到账服务，如果选择当天到账，在正常的工作日下午3点前提交，您的支付都会在当天到达海外学校。
+					</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">7. 为什么跳转不到支付页面？</div>
+					</div>
+					<div class="bzzxR-text">
+						通常有几种原因会导致类似问题：1. 浏览器问题；2. 个别银行IE不支持等，如遇到此类问题，可直接微信二宝。
+					</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">8. 支付不成功是怎么回事？</div>
+					</div>
+					<div class="bzzxR-text">
+						通常有几种原因会导致类似问题：1. 您的银行卡支付限额（可用网上银行操作，调整额度）；2. 苹果系统不支持个别银行的控件，请选择Windows系统完成操作；3. 网银的控件不是最新版本，如遇到此类问题，可直接微信二宝。
+					</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">9. 怎么查询支付进度？</div>
+					</div>
+					<div class="bzzxR-text">
+						在支付的每个环节，二宝都会通知您。如果您想自己查询，可以在“我的订单”中，查找相关信息。
+					</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">10. 为什么我选择当天到账，学校账号还没查收到？</div>
+					</div>
+					<div class="bzzxR-text">
+						海外学校的银行账户，是每天固定时间更新的。 每个学校的银行账户更新时间并不相同，所以会导致学校账户中没有当天显示，其实学费已经到达学校账户的银行户头了。
+					</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">11. 支付信息出错了怎么办？</div>
+					</div>
+					<div class="bzzxR-text">
+						如果提交订单后，发现支付的信息有出入，此时不用紧张，可以微信联系二宝。
+					</div>
+			</div>
+				<div class="bzzxR3" style="display: none">
+					<div class="title">支付流程帮助</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">1. 打开二宝（www.erbaopay.com） ，点击“开始汇款“</div>
+
+					</div>
+					<div class="bzzxR-text">
+						<img src="../images/second/help1.png">
+					</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">2. 输入院校信息即可快速搜索，填入学校后，点击“开始汇款”
+						</div>
+					</div>
+					<div class="bzzxR-text">
+						<img src="../images/second/help2.png">
+					</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">3. 核对学校的帐户名和帐号，确保一致后，输入汇款金额，系统将自动计算出您需要支付的人民币金额
+						</div>
+					</div>
+					<div class="bzzxR-text">
+						<img src="../images/second/help3.png">
+					</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">4. 填写留学生信息，上传留学凭证（按照外管局备案要求，我们需要您上传留学缴费证明，例如：学生<br>要缴费金额的截图、或I-20表的截图、或录取通知书截图等）
+						</div>
+					</div>
+					<div class="bzzxR-text" style="margin-top: 20px">
+						<img src="../images/second/help4.png">
+					</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">5. 创建留学生账户，包括电子邮箱、姓名、密码、联系电话与验证码。点击“继续汇款”
+						</div>
+					</div>
+					<div class="bzzxR-text">
+						<img src="../images/second/help5.png">
+					</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">6. 订单确认提交后，进入网银支付进行付款；支付完成后，您将会通过手机和邮件收到支付成功的通知
+						</div>
+					</div>
+					<div class="bzzxR-text">
+						<img src="../images/second/help6.png">
+					</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">7. 进入银联支付页面，选择支付的付款途径进行付款
+						</div>
+					</div>
+					<div class="bzzxR-text">
+						<img src="../images/second/help7.png">
+					</div>
+					<div class="bzzxR-title clear">
+						<div class="btn fl"></div>
+						<div class="text fl">8. 订单支付成功后，您可在首页中“我的订单”里面查看订单的实时进度
+						</div>
+					</div>
+					<div class="bzzxR-text">
+						<img src="../images/second/help8.png">
+					</div>
+				</div>
+
+				<div class="bzzxR4" style="display: none">
+					<div class="title">联系我们</div>
+					<form id="feedbackForm" class="contactUs">
+						<div><span>姓名：</span><input id="name" name="name"/></div>
+						<div><span>邮箱：</span><input id="email" name="email"/></div>
+						<div><span>电话：</span><input id="tel" name="tel" type="tel"/></div>
+						<div><span>留言：</span></div>
+						<textarea id="content" name="content"></textarea>
+						<div><a class="submitFeedback" onclick="submitFeedback()">提交</a></div>
+					</form>
+				</div>
+			</div>
+		</section>
+	</article>
+	<footer>
+		<div class="footerC clear">
+			<div class="footL fl">
+				<ul class="clear">
+					<a href="bzzx.html?"><li class="fl">帮助中心</li></a>
+					<a href="bzzx.html"><li class="fl">关于我们</li></a>
+					<a href="bzzx.html"><li class="fl"></li></a>
+				</ul>
+				<dl>
+					<dd>邮箱</dd>
+					<dt>erbao@leadingmax.com</dt>
+				</dl>
+				<dl>
+					<dd>电话</dd>
+					<dt>0755-86525927</dt>
+				</dl>	
+			</div>
+			<div class="footC fl">
+				<img src="../images/smyz.png" alt="" height="60"><img src="../images/kexin.png" alt="" height="60">
+			</div>
+			<div class="footR fr">
+				<img src="../images/twoCode.png" alt="">
+				<p>二宝平台公众号</p>
+			</div>
+		</div>
+		<div class="footB">Copyright©2017 二宝平台<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;闽公网安备<span></span>35020602000154号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;闽ICP备16005894号-1 --></div>
+	</footer>
+</body>
+<script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/second.js"></script>
+<script>
+	$('.bzzxL ul li').click(function(){
+		if ($(this).index()==0) {
+			$('.bzzxR1').show();
+			$('.bzzxR2').hide();
+			$('.bzzxR3').hide();
+			$('.bzzxR4').hide();
+		}else if ($(this).index()==1) {
+			$('.bzzxR2').show();
+			$('.bzzxR1').hide();
+			$('.bzzxR3').hide();
+			$('.bzzxR4').hide();
+		}else if($(this).index()==2){
+            $('.bzzxR3').show();
+            $('.bzzxR1').hide();
+            $('.bzzxR2').hide();
+            $('.bzzxR4').hide();
+		}else{
+            $('.bzzxR4').show();
+            $('.bzzxR1').hide();
+            $('.bzzxR2').hide();
+            $('.bzzxR3').hide();
+		}
+	})
+	/*判断内容*/
+	if(window.location.href.indexOf('?')!=-1){
+		$('.bzzxL ul li:eq(1)').click();
+	}
+</script>
+</html>

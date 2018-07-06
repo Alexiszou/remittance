@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>二宝平台-确认付款信息</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/second.css">
+</head>
+<body>
+	<header>
+		<div class="headerC clear">
+			<a class="headerLogo" href="../index.html"><img  src="../images/logo.jpg"/></a>
+			<nav class="fl clear">
+				<a href="../index.html"><div class="fl">首页</div></a>
+				<a href="hksy.html"><div class="fl cur">留学汇款</div></a>
+				<a href="../personal/bzzx.html?"><div class="fl">帮助中心</div></a>
+				<a href="../personal/wddd.html"><div class="fl active">我的订单</div></a>
+			</nav>
+			<ul class="header-right fr">
+				<li class="fl phone">
+					<div class="img"></div>
+					<div class="phoneHover">0755-86525927</div>
+				客服电话</li>
+				<li class="fl weixin">
+					<div class="img"></div>
+					<div class="codeHover">
+						<img src="../images/twoCode.png" alt="">
+						<p>二宝公众号</p>
+					</div>
+				微信咨询</li>
+				<li class="fl">
+					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3264465415&amp;site=qq&amp;menu=yes" style="padding: 0;margin: 0 auto;display: block;">
+                            <div class="img"></div>
+                        </a>
+				QQ咨询</li>
+				<!-- <li class="fl emil">
+					<div class="img"></div>
+				留言建议</li> -->
+			</ul>
+			<div class="header-login fr clear">
+				<div class="login-left fl">登录</div>
+				<div class="login-right fl">注册</div>
+			</div>
+			<div class="header-user fr clear">
+				<div class="header-userId fr"></div>
+				<div class="header-userImg fr"></div>
+				<ul>
+					<li class="wddd"><div class="radius"></div>汇款订单</li>
+					<li class="grzl"><div class="radius"></div>个人中心</li>
+					<li class="out"><div class="radius"></div>安全退出</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<article class="qehkxx">
+		<p class="qehkxx-p">
+			<strong>付款信息</strong><br>
+			您将通过网银支付： <span>0.00</span>人民币，<spen></spen>将足额收到： <span>0.00</span><br>
+			<strong>二宝平台将赠送您账户安全险，由前海财险全程为您的支付安全保驾护航</strong>
+		</p>
+		<!-- 收款账户信息 -->
+		<section class="container qehkxx-xinxi">
+			<div class="title">收款账户信息</div>
+			<ul>
+				<li>收款账户　　　　　　　<span></span></li>
+				<li>收款账号　　　　　　　<span></span></li>
+				<li>汇款金额　　　　　　　<span></span></li>
+				<li>汇款附言　　　　　　　<span></span></li>
+				<li>银行国际代码　　　　　<span></span></li>
+			</ul>
+		</section>
+		<!-- 留学生信息 -->
+		<section class="container qehkxx-xinxi">
+			<div class="title">留学生信息</div>
+			<ul>
+				<li>姓名中文　　　　　　　<span></span></li>
+				<li>姓名拼音　　　　　　　<span></span></li>
+				<li>身份证号　　　　　　　<span></span></li>
+			</ul>
+		</section>
+		<!-- 上传资料 -->
+		<section class="container qehkxx-xinxi">
+			<div class="title">上传资料</div>
+			<ul>
+				<li><!-- 身份证个人照片页、护照、 -->缴费证明　　　<span></span></li>
+
+			</ul>
+		</section>
+		<div class="qehkxx-btn clear">
+			<!-- <a href="ddfk.html"><div class="qehkxx-btnL fl">确定</div></a> -->
+			<div class="qehkxx-btnL fl">确定</div>
+			<a href="hkdl.html"><div class="qehkxx-btnR fr">返回修改</div></a>
+		</div>
+	</article>
+	<footer>
+		<div class="footerC clear">
+			<div class="footL fl">
+				<ul class="clear">
+					<a href="../personal/bzzx.html?"><li class="fl">帮助中心</li></a>
+					<a href="../personal/bzzx.html"><li class="fl">关于我们</li></a>
+					<a href="../personal/bzzx.html"><li class="fl"></li></a>
+				</ul>
+				<dl>
+					<dd>邮箱</dd>
+					<dt>erbao@leadingmax.com</dt>
+				</dl>
+				<dl>
+					<dd>电话</dd>
+					<dt>0755-86525927</dt>
+				</dl>
+			</div>
+			<div class="footC fl">
+				<img src="../images/smyz.png" alt="" height="60"><img src="../images/kexin.png" alt="" height="60">
+			</div>
+			<div class="footR fr">
+				<img src="../images/twoCode.png" alt="">
+				<p>二宝平台公众号</p>
+			</div>
+		</div>
+		<div class="footB">Copyright©2017 二宝平台<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;闽公网安备<span></span>35020602000154号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;闽ICP备16005894号-1 --></div>
+	</footer>
+</body>
+<script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/second.js"></script>
+<script>
+	if(sessionStorage.openWddd==0){
+		$('.qehkxx-btnR').show();
+		/*确认汇款信息*/
+		/*学生信息*/
+		$.ajax({
+            type: "GET",
+            url:ip+'/students/getInfo/'+sessionStorage.studentsId,
+            //data:JSON.stringify(dataS),
+            contentType: "application/json",
+            async: false,
+            dataType: "json",
+            error: function(request) {
+                alert("Connection error");
+            },
+            success: function(data) {
+            	console.log(data);
+                $('.qehkxx-xinxi li:eq(3) span').text(data[0].Remarks);
+                $('.qehkxx-xinxi li:eq(5) span').text(data[0].ChName);
+                $('.qehkxx-xinxi li:eq(6) span').text(data[0].pyName);
+                $('.qehkxx-xinxi li:eq(7) span').text(data[0].CardNo);
+                var sczl=data[0].VoucherUrl.split(',');
+                for (var i = 0; i < sczl.length; i++) {
+                	sczl[i]=sczl[i].substring(sczl[i].lastIndexOf('/')+1);
+                }
+                $('.qehkxx-xinxi li:eq(8) span').text(sczl[0]+','+sczl[1]+','+sczl[2]+','+sczl[3]);
+            }
+        })
+        /*学校信息*/
+        $.ajax({
+            type: "GET",
+            url:ip+'/schools/'+sessionStorage.schoolsID,
+            //data:JSON.stringify(dataS),
+            async: false,
+            dataType: "json",
+            error: function(request) {
+                alert("Connection error");
+            },
+            success: function(data) {
+            	console.log(data)
+            	$('.qehkxx-xinxi li:eq(0) span').text(data[0].AccountName);
+            	$('.qehkxx-xinxi li:eq(1) span').text(data[0].AccountNo);
+            	$('.qehkxx-xinxi li:eq(4) span').text(data[0].BIC);
+            	var UnitText=data[0].UnitText;
+            	var EnName=data[0].EnName;
+            	/*支付信息*/
+            	$.ajax({
+		            type: "GET",
+		            url:ip+'/pays/'+sessionStorage.paysId,
+		            //data:JSON.stringify(dataS),
+		            contentType: "application/json",
+		            async: false,
+		            dataType: "json",
+		            error: function(request) {
+		                alert("Connection error");
+		            },
+		            success: function(data) {
+		            	console.log(data)
+						$('.qehkxx-p').html('<strong>付款信息</strong><br>您将通过网银支付： <span>'+data[0].PriceCN+'</span>人民币，<span>'+EnName+'</span>将足额收到： <span>'+data[0].PriceEN+'</span>'+UnitText+
+                            '<br><strong>二宝平台将赠送您账户安全险，由前海财险全程为您的支付安全保驾护航</strong>');
+		            	$('.qehkxx-xinxi li:eq(2) span').text(data[0].PriceCN+'人民币');
+		            }
+		        })
+            }
+        })
+        $('.qehkxx-btnL').one("click",function(){
+      		$('.qehkxx-btnL').css({'background':'#ccc','border':'1px solid #ccc','box-shadow':'0 0','cursor':'auto'})
+        	if(sessionStorage.openOrders==0){/*判断是否需要新建订单*/
+	        	var dataS={
+	        		userId:sessionStorage.id,
+	        		schoolId:sessionStorage.schoolsID,
+	        		studentId:sessionStorage.studentsId,
+	        		payId:sessionStorage.paysId,
+	        		orderSeq:sessionStorage.orderSeq
+	        	}
+	        	$.ajax({
+		            type: "POST",
+		            url:ip+'/orders/add',
+		            data:JSON.stringify(dataS),
+		            contentType: "application/json",
+		            async: false,
+		            dataType: "json",
+		            error: function(request) {
+		                alert("Connection error");
+		            },
+		            success: function(data) {
+		           		if (data[0].result<1) {
+		            		alert('提交失败!')
+		            	}else{
+		            		sessionStorage.ordersId=data[0].result/*记录订单ID*/
+		           			window.location.href='ddfk.html';
+		            	}
+		            }
+		        })
+		    }else{
+		    	window.location.href='ddfk.html';
+		    }
+        });
+    }else{
+    	$('.qehkxx-btnR').hide();
+    	$('.qehkxx-btnL').click(function(){
+    		window.location.href='../personal/wddd.html'
+    	});
+    	$.ajax({
+            type: "GET",
+            url:ip+'/orders/getDetail/'+sessionStorage.ordersId,
+            //data:JSON.stringify(dataS),
+            //contentType: "application/json",
+            async: false,
+            dataType: "json",
+            error: function(request) {
+                alert("Connection error");
+            },
+            success: function(data) {
+            	console.log(data)
+            	$('.qehkxx-p').html('<strong>付款信息</strong><br>您将通过网银支付： <span>'+data[0].PriceCN+'</span>人民币'+data[0].EnName+'将足额收到： <span>'+data[0].PriceEN+'</span>'+data[0].UnitText
+				+'<br><strong>二宝平台将赠送您账户安全险，由前海财险全程为您的支付安全保驾护航</strong>');
+            	$('.qehkxx-xinxi li:eq(0) span').text(data[0].AccountName);
+            	$('.qehkxx-xinxi li:eq(1) span').text(data[0].AccountNo);
+		        $('.qehkxx-xinxi li:eq(2) span').text(data[0].PriceCN+'人民币');
+            	$('.qehkxx-xinxi li:eq(3) span').text(data[0].Remarks);
+                $('.qehkxx-xinxi li:eq(4) span').text(data[0].BIC);
+
+                $('.qehkxx-xinxi li:eq(5) span').text(data[0].ChName);
+                $('.qehkxx-xinxi li:eq(6) span').text(data[0].PyName);
+                $('.qehkxx-xinxi li:eq(7) span').text(data[0].CardNo);
+                var sczl=data[0].VoucherUrl.split(',');
+                for (var i = 0; i < sczl.length; i++) {
+                	sczl[i]=sczl[i].substring(sczl[i].lastIndexOf('/')+1);
+                }
+                $('.qehkxx-xinxi li:eq(8) span').text(sczl[0]+','+sczl[1]+','+sczl[2]+','+sczl[3]);
+            }	
+        })
+    }
+</script>
+</html>

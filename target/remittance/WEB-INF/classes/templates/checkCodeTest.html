@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!-- <meta http-equiv="Access-Control-Allow-Origin" content="*">   AJAX 跨域设置 -->
+<meta charset="UTF-8">
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+<title></title>
+</head>
+
+<body>
+	<a href="#">111</a>
+	<a href="#">222</a>
+	<a href="#">333</a>
+	<a href="#">444</a>
+	<a href="#">555</a>
+	<a onclick="aj()" href="#">121212</a>
+	<form action="/upload" method="post" enctype="multipart/form-data">
+		选择文件:<input type="file" name="file1" > <input
+			type="submit" value="上传">
+	</form>
+
+
+	<div>
+		<input type="text" name="captcha" style="width: 195px;"
+			placeholder="验证码"> <img alt="测试验证" id="caImg">
+	</div>
+
+</body>
+<script>
+	$('#caImg').click(function() {
+		var ctoken = new Date().getTime();
+		console.log(ctoken);
+		$(this).attr("src", "/captcha/image.html?ctoken=" + ctoken);
+		console.log($(this).attr("src"))
+	})
+
+	function aj() {
+		var params = '{"email":"zhangyn@12.com","telphone":"16786252421","password":"Aa1273"}';
+		url = '/users/register';
+		$.ajax({
+			url : url,
+			type : 'POST',
+			data : params,
+			contentType : 'application/json',
+			success : function(data) {
+				alert(JSON.stringify(data));
+				if (data.code == 4000) {
+					console.log(data);
+				}
+			}
+		})
+	}
+
+	//var elems = document.getElementsByTagName('a');
+	//for(var i = 0; i < elems.length; i++) {
+	//  elems[i].addEventListener('click', function(e) {
+	//      e.preventDefault();
+	//      alert('I am link #' + i);
+	//  }, 'false');
+	//}
+</script>
+</html>
