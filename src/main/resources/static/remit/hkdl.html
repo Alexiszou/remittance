@@ -8,6 +8,13 @@
 	<!-- <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" /> -->
 	<link rel="stylesheet" type="text/css" href="../css/zzsc.css">
 	<link rel="stylesheet" href="../css/ssi-uploader.css"/>
+	<link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+	<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../vendors/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap-datetimepicker.zh-CN.js"></script>
+
 </head>
 <body>
 	<header>
@@ -88,7 +95,7 @@
 			<p>请您仔细核对以上信息，确保无误即可。</p><div class="fl schoolsAdd">确认学校添加</div><span class="schoolsAddtrue fl">添加成功</span><span class="schoolsAddfalse fl">添加失败</span>
 		</div>
 		<!-- 支付信息 -->
-		<section class="container hkdl-zhifu" id="hkdl-zhifu">
+		<!--<section class="container hkdl-zhifu" id="hkdl-zhifu">
 			<div class="title">支付信息</div>
 			<div class="hkwdl-zhifu-top clear">
 				<label class="fl" for="">汇款金额</label>
@@ -129,6 +136,53 @@
 						<p>此价格已包含所有的<span>手续费</span>、电报费及<span>中转行清算费</span>，保证<span>足额</span>到账。</p>
 						<p>支持国内所有主流银行的银行卡，付款金额上限与银行及客户类型有关。<a href="../personal/bzzx.html?" class="line">银行限额表</a></p>
 						<p>上述 T 指工作日，如遇周末及法定节假日，到账时间顺延。</p>
+					</div>
+				</div>
+			</div>
+		</section>-->
+		<!-- 支付信息 -->
+		<section class="container hkwdl-zhifu">
+			<div class="title">支付信息</div>
+			<div class="hkwdl-zhifu-top clear">
+				<label class="fl" for="">汇款金额</label>
+				<div class="input clear">
+					<div class="inputL fl"></div>
+					<input type="text" class="fl" placeholder="0.00">
+					<div class="inputR fl"><span>英镑</span>
+						<ul>
+						</ul>
+					</div>
+				</div>
+				<div class="table">
+					<ul class="flex table-top">
+						<li class="flex3">付款方式</li>
+						<li class="flex2">应付人民币</li>
+						<li class="flex2">到账时间</li>
+						<li class="flex4">预约到账日期</li>
+					</ul>
+					<ul class="flex table-bot">
+						<li class="flex3"><div class="radius-btn cur"></div>网银支付(T+0预约)</li>
+						<li class="flex2 red cur">0.00</li>
+						<li class="flex2">按指定时间到账</li>
+						<li class="flex4" >
+							<!--<div  class="input-append date" id="datetimepicker"  data-date-format="yyyy-mm-dd">
+								<input style="text-align: center;width: 70%" class="red" size="16" type="text" value="点击这里选择日期" readonly>
+								<span class="add-on"><i class="icon-th"></i></span>
+							</div>-->
+							<input id="datetimepicker"  style="text-align: center;width: 70%;margin:25px auto" class="form-control red"  value="点击这里选择日期" readonly>
+						</li>
+					</ul>
+					<ul class="flex table-bot">
+						<li class="flex3"><div class="radius-btn"></div>网银支付(T+2)</li>
+						<li class="flex2 red">0.00</li>
+						<li class="flex2">T+2</li>
+						<li class="flex4"></li>
+					</ul>
+					<div class="table-text table-bot" style="padding:20px 0px">
+						<p>此价格已包含所有的<span>手续费</span>、电报费及<span>中转行清算费</span>，保证<span>足额</span>到账。</p>
+						<p>支持国内所有主流银行的银行卡，付款金额上限与银行及客户类型有关。<a href="../personal/bzzx.html?" class="line" hidden>银行限额表</a></p>
+						<p>上述 T 指工作日，如遇周末及法定节假日，到账时间顺延。</p>
+						<p>T+0预约会按照您指定的日期到账。</p>
 					</div>
 				</div>
 			</div>
@@ -416,18 +470,18 @@
 			};
 		}
 		if (!isNaN($(this).val())&&$(this).val()!='') {
-			/*当日到账*/
-			if (($(this).val()*(rate/100))*0.0075<300) {
-				$('.hkdl-zhifu .table-bot li.red:eq(0)').text((($(this).val()*(rate/100))+300).toFixed(2));
-			}else{
-				$('.hkdl-zhifu .table-bot li.red:eq(0)').text((($(this).val()*(rate/100))+(($(this).val()*(rate/100))*0.0075)).toFixed(2));
-			}
-			/*普通到账*/
-			if(($(this).val()*(rate/100))*0.0065<300) {
-				$('.hkdl-zhifu .table-bot li.red:eq(1)').text((($(this).val()*(rate/100))+300).toFixed(2));
-			}else{
-				$('.hkdl-zhifu .table-bot li.red:eq(1)').text((($(this).val()*(rate/100))+(($(this).val()*(rate/100))*0.0065)).toFixed(2));
-			}
+            /*当日到账*/
+            if (($(this).val()*(rate/100))*0.004<360) {
+                $('.hkwdl-zhifu .table-bot li.red:eq(0)').text((($(this).val()*(rate/100))+360+100).toFixed(2));
+            }else{
+                $('.hkwdl-zhifu .table-bot li.red:eq(0)').text((($(this).val()*(rate/100))+(($(this).val()*(rate/100))*0.004)+100).toFixed(2));
+            }
+            /*普通到账*/
+            if(($(this).val()*(rate/100))*0.004<360) {
+                $('.hkwdl-zhifu .table-bot li.red:eq(1)').text((($(this).val()*(rate/100))+360+80).toFixed(2));
+            }else{
+                $('.hkwdl-zhifu .table-bot li.red:eq(1)').text((($(this).val()*(rate/100))+(($(this).val()*(rate/100))*0.004)+80).toFixed(2));
+            }
 		}else{
 			$('.hkdl-zhifu .table-bot li.red:eq(0),.hkdl-zhifu .table-bot li.red:eq(1)').text('0.00');
 		}
@@ -571,5 +625,35 @@
 			isIdcard($('.hkdl-zhanghu input.idCard'));
 		}
 	}
+
+    $(function () {
+        $.noConflict()
+        var startDate;
+        var curDate = new Date();
+        if(curDate.getDay() == 3 ||curDate.getDay() == 4 || curDate.getDay() == 5){
+            //当天为周三或者周四或者周五
+            startDate = new Date(curDate.setDate(curDate.getDate()+5))
+        }else if(curDate.getDay() == 6){
+            //当天为周三
+            startDate = new Date(curDate.setDate(curDate.getDate()+4))
+        }else{
+            startDate = new Date(curDate.setDate(curDate.getDate()+3))
+        }
+
+        $('#datetimepicker').datetimepicker({
+            language: 'zh-CN',//显示中文
+            format: 'yyyy-mm-dd',//显示格式
+            minView: "month",//设置只显示到月份
+            initialDate: new Date(),//初始化当前日期
+            autoclose: true,//选中自动关闭
+            todayBtn: false,//显示今日按钮
+            startDate:startDate,
+            daysOfWeekDisabled: [0,6],
+            pickerPosition:'bottom-left',
+            forceParse: false,
+            todayHighlight:false,
+        })
+
+    })
 </script>
 </html>

@@ -5,12 +5,20 @@
 	<title>二宝平台-汇款未登录</title>
 	<link rel="stylesheet" href="../css/common.css">
 	<link rel="stylesheet" href="../css/second.css">
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
 	<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../vendors/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrap-datetimepicker.zh-CN.js"></script>
+
+	<style type="text/css">
+		.shadow-login .input,.shadow-xiugai .input{
+			padding-bottom:40px;
+			padding-right: 0;
+			padding-left: 0;
+		}
+	</style>
 
 </head>
 <body>
@@ -206,10 +214,11 @@
 						<li class="flex2 red cur">0.00</li>
 						<li class="flex2">按指定时间到账</li>
 						<li class="flex4" >
-							<div  class="input-append date" id="datetimepicker"  data-date-format="yyyy-mm-dd">
-								<input style="text-align: center;width: 70%" size="16" type="text" value="" readonly>
+							<!--<div  class="input-append date" id="datetimepicker"  data-date-format="yyyy-mm-dd">
+								<input style="text-align: center;width: 70%" class="red" size="16" type="text" value="点击这里选择日期" readonly>
 								<span class="add-on"><i class="icon-th"></i></span>
-							</div>
+							</div>-->
+							<input id="datetimepicker"  style="text-align: center;width: 70%;margin:25px auto" class="form-control red"  value="点击这里选择日期" readonly>
 						</li>
 					</ul>
 					<ul class="flex table-bot">
@@ -482,7 +491,7 @@
 			}
 		}
 	})
-	
+
 	/*汇率计算*/
 	$('.hkwdl-zhifu-top input').keyup(function(){
 		if ($(this).val().indexOf('.')==-1) {/*判断整数位不能超过6位*/
@@ -535,8 +544,11 @@
             autoclose: true,//选中自动关闭
             todayBtn: false,//显示今日按钮
             startDate:startDate,
-            daysOfWeekDisabled: [0,6]
+            daysOfWeekDisabled: [0,6],
+            pickerPosition:'bottom-left',
+            forceParse: false,
         })
+
     })
 
 </script>
