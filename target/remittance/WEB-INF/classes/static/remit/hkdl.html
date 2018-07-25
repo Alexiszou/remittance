@@ -141,7 +141,7 @@
 			</div>
 		</section>-->
 		<!-- 支付信息 -->
-		<section class="container hkwdl-zhifu">
+		<section class="container hkdl-zhifu">
 			<div class="title">支付信息</div>
 			<div class="hkwdl-zhifu-top clear">
 				<label class="fl" for="">汇款金额</label>
@@ -273,7 +273,7 @@
 				<p>二宝平台公众号</p>
 			</div>
 		</div>
-		<div class="footB">Copyright©2017 二宝平台<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;闽公网安备<span></span>35020602000154号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;闽ICP备16005894号-1 --></div>
+		<div class="footB">Copyright©2017-2018 二宝平台<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;闽公网安备<span></span>35020602000154号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;闽ICP备16005894号-1 --></div>
 	</footer>
 </body>
 <script type="text/javascript" src="../js/base.js"></script>
@@ -308,6 +308,7 @@
 	/*支付方式选择*/
 	$('.hkdl-zhifu .table-bot .radius-btn').click(function(){
 		var thisIndex=$('.hkdl-zhifu .table-bot .radius-btn').index($(this));
+		//console.log("index:"+index);
 		$('.hkdl-zhifu .table-bot .radius-btn').removeClass('cur');
 		$(this).addClass('cur');
 		$('.hkdl-zhifu .table-bot li.red').removeClass('cur');
@@ -460,6 +461,7 @@
 	})
 	/*汇率计算*/
 	$('.hkwdl-zhifu-top input').keyup(function(){
+	    console.log("value:"+$(this).val())
 		if ($(this).val().indexOf('.')==-1) {/*判断整数位不能超过6位*/
 			if ($(this).val().length>6) {
 				$(this).val($(this).val().substring(0,6));
@@ -472,15 +474,15 @@
 		if (!isNaN($(this).val())&&$(this).val()!='') {
             /*当日到账*/
             if (($(this).val()*(rate/100))*0.004<360) {
-                $('.hkwdl-zhifu .table-bot li.red:eq(0)').text((($(this).val()*(rate/100))+360+100).toFixed(2));
+                $('.hkdl-zhifu .table-bot li.red:eq(0)').text((($(this).val()*(rate/100))+360+100).toFixed(2));
             }else{
-                $('.hkwdl-zhifu .table-bot li.red:eq(0)').text((($(this).val()*(rate/100))+(($(this).val()*(rate/100))*0.004)+100).toFixed(2));
+                $('.hkdl-zhifu .table-bot li.red:eq(0)').text((($(this).val()*(rate/100))+(($(this).val()*(rate/100))*0.004)+100).toFixed(2));
             }
             /*普通到账*/
             if(($(this).val()*(rate/100))*0.004<360) {
-                $('.hkwdl-zhifu .table-bot li.red:eq(1)').text((($(this).val()*(rate/100))+360+80).toFixed(2));
+                $('.hkdl-zhifu .table-bot li.red:eq(1)').text((($(this).val()*(rate/100))+360+80).toFixed(2));
             }else{
-                $('.hkwdl-zhifu .table-bot li.red:eq(1)').text((($(this).val()*(rate/100))+(($(this).val()*(rate/100))*0.004)+80).toFixed(2));
+                $('.hkdl-zhifu .table-bot li.red:eq(1)').text((($(this).val()*(rate/100))+(($(this).val()*(rate/100))*0.004)+80).toFixed(2));
             }
 		}else{
 			$('.hkdl-zhifu .table-bot li.red:eq(0),.hkdl-zhifu .table-bot li.red:eq(1)').text('0.00');

@@ -92,7 +92,7 @@ public class PayController {
 			if(priceCn * 0.0075 > 300) {
 				sjPrice = (float) (priceCn * 0.0075);
 			}
-			endDate = today;
+			//endDate = today;
 
 		}
 		// 汇款人民币 = 换算汇率后的人民币+ 手续费

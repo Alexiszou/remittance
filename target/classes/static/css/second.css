@@ -609,7 +609,7 @@
 		box-sizing:border-box;
 		-webkit-box-sizing:border-box;
 		padding:0 23px;
-		padding-bottom: 30px;
+		padding-bottom: 20px;
 	}
 	.hkdl-zhifu .table{
 		margin-top: 22px;
@@ -617,7 +617,7 @@
 		width: 954px;
 		border:1px solid #dadada;
 		background: #f1f4fa;
-		padding-bottom: 12px;
+		padding-bottom: 10px;
 	}
 	.hkdl-zhifu .table-top li{
 		font: 18px/56px "微软雅黑";
@@ -629,7 +629,8 @@
 		position: relative;
 	}
 	.hkdl-zhifu .table-bot li{
-		font: 18px/50px "微软雅黑";
+		height:90px;
+		font: 18px/90px "微软雅黑";
 		color: #424242;
 		text-align: center;
 		padding:0 20px;
@@ -641,9 +642,9 @@
 	} */
 	.hkdl-zhifu .table-bot .radius-btn{
 		position: absolute;
-		left:30px;
-		top: 18px;
-		background-position: center;
+		left:22px;
+		top: 38px;
+
 	}
 	.hkdl-zhifu .table-bot .close,.hkdl-zhifu .table-bot .more{
 		margin-left: 20px;

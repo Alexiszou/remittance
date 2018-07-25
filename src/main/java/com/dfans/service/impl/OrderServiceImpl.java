@@ -396,8 +396,7 @@ public class OrderServiceImpl implements OrderService {
 			sbContent.append("<br>在您付款成功后，您将收到一份来自<a href='http://www.qhins.com'>前海财险</a>的保单邮件");*/
 			sbContent.append("<div><p>尊敬的用户<strong>【"+userName+"】</strong>：</p>");
 			sbContent.append("<p>感谢选择二宝平台跨境缴费服务。请在"+ddlTime+"之前完成付款，\n" +
-					"            以确保款项可以按照您预期的时间到账，若汇款时选择T+0的付款方式，\n" +
-					"            则请在工作日12:00前完成付款。如果您已经付款完毕请忽略本邮件。\n" +
+					"            以确保款项可以按照您预期的时间到账，如果您已经付款完毕请忽略本邮件。\n" +
 					"        </p>");
 			sbContent.append("<a href='http://www.erbaopay.com/personal/wddd.html'>付款请点击这里</a>");
 			sbContent.append("<h3>订单信息</h3>");
