@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>二宝平台-保险信息</title>
+	<link rel="stylesheet" href="../css/common.css"/>
+	<link rel="stylesheet" href="../css/second.css"/>
+	<style type="text/css">
+		.insurance{
+			text-align: center;
+			padding: 30px 0;
+		}
+		.insurance .desc{
+			font-size: 14px;
+		}
+		.insurance .title{
+			font-size: 22px;
+			font-weight: bold;
+			margin-top: 50px;
+			margin-bottom: 20px;
+		}
+		.insuranceForm input{
+			border: 1px solid  #dadada;
+			border-radius: 5px;
+			padding: 5px;
+			width: 40%;
+			font: 16px "微软雅黑";
+			margin-top: 10px;
+		}
+		.insuranceForm select{
+			border: 1px solid  #dadada;
+			border-radius: 5px;
+			padding: 5px;
+			width: 40%;
+			font: 16px "微软雅黑";
+			margin-top: 10px;
+		}
+
+		.submitInsuranceInfo{
+
+			padding: 10px 50px;
+			background: #8e98b1;
+			border: 1px solid #848fab;
+			border-radius:10px;
+			cursor: pointer;
+			color: #fff;
+
+		}
+		.submitInsuranceInfo:hover{
+			background: #a7b2cd;
+		}
+		.submitInsuranceInfo:active{
+			background: #7a859e;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="headerC clear">
+			<a class="headerLogo" href="../index.html"><img  src="../images/logo.jpg"/></a>
+			<nav class="fl clear">
+				<a href="../index.html"><div class="fl">首页</div></a>
+				<a href="../remit/hksy.html"><div class="fl">留学汇款</div></a>
+				<a href="bzzx.html?"><div class="fl">帮助中心</div></a>
+				<a href="wddd.html"><div class="fl active">我的订单</div></a>
+			</nav>
+			<ul class="header-right fr">
+				<li class="fl phone">
+					<div class="img"></div>
+					<div class="phoneHover">0755-86525927</div>
+				客服电话</li>
+				<li class="fl weixin">
+					<div class="img"></div>
+					<div class="codeHover">
+						<img src="../images/twoCode.png" alt="" />
+						<p>二宝公众号</p>
+					</div>
+				微信咨询</li>
+				<li class="fl">
+					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3264465415&amp;site=qq&amp;menu=yes" style="padding: 0;margin: 0 auto;display: block;">
+                            <div class="img"></div>
+                        </a>
+				QQ咨询</li>
+				<!-- <li class="fl emil">
+					<div class="img"></div>
+				留言建议</li> -->
+			</ul>
+			<div class="header-user fr clear">
+				<div class="header-userId fr"></div>
+				<div class="header-userImg fr"></div>
+				<ul>
+					<li class="wddd"><div class="radius"></div>汇款订单</li>
+					<li class="grzl"><div class="radius"></div>个人中心</li>
+					<li class="out"><div class="radius"></div>安全退出</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<div class="insurance" style="">
+		<div class="desc red">二宝平台全程为您的财产安全保驾护航，免费赠送您一份财产安全险，填写保单信息提交即可获得一份电子保单。如果您不需要这份保单，可以关闭此网页。</div>
+		<div class="title">前海财险保单信息填写表</div>
+		<form id="insuranceForm" class="insuranceForm">
+			<div><span>付款人姓名：</span><input id="fullname" name="fullname"/></div>
+			<div><span>身份证号码：</span><input id="idNum" name="idNum" type="number"/></div>
+			<div><span>性&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp别：</span>
+			<select name="sex">
+				<option value="0">男</option>
+				<option value="1">女</option>
+			</select></div>
+			<div><span>联&nbsp系&nbsp地&nbsp址：</span><input id="address" name="address" type="text"/></div>
+			<div><span>移&nbsp动&nbsp电&nbsp话：</span><input id="phone" name="phone" type="tel"/></div>
+
+			<div style="margin-top: 30px"><a class="submitInsuranceInfo" onclick="submitInsuranceInfo()">提交</a></div>
+		</form>
+		<div style="margin-top: 50px;color: #c3c3c3;font-size: 14px;">提交后，您将收到来自前海财险的一份电子保单邮件。请及时查收邮件</div>
+		<div style="margin-top: 20px;color: #1D8DFB">财产保险介绍</div>
+	</div>
+	<footer>
+		<div class="footerC clear">
+			<div class="footL fl">
+				<ul class="clear">
+					<a href="bzzx.html?"><li class="fl">帮助中心</li></a>
+					<a href="bzzx.html"><li class="fl">关于我们</li></a>
+					<a href="bzzx.html"><li class="fl"></li></a>
+				</ul>
+				<dl>
+					<dd>邮箱</dd>
+					<dt>erbao@leadingmax.com</dt>
+				</dl>
+				<dl>
+					<dd>电话</dd>
+					<dt>0755-86525927</dt>
+				</dl>
+			</div>
+			<div class="footC fl">
+				<img src="../images/smyz.png" alt="" height="60" /><img src="../images/kexin.png" alt="" height="60" />
+			</div>
+			<div class="footR fr">
+				<img src="../images/twoCode.png" alt="" />
+				<p>二宝平台公众号</p>
+			</div>
+		</div>
+		<div class="footB">Copyright©2017-2018 二宝平台<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;闽公网安备<span></span>35020602000154号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;闽ICP备16005894号-1 --></div>
+	</footer>
+</body>
+<script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/second.js"></script>
+
+<script type="text/javascript">
+	function submitInsuranceInfo() {
+        if($("#fullname").val() == null || $("#fullname").val().trim() == "" || !isFullname($("#fullname").val())){
+            alert("请输入正确的姓名");
+            return;
+        }
+
+        if($("#idNum").val()  == null || $("#idNum").val().trim() == "" || !isIDNum($("#idNum").val())){
+            alert("请输入正确的身份证号码");
+            return;
+        }
+        if($("#address").val()  == null || $("#address").val().trim() == ""){
+            alert("请输入联系地址");
+            return;
+        }
+        if($("#phone").val()  == null || $("#phone").val().trim() == "" || !isPhoneNum($("#phone").val())){
+            alert("请输入正确的手机号码");
+            return;
+        }
+
+        console.log("insurance:"+JSON.stringify($('#insuranceForm').serializeObject()))
+        $.ajax({
+            //几个参数需要注意一下
+            type: "POST",//方法类型
+            dataType: "json",//预期服务器返回的数据类型
+            url: "/insurance" ,//url
+            data:JSON.stringify($('#insuranceForm').serializeObject()),
+            contentType:"application/json;charset=utf-8",
+            success: function (result) {
+                console.log("post result:"+JSON.stringify(result));//打印服务端返回的数据(调试用)
+                /*if (result.resultCode == 200) {
+                    closeDialog()
+                    alert("预约成功，稍后会有客服人员联系您，请保持电话畅通。")
+                }else{
+                    alert(result.message);
+                }*/
+                alert("保险信息提交成功！")
+				window.location.href="../personal/wddd.html"
+
+            },
+            error : function(result) {
+                console.log(result);
+                alert("网络异常！");
+                ;
+            }
+        });
+    }
+
+    $.fn.serializeObject = function() {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function () {
+            if (o[this.name]) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    }
+</script>
+
+</html>

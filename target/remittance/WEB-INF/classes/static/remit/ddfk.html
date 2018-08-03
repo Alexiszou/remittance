@@ -93,7 +93,7 @@
 
 				<div class="btn">进入网银支付</div>
 				<div class="text">
-					注意：若实现当日到账，需在当日12:00之前完成支付。8:00-21:00订单，订单有效期至当日22:00；21:00-次日8:00订单，订单有效期至次日8:00，请及时支付。如支付遇到问题，请直接咨询在线客服。预计T+0到账，我们将以短信或邮件形式通知您
+					注意：订单创建后20分钟内有效，请及时支付。如果超过支付时间，请重新创建订单并支付。如支付遇到问题，请直接咨询在线客服。
 				</div>
 			</div>
 		</section>
@@ -199,8 +199,9 @@ console.log("ordersId="+sessionStorage.ordersId)
             	$('.ddfk-middleB li span.data').text(format(data[0].CreatedTime.time));
             	$('.ddfk-middleT').text(data[0].ChName+' 向 '+data[0].EnName+' 汇款 '+data[0].PriceEN+' '+data[0].UnitText);
             	/*选择到账方式文案*/
-            	data[0].PayStyle==0?$('.ddfk-bot .text').html('注意：若实现当日到账，需在当日12:00之前完成支付。<br>8:00-21:00订单，订单有效期至当日22:00；21:00-次日8:00订单，订单有效期至次日8:00，请及时支付。<br>如支付遇到问题，请直接咨询在线客服。预计T+0到账，我们将以短信或邮件形式通知您!'):$('.ddfk-bot .text').html('“注意：8:00-21:00订单，订单有效期至当日22:00；21:00-次日8:00订单，订单有效期至次日8:00，请及时支付。<br>如支付遇到问题，请直接咨询在线客服。预计T+2到账，我们将以短信或邮件形式通知您!')
-            }	
+            	/*data[0].PayStyle==0?$('.ddfk-bot .text').html('注意：若实现当日到账，需在当日12:00之前完成支付。<br>8:00-21:00订单，订单有效期至当日22:00；21:00-次日8:00订单，订单有效期至次日8:00，请及时支付。<br>如支付遇到问题，请直接咨询在线客服。预计T+0到账，我们将以短信或邮件形式通知您!'):$('.ddfk-bot .text').html('“注意：8:00-21:00订单，订单有效期至当日22:00；21:00-次日8:00订单，订单有效期至次日8:00，请及时支付。<br>如支付遇到问题，请直接咨询在线客服。预计T+2到账，我们将以短信或邮件形式通知您!')*/
+            	data[0].PayStyle==$('.ddfk-bot .text').html('注意：订单创建后20分钟内有效，请及时支付。如果超过支付时间，请重新创建订单并支付。如支付遇到问题，请直接咨询在线客服。')
+            }
         })
 	/*订单付款-付款*/
 	$('.shadow-fk').css('height',documentH);
@@ -264,7 +265,8 @@ console.log("ordersId="+sessionStorage.ordersId)
 		$('.shadow-fk2').show();
 	})
 	$('.shadow-fk1 .btnR,.shadow-fk2 .btnL').click(function(){
-		window.location.href='../personal/wddd.html?updateOrder';
+		//window.location.href='../personal/wddd.html?updateOrder';
+		window.location.href='../personal/insurance.html';
 	})
 </script>
 </html>

@@ -184,9 +184,10 @@
 			                    alert("Connection error");
 			                },
 			                success: function(data) {
-			                	//console.log(data)
+			                	console.log(data)
 			                    $('.header-userId').text(data[0].Name+'，你好')
 			                    localStorage.name=data[0].Name;
+			                    localStorage.telephone=data[0].Telphone;
 			                    sessionStorage.name=data[0].Name;
 								$('.shadow-login').hide();
 		                    	$('.header-login').hide();
@@ -358,6 +359,20 @@
 				isStyle1(obj)
 			}
 		}
+
+		function isIDNum(idNum) {
+			return /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(idNum)
+        }
+
+        function isPhoneNum(phoneNum) {
+            return /^13[0-9]{1}[0-9]{8}$|15[0-9]{1}[0-9]{8}$|16[0-9]{1}[0-9]{8}$|18[0-9]{1}[0-9]{8}$|17[0-9]{1}[0-9]{8}$/.test(phoneNum)
+        }
+
+        function isFullname(fullname) {
+            return /^[\u4E00-\u9FA5]{1,6}$/.test(fullname)
+        }
+
+
 	/*验证确定样式*/
 	function isStyle(obj){
 		obj.parent().find('.true,.false').hide();

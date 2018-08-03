@@ -109,6 +109,8 @@
                         <thead>
                             <tr>
                                 <th data-options="field:'ck',checkbox:true" />
+                                <th field="fullname" width="25">姓名</th>
+                                <th field="phone" width="50">手机号码</th>
                                 <th field="enName" width="50">学校名称</th>
                                 <th field="accountName" width="50">账户名</th>
                                 <th field="accountNo" width="50">账户账号</th>
@@ -116,6 +118,7 @@
                                <!--  <th field="sortCode"  width="25" >SORT CODE</th> -->
                                <!--  <th field="ibanno"  width="25" >IBANNo.</th> -->
                                 <th field="bic"  width="50" >SWIFT CODE.</th>
+                                <th field="voucherUrl" width="50" >留学凭证</th>
                                 <!-- <th field="bankAddress"  width="25" >银行地址</th>
                                 <th field="bankName"  width="25" >银行名</th> -->
                                <!--  <th field="bankName"  width="25" >银行名</th> -->
@@ -328,6 +331,7 @@
             pageSize:20,
             loadFilter: function (data){
                 var rowsTemp = data.rows;
+                console.log("data:"+JSON.stringify(data))
                 for(var n=0; n<data.rows.length; n++){
                      if(rowsTemp[n].createdTime){
                          var timestamp = new Date(rowsTemp[n].createdTime.time);  
@@ -344,6 +348,13 @@
                              rowsTemp[n].ctFlag = "待审核";
                          }
                      }
+                    if(rowsTemp[n].voucherUrl){
+                        var hrefUrl = ".."+rowsTemp[n].voucherUrl;
+                        var index = rowsTemp[n].voucherUrl.lastIndexOf("/");
+                        var url = rowsTemp[n].voucherUrl.substring(index+1);
+
+                        rowsTemp[n].voucherUrl  = "<a style='color: #1D8DFB;text-decoration: underline' href="+hrefUrl+" target='_blank'>"+url +"</a>";
+                    }
                 }
                 return data;
             },

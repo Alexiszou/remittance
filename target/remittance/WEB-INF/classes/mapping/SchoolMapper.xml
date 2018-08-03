@@ -114,6 +114,12 @@
             <if test="bankName != null">
                 BankName,
             </if>
+            <if test="userId != null">
+                UserId,
+            </if>
+            <if test="voucherUrl != null">
+                VoucherUrl,
+            </if>
                 CreatedTime,
                 UpdateTime,
                 CTFlag
@@ -157,6 +163,12 @@
             </if>
             <if test="bankName != null">
                 #{bankName, jdbcType=VARCHAR},
+            </if>
+            <if test="userId != null">
+                #{userId, jdbcType=INTEGER},
+            </if>
+            <if test="voucherUrl != null">
+                #{voucherUrl, jdbcType=VARCHAR},
             </if>
                 NOW(),
                 NOW(),
@@ -366,24 +378,29 @@
 
     <select id="selecttb_schoolList" resultType="hashmap" parameterType="hashmap">
         SELECT
-           id,
-           accountName,
-           accountNo,
-           chName,
-           enName,
-           country,
-           location,
-           sortCode,
-           ibanno,
-           bic,
-           bankAddress,
-           referencing,
-           createdTime,
-           updateTime,
-           ctFlag,
-           bankName
+           tb_school.id,
+        tb_school.userId,
+           B.Name as fullname,
+           B.Telphone as phone,
+        tb_school.accountName,
+        tb_school.accountNo,
+        tb_school.chName,
+        tb_school.enName,
+        tb_school.country,
+        tb_school.location,
+        tb_school.sortCode,
+        tb_school.ibanno,
+        tb_school.bic,
+        tb_school.bankAddress,
+        tb_school.referencing,
+        tb_school.createdTime,
+        tb_school.updateTime,
+        tb_school.ctFlag,
+        tb_school.bankName,
+        tb_school.voucherUrl
         FROM
              tb_school
+        LEFT JOIN tb_user B ON tb_school.userId = B.`ID`
         WHERE 1=1
         <if test="country != null and country != '' ">
             AND Country = #{country}

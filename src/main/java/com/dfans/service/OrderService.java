@@ -2,6 +2,7 @@ package com.dfans.service;
 
 import java.util.Map;
 
+import com.dfans.model.Insurance;
 import com.dfans.model.User;
 
 public interface OrderService {
@@ -56,5 +57,7 @@ public interface OrderService {
 	String sendMsg(User obj);
 
 	String sendFeedbackEmail(Map map);
+
+	String sendInsuranceMail(Insurance insurance);
 
 }

@@ -17,6 +17,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import com.dfans.enums.Merchant;
+import com.dfans.model.Insurance;
 import org.apache.commons.lang.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
@@ -395,9 +396,10 @@ public class OrderServiceImpl implements OrderService {
 			sbContent.append("<br>汇款附言：<span style ='color: #3e7fe0;'>" + studentRemarks + "</span>");
 			sbContent.append("<br>在您付款成功后，您将收到一份来自<a href='http://www.qhins.com'>前海财险</a>的保单邮件");*/
 			sbContent.append("<div><p>尊敬的用户<strong>【"+userName+"】</strong>：</p>");
-			sbContent.append("<p>感谢选择二宝平台跨境缴费服务。请在"+ddlTime+"之前完成付款，\n" +
-					"            以确保款项可以按照您预期的时间到账，如果您已经付款完毕请忽略本邮件。\n" +
-					"        </p>");
+			//sbContent.append("<p>感谢选择二宝平台跨境缴费服务。请在"+ddlTime+"之前完成付款，\n" +
+			//		"            以确保款项可以按照您预期的时间到账，如果您已经付款完毕请忽略本邮件。\n" +
+			//		"        </p>");
+			sbContent.append("感谢选择二宝平台跨境缴费服务，订单在20分钟内支付有效，如超出付款时间，请重新创建订单支付。在当天23:00:00之前完成付款，将会按照当天的汇率进行清算。当天23:00:00以后的完成支付的订单将会按照第二天的汇率进行清算，请悉知！");
 			sbContent.append("<a href='http://www.erbaopay.com/personal/wddd.html'>付款请点击这里</a>");
 			sbContent.append("<h3>订单信息</h3>");
 
@@ -468,7 +470,7 @@ public class OrderServiceImpl implements OrderService {
 			sbContent.append("<img style='width: 140px;' src='http://www.erbaopay.com/images/second/qianhairenshou.png'/>");
 			sbContent.append("</div>");
 
-			sbContent.append("<p>在您付款成功后，您将收到一份来自<a href='http://www.qhins.com'>前海财险</a>的保单邮件</p>");
+			//sbContent.append("<p>在您付款成功后，您将收到一份来自<a href='http://www.qhins.com'>前海财险</a>的保单邮件</p>");
 			sbContent.append("<p>感谢您对二宝平台的支持，如有问题请<a href='http://www.erbaopay.com'>与我们联系</a>。</p>");
 			sbContent.append("</div>");
 
@@ -558,7 +560,7 @@ public class OrderServiceImpl implements OrderService {
 			sbContent.append("<img style='width: 140px;' src='http://www.erbaopay.com/images/second/qianhairenshou.png'/>");
 			sbContent.append("</div>");
 
-			sbContent.append("<p>在您付款成功后，您将收到一份来自<a href='http://www.qhins.com'>前海财险</a>的保单邮件</p>");
+			//sbContent.append("<p>在您付款成功后，您将收到一份来自<a href='http://www.qhins.com'>前海财险</a>的保单邮件</p>");
 			sbContent.append("<p>感谢您对二宝平台的支持，如有问题请<a href='http://www.erbaopay.com'>与我们联系</a>。</p>");
 			sbContent.append("</div>");
 			//sbContent.append("<br><br>");
@@ -733,6 +735,50 @@ public class OrderServiceImpl implements OrderService {
 		content.append("反馈内容：<span style ='color: #3e7fe0;'>" + map.get("content") + "</span><br>");
 		try {
 			SendEmail.sendEmail(SendEmail.getPro("from"), content.toString(), "用户反馈");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	/*投保人信息
+	客户名称：深圳市万方恒业科技有限公司
+	投保人性质：0「非自然人」
+	证件类型：110003「营业执照」
+	证件号码：91440300668522829N
+	手机号码：13665021133
+	与被保人关系：601001「雇佣关系」
+	固定电话：0755-86525927
+	邮件：erbao@leadingmax.com
+	地址：深圳市南山区沿山路22号火炬创业大厦5楼*/
+	@Override
+	public String sendInsuranceMail(Insurance insurance) {
+		//发送邮件到前海保险邮箱
+		StringBuilder content = new  StringBuilder();
+		//content.append("用户反馈内容test");
+		content.append("投保人信息<br>");
+		content.append("客户姓名：<span style ='color: #3e7fe0;'>深圳市万方恒业科技有限公司</span><br>");
+		content.append("投保人性质：<span style ='color: #3e7fe0;'>0「非自然人」</span><br>");
+		content.append("证件类型：<span style ='color: #3e7fe0;'>110003「营业执照」</span><br>");
+		content.append("证件号码：<span style ='color: #3e7fe0;'>91440300668522829N</span><br>");
+		content.append("手机号码：<span style ='color: #3e7fe0;'>13665021133</span><br>");
+		content.append("与被保人关系：<span style ='color: #3e7fe0;'>601001「雇佣关系」</span><br>");
+		content.append("固定电话：<span style ='color: #3e7fe0;'>0755-86525927</span><br>");
+		content.append("邮件：<span style ='color: #3e7fe0;'>erbao@leadingmax.com</span><br>");
+		content.append("地址：<span style ='color: #3e7fe0;'>深圳市南山区沿山路22号火炬创业大厦5楼</span><br>");
+		content.append("<br>");
+		content.append("<br>");
+
+
+		content.append("被保人信息<br>");
+		content.append("客户名称：<span style ='color: #3e7fe0;'>" + insurance.getFullname()+ "</span><br>");
+		content.append("身份证号码：<span style ='color: #3e7fe0;'>" + insurance.getIdNum()+ "</span><br>");
+		content.append("联系电话：<span style ='color: #3e7fe0;'>" + insurance.getPhone() + "</span><br>");
+		content.append("性别：<span style ='color: #3e7fe0;'>" + insurance.getSexName() + "</span><br>");
+		content.append("联系地址：<span style ='color: #3e7fe0;'>" + insurance.getAddress() + "</span><br>");
+		try {
+			SendEmail.sendEmail("mchau@leadingmax.com", content.toString(), "保险内容");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

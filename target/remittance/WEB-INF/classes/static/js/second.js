@@ -146,6 +146,11 @@ $('.hksy .adC input').keyup(function(event){
  		sessionStorage.removeItem("schoolsID");
 		sessionStorage.removeItem("schoolsData");
 		sessionStorage.removeItem("schoolsCt");
+
+        if (localStorage.id == null){
+        	alert("请您先登录！")
+			return;
+		}
 		if (sessionStorage.id||localStorage.id) {
 			if (sessionStorage.schoolsID) {
 	 			window.location.href='hkdl.html'

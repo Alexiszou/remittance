@@ -5,6 +5,8 @@
 	<title>二宝平台-学校添加</title>
 	<link rel="stylesheet" href="../css/common.css">
 	<link rel="stylesheet" href="../css/second.css">
+	<link rel="stylesheet" type="text/css" href="../css/zzsc.css">
+	<link rel="stylesheet" href="../css/ssi-uploader.css"/>
 </head>
 <body>
 <div class="shadow-login">
@@ -102,7 +104,7 @@
 			<a class="headerLogo" href="../index.html"><img  src="../images/logo.jpg"/></a>
 			<nav class="fl clear">
 				<a href="../index.html"><div class="fl">首页</div></a>
-				<a href="/hksy.html"><div class="fl">留学汇款</div></a>
+				<a href="../remit/hksy.html"><div class="fl">留学汇款</div></a>
 				<a href="../personal/bzzx.html?"><div class="fl">帮助中心</div></a>
 				<a href="../personal/wddd.html"><div class="fl active">我的订单</div></a>
 			</nav>
@@ -140,18 +142,41 @@
 		</div>
 	</header>
 	<article class="hkwdl">
-		<div class="container hkwdl-auditing">
+		<div class="container hkwdl-auditing" >
 			<div class="clear">
-				<label class="fl" for="">学校信息：</label>
-				<input class="fl enName" type="text" placeholder="请输入院校英文名称"><span class="true fl"></span><span class="false fl">内容不能为空</span>
+				<label class="fl" for="">姓&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp名：</label>
+				<input class="fl fullname" type="text" placeholder=""  disabled>
 			</div>
 			<div class="clear">
-				<label class="fl" for="">收款账号：<br><span>Account N0.</span></label>
-				<input class="fl accountNo" type="text" placeholder="请输入院校收款账号"><span class="true fl"></span><span class="false fl">内容不能为空</span>
+				<label class="fl" for="">联系电话：</label>
+				<input class="fl phone" type="text" placeholder="" disabled>
 			</div>
-			<p>请您仔细核对以上信息，确保无误即可。</p><div class="fl schoolsAdd">确认学校添加</div><span class="schoolsAddtrue fl">添加成功</span><span class="schoolsAddfalse fl">添加失败</span>
-			<h3 class="addText"></h3>
+
+
 		</div>
+		<section class="container hkdl-shangchuan" id="hkdl-shangchuan">
+			<div class="title">请您上传留学凭证，我们将会审核留学凭证上的信息，并且为您开通学校支付通道。</div>
+			<!--<div class="title">上传资料</div>-->
+			<div class="text">
+				<!-- 护照， -->留学凭证<!-- ，身份证正反面 -->（支持JPG/PDF/PNG/bmp/jpeg格式）<span style="color: #e36d6e">上传文件个数需为一个</span>
+				<strong style="color: #e36d6e;font-size: 16px;display: none;">　　　　(上传个数或格式不对！！！)</strong>
+			</div>
+			<input type="file" multiple id="ssi-upload"/>
+			<!-- <div class="text">
+				护照（支持JPG/PDG/PNG/bmp格式）<span style="color: #e36d6e">上传文件个数需为一个</span>
+			</div>
+			<input type="file" multiple id="ssi-upload1"/>
+			<div class="text">
+				留学凭证（支持JPG/PDG/PNG/bmp格式）<span style="color: #e36d6e">上传文件个数需为一个</span>
+			</div>
+			<input type="file" multiple id="ssi-upload2"/> -->
+			<!--<ul>
+				<li>按照外管局备案要求，我们需要您上传留学缴费证明，例如：学生要缴费金额的截图、或I-20表的截图、或录取通知书截图等。</li>
+				<li>上传图片扫描或拍照均可，要求字迹清晰可辨认，必须包含缴费金额，学生英文姓名或学号（ID）</li>
+				<li>如果您找不到证明材料，请联系我们的在线客服或拨打0755-86525927.</li>
+			</ul>-->
+		</section>
+		<div class=" schoolsAdd">提交</div>
 	</article>
 	<footer>
 		<div class="footerC clear">
@@ -184,25 +209,72 @@
 <script type="text/javascript" src="../js/base.js"></script>
 <script type="text/javascript" src="../js/common.js"></script>
 <script type="text/javascript" src="../js/second.js"></script>
+<script type="text/javascript" src="../js/ssi-uploader.js"></script>
 <script>
-$('.hkwdl-auditing input').removeAttr('readonly').css('background','#fff');
+    $('#ssi-upload').ssi_uploader({url:ip+'/upload/uploadFile/'+sessionStorage.id+'/'+new Date().getTime()+''+(Math.floor(Math.random()*900)+100),maxFileSize:10,allowed:['jpg','bmp','png','pdf','jpeg'],
+	onUpload:function () {
+		//alert("上传成功！")
+		//window.location.href="hksy.html"
+    }});
+    $('.hkwdl-auditing input').removeAttr('readonly').css('background','#fff');
+
+    $('.fullname').val(localStorage.name);
+    $('.phone').val(localStorage.telephone);
+
 /*  添加学校 */
 	$('.schoolsAdd').click(function(){
-		if (sessionStorage.id||localStorage.id){/*判断是否未为登录状态*/
+	    if(voucherUrlArr.length == 1){
+
+            /*上传文件拼接*/
+            var voucherfileUrl='';
+            voucherfileUrl=voucherUrlArr[0][0]. fileUrl;
+            var dataS={
+				userId:localStorage.id,
+                //fullname:$('.fullname').val(),
+                //phone:$('.phone').val(),
+                voucherUrl:voucherfileUrl
+            }
+            //console.log(dataS)
+            $.ajax({
+                type: "POST",
+                url:ip+'/schools/add',
+                data:JSON.stringify(dataS),
+                async: false,
+                dataType: "json",
+                contentType:"application/json",
+                error: function(request) {
+                    alert("Connection error");
+                },
+                success: function(data) {
+                    console.log(data)
+                    sessionStorage.openShools=1;
+                    //$('.hkwdl .hkwdl-auditing span.schoolsAddtrue').show();
+                    //$('.schoolsAdd').hide();
+                    sessionStorage.schoolsID=data;
+                    //$('.hkwdl .addText').html('学校信息已接收，客服人员将立即与您联系核实信息。您也可以点击<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3264465415&amp;site=qq&amp;menu=yes">在线客服</a>，处理速度更快哦！');
+					alert('学校信息已接收，客服人员将立即与您联系核实信息。你也可以联系在线客服，处理速度更快哦！')
+                    window.location.href = "../remit/hksy.html";
+                }
+            })
+
+		}else{
+	        alert("请上传留学凭证！")
+		}
+		/*if (sessionStorage.id||localStorage.id){/!*判断是否未为登录状态*!/
 			$('.hkwdl-auditing span.false').hide();
-			var auditingNum=0;/*添加学校输入框验证*/
+			var auditingNum=0;/!*添加学校输入框验证*!/
 			for (var i = 0; i < $('.hkwdl-auditing input').length ; i++) {
 				if ($('.hkwdl-auditing input').eq(i).val()=='') {auditingNum++}
 			}
 			if (auditingNum==0&&!isNaN($('.hkwdl-auditing input.accountNo').val())) {
 				var dataS={
-					/*accountName:$('.accountName').val(),*/
+					/!*accountName:$('.accountName').val(),*!/
 					accountNo:$('.accountNo').val(),
 					enName:$('.enName').val()
-					/*location:$('.location').val(),
+					/!*location:$('.location').val(),
 					bankName:$('.bankName').val(),
 					bankAddress:$('.bankAddress').val(),
-					bic:$('.bic').val()*/
+					bic:$('.bic').val()*!/
 				}
 				//console.log(dataS)
 				$.ajax({
@@ -234,7 +306,7 @@ $('.hkwdl-auditing input').removeAttr('readonly').css('background','#fff');
 		}else{
 			$('.hkwdl .addText').text('请先登录。');
 			$('.header-login .login-left').click();
-		}
+		}*/
 	})
 </script>
 </html>

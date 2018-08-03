@@ -15,6 +15,12 @@ public class School {
 	@JsonProperty("id")
 	private java.lang.Integer id;
 
+
+	private java.lang.Integer userId;
+	private String fullname;
+	private String phone;
+
+	private String voucherUrl;
 	/**
 	 * 收款账户
 	 */
@@ -124,6 +130,22 @@ public class School {
 	@JsonIgnore
 	public java.lang.Integer getID() {
 		return this.id;
+	}
+
+	public String getFullname() {
+		return fullname;
+	}
+
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	@JsonIgnore
@@ -316,4 +338,20 @@ public class School {
 		this.bankName = bankName;
 	}
 
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	public String getVoucherUrl() {
+		return voucherUrl;
+	}
+
+	public void setVoucherUrl(String voucherUrl) {
+		this.voucherUrl = voucherUrl;
+	}
 }
