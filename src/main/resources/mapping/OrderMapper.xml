@@ -90,11 +90,11 @@
 		    tb_basicdict B ON S.Country = B.`Code`
 		WHERE
 		U.ID = #{userId}
-		<if test="flg == 4">
-			AND FinishFlg = 4
+		<if test="flg == 4 or flg == 1">
+			AND (FinishFlg = 4 OR FinishFlg = 1)
 		</if>
-		<if test="flg != 4">
-			AND FinishFlg != 4
+		<if test="flg != 4 and flg != 1">
+			AND (FinishFlg != 4 AND FinishFlg != 1)
 		</if>
 		ORDER BY A.CreatedTime DESC 
 	</select>

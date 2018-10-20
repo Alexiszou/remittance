@@ -292,6 +292,7 @@ public class OrderServiceImpl implements OrderService {
 		StringBuilder sbContent = new StringBuilder();
 		String schoolEnName = (String) msgMap.get("EnName");
 		BigDecimal payPriceEN = (BigDecimal) msgMap.get("PriceEN");
+		String userName = (String)msgMap.get("UserName");
 
 		String schoolUnit = (String) msgMap.get("UnitText");
 		if ("0".equals(sendFlg)) {
@@ -299,8 +300,10 @@ public class OrderServiceImpl implements OrderService {
 			sbContent.append(payPriceEN + " " + schoolUnit);
 			sbContent.append(" 的订单(订单编号：" + orderNo + "),");
 			sbContent.append("请您在订单有效期内及时完成");
+			return -1;
 		} else if ("1".equals(sendFlg)){
-			sbContent.append("【二宝支付】您汇往"+schoolEnName+"学校"+payPriceEN + "（" + schoolUnit+"）的订单已经支付完成，预计2个工作日内到账，请留意短信或邮件进度通知。");
+			//sbContent.append("【二宝支付】您汇往"+schoolEnName+"学校"+payPriceEN + "（" + schoolUnit+"）的订单已经支付完成，预计2个工作日内到账，请留意短信或邮件进度通知。");
+			sbContent.append("【二宝支付】尊敬的用户"+userName+"，您已成功付款，非常感谢您使用二宝平台跨境缴费服务，汇款将在您选定的到账服务时间足额到账，期间您可以在二宝平台上查询进程，再次感谢您对我们的信任");
 		} else if ("2".equals(sendFlg)){
 			sbContent.append("【二宝支付】恭喜，"+schoolEnName+"学校已成功收到您的汇款"+payPriceEN + "（" + schoolUnit+"），感谢您使用二宝支付，期待下一次我们能更好的为您服务。");
 		}
@@ -400,7 +403,7 @@ public class OrderServiceImpl implements OrderService {
 			//		"            以确保款项可以按照您预期的时间到账，如果您已经付款完毕请忽略本邮件。\n" +
 			//		"        </p>");
 			sbContent.append("感谢选择二宝平台跨境缴费服务，订单在20分钟内支付有效，如超出付款时间，请重新创建订单支付。在当天23:00:00之前完成付款，将会按照当天的汇率进行清算。当天23:00:00以后的完成支付的订单将会按照第二天的汇率进行清算，请悉知！");
-			sbContent.append("<a href='http://www.erbaopay.com/personal/wddd.html'>付款请点击这里</a>");
+			sbContent.append("<a href='https://www.erbaopay.com/personal/wddd.html'>付款请点击这里</a>");
 			sbContent.append("<h3>订单信息</h3>");
 
 			sbContent.append("<table border='1'>");
@@ -445,7 +448,7 @@ public class OrderServiceImpl implements OrderService {
 			sbContent.append("<tr>");
 			sbContent.append("<th>微信公众号</th>");
 			sbContent.append("<td>二宝平台</td>");
-			sbContent.append("<td rowspan='4'><img style='width: 140px;' src='http://www.erbaopay.com/images/twoCode.png'></td>");
+			sbContent.append("<td rowspan='4'><img style='width: 140px;' src='https://www.erbaopay.com/images/twoCode.png'></td>");
 			sbContent.append("</tr>");
 
 			sbContent.append("<tr>");
@@ -466,19 +469,19 @@ public class OrderServiceImpl implements OrderService {
 			sbContent.append("</table>");
 
 			sbContent.append("<div>");
-			sbContent.append("<img  style='width: 140px;' src='http://www.erbaopay.com/images/second/hksy11.png'/>");
-			sbContent.append("<img style='width: 140px;' src='http://www.erbaopay.com/images/second/qianhairenshou.png'/>");
+			sbContent.append("<img  style='width: 140px;' src='https://www.erbaopay.com/images/second/hksy11.png'/>");
+			sbContent.append("<img style='width: 140px;' src='https://www.erbaopay.com/images/second/qianhairenshou.png'/>");
 			sbContent.append("</div>");
 
 			//sbContent.append("<p>在您付款成功后，您将收到一份来自<a href='http://www.qhins.com'>前海财险</a>的保单邮件</p>");
-			sbContent.append("<p>感谢您对二宝平台的支持，如有问题请<a href='http://www.erbaopay.com'>与我们联系</a>。</p>");
+			sbContent.append("<p>感谢您对二宝平台的支持，如有问题请<a href='https://www.erbaopay.com'>与我们联系</a>。</p>");
 			sbContent.append("</div>");
 
 			/*sbContent.append("<tr>");
 			sbContent.append("<tr>");
 			sbContent.append("<tr>");
 			sbContent.append("<tr>");*/
-
+			return -1;
 
 		} else if ("1".equals(sendFlg)) {
 			title = "支付订单完成，可跟踪您的汇款进度";
@@ -490,7 +493,7 @@ public class OrderServiceImpl implements OrderService {
 
 			sbContent.append("<div><p>尊敬的用户<strong>【"+userName+"】</strong>：</p>");
 			sbContent.append("<p>非常感谢您使用二宝平台跨境缴费服务，汇款将在您选定的到账服务时间内足额到账，届时您可以在二宝平台上查询进程，再次感谢您对我们的信任。</p>");
-			sbContent.append("<a href='http://www.erbaopay.com/personal/wddd.html'>查看订单请点击这里</a>");
+			sbContent.append("<a href='https://www.erbaopay.com/personal/wddd.html'>查看订单请点击这里</a>");
 			sbContent.append("<h3>订单信息</h3>");
 
 			sbContent.append("<table border='1'>");
@@ -535,7 +538,7 @@ public class OrderServiceImpl implements OrderService {
 			sbContent.append("<tr>");
 			sbContent.append("<th>微信公众号</th>");
 			sbContent.append("<td>二宝平台</td>");
-			sbContent.append("<td rowspan='4'><img style='width: 140px;' src='http://www.erbaopay.com/images/twoCode.png'></td>");
+			sbContent.append("<td rowspan='4'><img style='width: 140px;' src='https://www.erbaopay.com/images/twoCode.png'></td>");
 			sbContent.append("</tr>");
 
 			sbContent.append("<tr>");
@@ -556,12 +559,12 @@ public class OrderServiceImpl implements OrderService {
 			sbContent.append("</table>");
 
 			sbContent.append("<div>");
-			sbContent.append("<img  style='width: 140px;' src='http://www.erbaopay.com/images/second/hksy11.png'/>");
-			sbContent.append("<img style='width: 140px;' src='http://www.erbaopay.com/images/second/qianhairenshou.png'/>");
+			sbContent.append("<img  style='width: 140px;' src='https://www.erbaopay.com/images/second/hksy11.png'/>");
+			sbContent.append("<img style='width: 140px;' src='https://www.erbaopay.com/images/second/qianhairenshou.png'/>");
 			sbContent.append("</div>");
 
 			//sbContent.append("<p>在您付款成功后，您将收到一份来自<a href='http://www.qhins.com'>前海财险</a>的保单邮件</p>");
-			sbContent.append("<p>感谢您对二宝平台的支持，如有问题请<a href='http://www.erbaopay.com'>与我们联系</a>。</p>");
+			sbContent.append("<p>感谢您对二宝平台的支持，如有问题请<a href='https://www.erbaopay.com'>与我们联系</a>。</p>");
 			sbContent.append("</div>");
 			//sbContent.append("<br><br>");
 			//sbContent.append("&nbsp;&nbsp;&nbsp;&nbsp;感谢您使用【二宝支付】全球在线跨境留学平台，如果您有任何问题，请及时联系我们，我们将竭诚为您服务。");
@@ -580,7 +583,7 @@ public class OrderServiceImpl implements OrderService {
 		sbContent.append("如果您有任何疑问，请联系我们：<br>");
 		sbContent.append("客服热线（TEL）：0755-86525927<br>");
 		sbContent.append("电子邮件（E-mail）：erbao@leadingmax.com<br>");
-		sbContent.append("官方网址（Website）：<a href='http://www.erbaopay.com'>http://www.erbaopay.com<a><br>");*/
+		sbContent.append("官方网址（Website）：<a href='https://www.erbaopay.com'>https://www.erbaopay.com<a><br>");*/
 		try {
 			return SendEmail.sendEmail(userEmail, sbContent.toString(), title);
 		} catch (Exception e) {
@@ -663,7 +666,7 @@ public class OrderServiceImpl implements OrderService {
 		sbContent.append("<tr>");
 		sbContent.append("<th>微信公众号</th>");
 		sbContent.append("<td>二宝平台</td>");
-		sbContent.append("<td rowspan='4'><img style='width: 140px;' src='http://www.erbaopay.com/images/twoCode.png'></td>");
+		sbContent.append("<td rowspan='4'><img style='width: 140px;' src='https://www.erbaopay.com/images/twoCode.png'></td>");
 		sbContent.append("</tr>");
 
 		sbContent.append("<tr>");
@@ -684,11 +687,11 @@ public class OrderServiceImpl implements OrderService {
 		sbContent.append("</table>");
 
 		sbContent.append("<div>");
-		sbContent.append("<img  style='width: 140px;' src='http://www.erbaopay.com/images/second/hksy11.png'/>");
-		sbContent.append("<img style='width: 140px;' src='http://www.erbaopay.com/images/second/qianhairenshou.png'/>");
+		sbContent.append("<img  style='width: 140px;' src='https://www.erbaopay.com/images/second/hksy11.png'/>");
+		sbContent.append("<img style='width: 140px;' src='https://www.erbaopay.com/images/second/qianhairenshou.png'/>");
 		sbContent.append("</div>");
 
-		sbContent.append("<p>感谢您对二宝平台的支持，如有问题请<a href='http://www.erbaopay.com'>与我们联系</a>。</p>");
+		sbContent.append("<p>感谢您对二宝平台的支持，如有问题请<a href='https://www.erbaopay.com'>与我们联系</a>。</p>");
 		sbContent.append("</div>");
 		/*sbContent.append("尊敬的用户【" + userName + "】：<br><br>");
 		sbContent.append("&nbsp;&nbsp;&nbsp;&nbsp;恭喜您已经成功注册二宝支付，您的账号为"+mail+"，请您妥善保管账号和密码，<br>");
@@ -698,7 +701,7 @@ public class OrderServiceImpl implements OrderService {
 		sbContent.append("如果您有任何疑问，请联系我们：<br>");
 		sbContent.append("客服热线（TEL）：0755-86525927<br>");
 		sbContent.append("电子邮件（E-mail）：erbao@leadingmax.com<br>");
-		sbContent.append("官方网址（Website）：<a href='http://www.erbaopay.com'>http://www.erbaopay.com<a><br>");*/
+		sbContent.append("官方网址（Website）：<a href='https://www.erbaopay.com'>https://www.erbaopay.com<a><br>");*/
 
 		// 发送邮件
 		try {

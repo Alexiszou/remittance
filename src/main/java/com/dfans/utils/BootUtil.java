@@ -159,7 +159,7 @@ public class BootUtil {
 		
 		
 		
-		byte b[] =  getImageFromNetByUrl("http://www.erbaopay.com/remittance/files/upload/171108135740Jellyfish.jpg");
+		byte b[] =  getImageFromNetByUrl("https://www.erbaopay.com/remittance/files/upload/171108135740Jellyfish.jpg");
 		writeImageToDisk(b,"ffff.zip");
 		
 	}

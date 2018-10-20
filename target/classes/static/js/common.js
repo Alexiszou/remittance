@@ -1,5 +1,7 @@
 
-	var ip='http://www.erbaopay.com/remittance';
+	var ip='https://www.erbaopay.com/remittance';
+	//var ip='http://47.107.67.79:8080/remittance';
+
 	//var ip='http://localhost:8088';
 	//var ip="";
 	var newTime='';//时间戳

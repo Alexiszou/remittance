@@ -96,7 +96,7 @@ public class PayController {
 
 		}
 		// 汇款人民币 = 换算汇率后的人民币+ 手续费
-		obj.setPriceCN(priceCn + sjPrice);
+		//obj.setPriceCN(priceCn + sjPrice);
 		obj.setEndDate(endDate);
 		int s = payMapper.insertpay(obj);
 		if (s > 0) {

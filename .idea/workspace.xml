@@ -7,51 +7,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8cdd5e2-5b7c-4f6f-8e54-d6f32bcf634b" name="Default" comment="修改未登录情况下费率问题">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dfans/controller/InsuranceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dfans/dao/InsuranceMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dfans/model/Insurance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/personal/insurance.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dfans/model/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dfans/model/School.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dfans/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dfans/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dfans/controller/PayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dfans/controller/PayController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dfans/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dfans/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/SchoolMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/SchoolMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dfans/utils/BootUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dfans/utils/BootUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/OrderMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/admin/admIndex.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/admin/admIndex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/admin/admLogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/admin/admLogin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/admin/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/admin/orders.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/admin/schools.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/admin/schools.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/second.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/second.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/admin/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/admin/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/h5/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/h5/js/common.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/second.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/second.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/wddd.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/wddd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/personal/hkpz.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/personal/hkpz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/remit/ddfk.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/remit/ddfk.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/remit/hksyAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/remit/hksyAdd.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dfans/model/School.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dfans/model/School.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dfans/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dfans/service/OrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/order_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/order_email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/remit/hkdl.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/remit/hkdl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dfans/controller/PayController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dfans/controller/PayController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/dfans/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dfans/service/impl/OrderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/SchoolMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/SchoolMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/admin/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/admin/orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/admin/schools.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/admin/schools.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/second.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/second.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/OrderMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/second.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/second.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/wddd.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/wddd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/personal/hkpz.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/personal/hkpz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/remit/ddfk.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/remit/ddfk.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/remit/hksyAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/remit/hksyAdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/remit/hkdl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/remit/hkdl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/remittance.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/remittance.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/com/dfans/model/School.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/com/dfans/model/School.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/com/dfans/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/com/dfans/service/OrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/com/dfans/controller/PayController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/com/dfans/controller/PayController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/com/dfans/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/com/dfans/service/impl/OrderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/mapping/SchoolMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/mapping/SchoolMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/admin/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/admin/orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/admin/schools.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/admin/schools.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/css/second.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/css/second.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/mapping/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/mapping/OrderMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/js/second.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/js/second.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/js/wddd.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/js/wddd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/personal/hkpz.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/personal/hkpz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/remit/ddfk.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/remit/ddfk.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/remit/hksyAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/remit/hksyAdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/remit/hkdl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/remittance/WEB-INF/classes/static/remit/hkdl.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -64,11 +47,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OrderService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/service/OrderService.java">
+      <file leaf-file-name="hkdl.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/remit/hkdl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="60" column="11" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
+            <state relative-caret-position="7140">
+              <caret line="476" column="111" selection-start-line="476" selection-start-column="111" selection-end-line="476" selection-end-column="111" />
             </state>
           </provider>
         </entry>
@@ -76,96 +59,53 @@
       <file leaf-file-name="OrderServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/service/impl/OrderServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="770" column="31" lean-forward="true" selection-start-line="770" selection-start-column="31" selection-end-line="770" selection-end-column="31" />
+            <state relative-caret-position="8250">
+              <caret line="582" column="48" selection-start-line="582" selection-start-column="48" selection-end-line="582" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InsuranceController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/controller/InsuranceController.java">
+      <file leaf-file-name="hkpz.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/personal/hkpz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="1035">
+              <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Insurance.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/model/Insurance.java">
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/remit/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-              <folding>
-                <element signature="e#394#395#0" expanded="true" />
-                <element signature="e#436#437#0" expanded="true" />
-                <element signature="e#470#471#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="750">
+              <caret line="50" column="102" selection-start-line="50" selection-start-column="102" selection-end-line="50" selection-end-column="102" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="insurance.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/personal/insurance.html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="69" column="63" lean-forward="true" selection-start-line="69" selection-start-column="63" selection-end-line="69" selection-end-column="63" />
-              <folding>
-                <element signature="n#style#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="3075">
+              <caret line="205" column="43" selection-start-line="205" selection-start-column="43" selection-end-line="205" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/common.css">
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="98" column="18" selection-start-line="98" selection-start-column="12" selection-end-line="98" selection-end-column="18" />
+            <state relative-caret-position="435">
+              <caret line="29" column="4" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wddd.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/personal/wddd.html">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ddfk.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/remit/ddfk.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="259" column="6" lean-forward="true" selection-start-line="259" selection-start-column="6" selection-end-line="259" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bzzx.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/personal/bzzx.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="197" column="16" selection-start-line="197" selection-start-column="16" selection-end-line="197" selection-end-column="73" />
-              <folding>
-                <element signature="n#style#0;n#div#3;n#div#1;n#section#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hksy.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/remit/hksy.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3433">
-              <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+            <state relative-caret-position="2385">
+              <caret line="159" selection-start-line="159" selection-end-line="159" />
             </state>
           </provider>
         </entry>
@@ -183,13 +123,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Date</find>
-      <find>goOrderList</find>
-      <find>getSearchUrl</find>
-      <find>getPa</find>
-      <find>updatePayResult</find>
-      <find>getPayStat</find>
-      <find>postZip</find>
       <find>uploadFlg</find>
       <find>getOrderInfo</find>
       <find>Merchant</find>
@@ -213,10 +146,18 @@
       <find>shangchuan</find>
       <find>voucherUrlArr</find>
       <find>VoucherUrl</find>
+      <find>qrfkxx.html</find>
+      <find>g</find>
+      <find>selecttb_orderList</find>
+      <find>39.109.5.149</find>
+      <find>http://www.erbaopay.com/remittance</find>
+      <find>http://www.erbaopay.com/</find>
+      <find>http://www.erbaopay.com</find>
     </findStrings>
     <replaceStrings>
       <replace>3264465415</replace>
       <replace>Copyright©2017-2018</replace>
+      <replace>https://www.erbaopay.com</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -241,7 +182,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/h5/css/index.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/h5/css/second.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/index.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/OrderMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/static/remit/qrfkxx.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/remit/hksy.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/personal/wddd.html" />
@@ -256,11 +196,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/css/common.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/dfans/enums/Merchant.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dfans/controller/PayController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/wddd.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/second.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/remit/hkdl.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/second.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/remit/hksyAdd.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/dfans/model/School.java" />
@@ -268,14 +205,18 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/admin/schools.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/admin/orders.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/personal/hkpz.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/common.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/dfans/dao/InsuranceMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dfans/service/OrderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dfans/controller/InsuranceController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/remit/ddfk.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/dfans/model/Insurance.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dfans/service/impl/OrderServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/personal/insurance.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/remit/hkdl.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfans/controller/PayController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfans/service/impl/OrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/OrderMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/common.js" />
       </list>
     </option>
   </component>
@@ -302,10 +243,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="-326" />
+    <option name="y" value="43" />
     <option name="width" value="1440" />
-    <option name="height" value="825" />
+    <option name="height" value="817" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -313,8 +255,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -338,85 +280,7 @@
               <item name="remittance" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remittance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remittance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dfans" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remittance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remittance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dfans" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remittance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remittance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dfans" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remittance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remittance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dfans" type="462c0819:PsiDirectoryNode" />
-              <item name="enums" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remittance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remittance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dfans" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remittance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remittance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dfans" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remittance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remittance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dfans" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remittance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remittance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remittance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remittance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapping" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="remittance" type="b2602c69:ProjectViewProjectNode" />
@@ -425,33 +289,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remittance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remittance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remittance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remittance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remittance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remittance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="personal" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="remittance" type="b2602c69:ProjectViewProjectNode" />
@@ -464,22 +301,13 @@
             </path>
             <path>
               <item name="remittance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remittance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remittance" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -488,7 +316,7 @@
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="remittance" />
-    <property name="SearchEverywhereHistoryKey" value="ddfk&#9;FILE&#9;file:///Users/alexis/myproject/remittance/src/main/resources/static/remit/ddfk.html&#10;sec&#9;FILE&#9;file:///Users/alexis/myproject/remittance/src/main/resources/static/css/second.css&#10;wddd&#9;FILE&#9;file:///Users/alexis/myproject/remittance/src/main/resources/static/personal/wddd.html" />
+    <property name="SearchEverywhereHistoryKey" value="Sms&#9;PSI&#9;JAVA://com.dfans.service.OrderService#sendMsg&#10;Or&#9;FILE&#9;file:///Users/alexis/myproject/remittance/src/main/resources/mapping/OrderMapper.xml&#10;ddfk&#9;FILE&#9;file:///Users/alexis/myproject/remittance/src/main/resources/static/remit/ddfk.html&#10;sec&#9;FILE&#9;file:///Users/alexis/myproject/remittance/src/main/resources/static/css/second.css&#10;wddd&#9;FILE&#9;file:///Users/alexis/myproject/remittance/src/main/resources/static/personal/wddd.html" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -675,7 +503,18 @@
       <workItem from="1532402872485" duration="1021000" />
       <workItem from="1532428071476" duration="3550000" />
       <workItem from="1532939570979" duration="30274000" />
-      <workItem from="1533201131844" duration="11875000" />
+      <workItem from="1533201131844" duration="12202000" />
+      <workItem from="1533881372063" duration="966000" />
+      <workItem from="1533977869644" duration="334000" />
+      <workItem from="1534126618386" duration="2245000" />
+      <workItem from="1534131494437" duration="5575000" />
+      <workItem from="1534335428704" duration="125000" />
+      <workItem from="1537779491886" duration="247000" />
+      <workItem from="1537780160002" duration="1537000" />
+      <workItem from="1539758080889" duration="1386000" />
+      <workItem from="1539915737382" duration="901000" />
+      <workItem from="1539933687861" duration="2314000" />
+      <workItem from="1539939860056" duration="876000" />
     </task>
     <task id="LOCAL-00001" summary="修改未登录情况下费率问题">
       <created>1531221115730</created>
@@ -688,10 +527,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="365436000" />
+    <option name="totallyTimeSpent" value="382269000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="825" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -719,7 +558,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23819445" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.21153846" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.21118881" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -740,24 +579,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="修改未登录情况下费率问题" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/bootstrap-datetimepicker.zh-CN.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/vendors/bootstrap/js/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/jquery-1.8.3.min.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/bootstrap-datetimepicker.fr.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/remit/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="70" column="8" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/web-forms2.rnc" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/images/login1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -768,42 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2790">
-          <caret line="186" column="49" selection-start-line="186" selection-start-column="49" selection-end-line="186" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/enums/Merchant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="87" selection-start-line="20" selection-start-column="87" selection-end-line="20" selection-end-column="87" />
-          <folding>
-            <element signature="e#1792#1793#0" expanded="true" />
-            <element signature="e#1822#1823#0" expanded="true" />
-            <element signature="e#1868#1869#0" expanded="true" />
-            <element signature="e#1906#1907#0" expanded="true" />
-            <element signature="e#1937#1938#0" expanded="true" />
-            <element signature="e#1964#1965#0" expanded="true" />
-            <element signature="e#2004#2005#0" expanded="true" />
-            <element signature="e#2036#2037#0" expanded="true" />
-            <element signature="e#2071#2072#0" expanded="true" />
-            <element signature="e#2102#2103#0" expanded="true" />
-            <element signature="e#2150#2151#0" expanded="true" />
-            <element signature="e#2190#2191#0" expanded="true" />
-            <element signature="e#2220#2221#0" expanded="true" />
-            <element signature="e#2246#2247#0" expanded="true" />
-            <element signature="e#2284#2285#0" expanded="true" />
-            <element signature="e#2314#2315#0" expanded="true" />
-            <element signature="e#2349#2350#0" expanded="true" />
-            <element signature="e#2380#2381#0" expanded="true" />
-            <element signature="e#2428#2429#0" expanded="true" />
-            <element signature="e#2468#2469#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/remit/hkwdl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7425">
@@ -811,44 +596,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/controller/PayController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="89" column="49" selection-start-line="89" selection-start-column="49" selection-end-line="89" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/wddd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/second.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
           <caret line="150" column="25" selection-start-line="150" selection-start-column="25" selection-end-line="150" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -905,9 +656,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4007">
           <caret line="355" column="46" selection-start-line="355" selection-start-column="46" selection-end-line="355" selection-end-column="46" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -915,24 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
           <caret line="402" column="47" selection-start-line="402" selection-start-column="47" selection-end-line="402" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/OrderMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1455">
-          <caret line="97" column="13" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/personal/hkpz.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#th#0;n#tr#1;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -950,13 +680,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="363" column="73" lean-forward="true" selection-start-line="363" selection-start-column="73" selection-end-line="363" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/remit/hksyAdd.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
@@ -968,15 +691,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1905">
           <caret line="134" column="33" selection-start-line="134" selection-start-column="33" selection-end-line="134" selection-end-column="33" />
-          <folding>
-            <element signature="e#1923#1924#0" expanded="true" />
-            <element signature="e#1968#1969#0" expanded="true" />
-            <element signature="e#1999#2000#0" expanded="true" />
-            <element signature="e#2028#2029#0" expanded="true" />
-            <element signature="e#2047#2048#0" expanded="true" />
-            <element signature="e#2086#2087#0" expanded="true" />
-            <element signature="e#2111#2112#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -984,13 +698,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/dao/PayMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1015,13 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/utils/SendEmail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-595">
-          <caret line="34" column="44" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/net/sf/json-lib/json-lib/2.2.2/json-lib-2.2.2-jdk15.jar!/net/sf/json/JSONArray.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1029,108 +729,190 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/controller/OrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/remit/hkdl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="626" column="12" selection-start-line="626" selection-start-column="12" selection-end-line="626" selection-end-column="12" />
-          <folding>
-            <element signature="e#4274#5776#0" />
-            <element signature="n#style#0;n#input#0;n#li#3;n#ul#1;n#div#1;n#div#1;n#section#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#section#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/remit/hksy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3433">
-          <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/remit/ddfk.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="259" column="6" lean-forward="true" selection-start-line="259" selection-start-column="6" selection-end-line="259" selection-end-column="6" />
+        <state relative-caret-position="3885">
+          <caret line="259" column="6" selection-start-line="259" selection-start-column="6" selection-end-line="259" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="1470">
           <caret line="98" column="18" selection-start-line="98" selection-start-column="12" selection-end-line="98" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/model/Insurance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
+        <state relative-caret-position="210">
           <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-          <folding>
-            <element signature="e#394#395#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/controller/InsuranceController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/service/OrderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="60" column="11" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/service/impl/OrderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="770" column="31" lean-forward="true" selection-start-line="770" selection-start-column="31" selection-end-line="770" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/personal/wddd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
+        <state relative-caret-position="240">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/personal/bzzx.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
+        <state relative-caret-position="2955">
           <caret line="197" column="16" selection-start-line="197" selection-start-column="16" selection-end-line="197" selection-end-column="73" />
-          <folding>
-            <element signature="n#style#0;n#div#3;n#div#1;n#section#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/personal/insurance.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="69" column="63" lean-forward="true" selection-start-line="69" selection-start-column="63" selection-end-line="69" selection-end-column="63" />
-          <folding>
-            <element signature="n#style#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="1680">
+          <caret line="112" column="35" selection-start-line="112" selection-start-column="35" selection-end-line="112" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/enums/Merchant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="87" selection-start-line="14" selection-start-column="87" selection-end-line="14" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/PayMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/remit/qrfkxx.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/dao/PayMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/controller/PayController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/remit/hksy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/utils/SendEmail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-907">
+          <caret line="34" column="44" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/service/OrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="29" column="16" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/controller/OrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2580">
+          <caret line="225" column="24" selection-start-line="225" selection-start-column="16" selection-end-line="225" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/personal/wddd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2445">
+          <caret line="163" column="44" selection-start-line="163" selection-start-column="44" selection-end-line="163" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/wddd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="55" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/OrderMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfans/service/impl/OrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8250">
+          <caret line="582" column="48" selection-start-line="582" selection-start-column="48" selection-end-line="582" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/personal/hkpz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/remit/hkdl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7140">
+          <caret line="476" column="111" selection-start-line="476" selection-start-column="111" selection-end-line="476" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/remit/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="50" column="102" selection-start-line="50" selection-start-column="102" selection-end-line="50" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/base.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ehcache.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/app-ehcache.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3075">
+          <caret line="205" column="43" selection-start-line="205" selection-start-column="43" selection-end-line="205" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="4" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2385">
+          <caret line="159" selection-start-line="159" selection-end-line="159" />
         </state>
       </provider>
     </entry>

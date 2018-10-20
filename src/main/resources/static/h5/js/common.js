@@ -1,4 +1,4 @@
-	var ip='http://www.erbaopay.com/remittance';
+	var ip='https://www.erbaopay.com/remittance';
     //var ip='http://localhost:8080';
 
 	var newTime='';//时间戳
